@@ -1,0 +1,10 @@
+.page-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.page-footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-style: italic;
+}

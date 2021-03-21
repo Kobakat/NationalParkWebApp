@@ -1,9 +1,19 @@
-import Demo from "./nps.js";
-
+import PageHeader from "./common/page-header";
+import PageFooter from "./common/page-footer";
+import HomePage from "./home/home-page";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div><Demo/></div>
+    <BrowserRouter>
+      <PageHeader />
+      <Switch>
+        <Route path="/" exact>
+          <HomePage />
+        </Route>
+      </Switch>
+      <PageFooter />
+    </BrowserRouter>
   );
 }
 

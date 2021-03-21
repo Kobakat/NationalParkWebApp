@@ -1,0 +1,12 @@
+.search-container {
+  width: 50%;
+  margin: 0 auto;
+
+  /*HACK just centering stuff on the page for right now*/
+  padding-top: 25rem;
+  padding-bottom: 25rem;
+}
+
+.search-form {
+  text-align: center;
+}
