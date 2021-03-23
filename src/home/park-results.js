@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 function ParkResults({ results }) {
   let content;
-  const {data} = results
+  const { data } = results;
   if (results !== null) {
     content = data.map((parks) => {
       return <div>{parks.fullName}</div>;
