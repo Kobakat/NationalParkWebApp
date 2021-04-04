@@ -24,7 +24,7 @@ function HomePage() {
     try {
       const data = await fetch(url);
       const parkJson = await data.json();
-      console.log(parkJson)
+      console.log(parkJson);
       if (parkJson !== null) setParkData(parkJson);
     } catch (err) {
       console.error(err);
@@ -32,7 +32,6 @@ function HomePage() {
   };
 
   return (
-    
     <div>
       {/* <SearchBar></SearchBar>  you shouldn't do it like this unless you are passing a Children to it*/}
       <SearchBar getData={getData} getParkData={getParkData} />
