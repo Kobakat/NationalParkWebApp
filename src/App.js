@@ -12,25 +12,16 @@ function App() {
         <Route path="/" exact>
           <HomePage />
         </Route>
-        <Route path="/park/:id" children={<Child />}>
-          <ParkPage />
-        </Route>
+        <Route path="/park/:code" children={<SetParkPage />} />
       </Switch>
       <PageFooter />
     </BrowserRouter>
   );
 }
 
-function Child() {
-  // We can use the `useParams` hook here to access
-  // the dynamic pieces of the URL.
-  let { id } = useParams();
-
-  return (
-    <div>
-      <h3>ID: {id}</h3>
-    </div>
-  );
+function SetParkPage() {
+  let { code } = useParams();
+  return <ParkPage parkCode={code}></ParkPage>;
 }
 
 export default App;

@@ -9,7 +9,7 @@ function ParkResults({ results }) {
       return (
         <div>
           <Link to={`park/${parks.parkCode}`}>
-            <button>{parks.parkCode}</button>
+            <button>{parks.fullName}</button>
           </Link>
         </div>
       );
