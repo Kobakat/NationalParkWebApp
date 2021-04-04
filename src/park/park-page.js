@@ -24,6 +24,8 @@ function ParkPage({ parkCode }) {
           errorMessage: "",
           data: park,
         });
+
+
       } catch (err) {
         setParkFetch({
           isLoading: false,
@@ -34,9 +36,14 @@ function ParkPage({ parkCode }) {
       }
     }
     loadPark();
+    
   }, []);
 
   const { isLoading, errorMessage, data } = parkFetch;
+  
+
+
+  
 
   let contents;
   if (isLoading) {
@@ -44,10 +51,14 @@ function ParkPage({ parkCode }) {
   } else if (errorMessage !== "") {
     contents = <div>{errorMessage}</div>;
   } else {
+    const [fullName, description, topics, activities, addresses, weatherInfo, images] = data;
     contents = (
       <div>
-        <img src={data.images[0].url} width="20%" />
-        <h1>{data.fullName}</h1>
+        <h1>{fullName}</h1>
+        <h4>{description}</h4>
+        <div>{weatherInfo}</div>
+        <img src={images[0].url} width="20%" />
+
       </div>
     );
   }
@@ -56,3 +67,4 @@ function ParkPage({ parkCode }) {
 }
 
 export default ParkPage;
+ 

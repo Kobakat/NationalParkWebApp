@@ -7,7 +7,7 @@ function ParkResults({ results }) {
   if (results !== null) {
     content = data.map((parks) => {
       return (
-        <div>
+        <div key={parks.id}>
           <Link to={`park/${parks.parkCode}`}>
             <button>{parks.fullName}</button>
           </Link>
