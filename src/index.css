@@ -7,9 +7,21 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: Helvetica;
+  background-color: #fefef8;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.rmsc {
+  width: 100%;
+  --rmsc-radius: 9px !important;
+}
+
+.dropdown-container {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
 }

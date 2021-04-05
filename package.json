@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@bumaga/tabs": "^0.2.0",
     "@craco/craco": "^6.1.1",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
@@ -12,6 +13,7 @@
     "react-multi-select-component": "^4.0.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-tabs": "^3.2.1",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
