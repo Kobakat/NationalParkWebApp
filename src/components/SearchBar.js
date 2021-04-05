@@ -101,7 +101,7 @@ const SearchBar = () => {
                 />
               </div>
             </div>
-            <button class="text-white bg-green-700 hover:bg-green-500 focus:bg-green-500 py-4 px-10 rounded-lg transition">
+            <button class="text-white bg-green-700 hover:bg-green-500 focus:bg-green-500 py-4 px-10 w-full lg:w-40 rounded-lg transition">
               Search
             </button>
           </div>
