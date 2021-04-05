@@ -101,11 +101,14 @@ const SearchBar = () => {
                 />
               </div>
             </div>
-            <button class="text-white bg-green-700 hover:bg-green-500 focus:bg-green-500 py-4 px-10 w-full lg:w-40 rounded-lg transition">
+            <button class="text-white bg-green-700 hover:bg-green-500 focus:bg-green-500 py-4 px-10 w-full md:w-40 rounded-lg transition">
               Search
             </button>
           </div>
         </TabPanel>
+        <p class="text-center mt-6 text-sm text-gray-300 hover:text-black transition">
+          Feel free to select as many or as few options as necessary
+        </p>
       </Tabs>
       {/* <pre>{JSON.stringify(selected)}</pre> */}
     </div>
