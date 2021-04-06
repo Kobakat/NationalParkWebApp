@@ -34,7 +34,7 @@ function HomePage() {
   return (
     <div>
       {/* <SearchBar></SearchBar>  you shouldn't do it like this unless you are passing a Children to it*/}
-      <SearchBar getData={getData} getParkData={getParkData} />
+      {/* <SearchBar getData={getData} getParkData={getParkData} /> */}
       {parkData ? <ParkResuls results={parkData} /> : ""}
     </div>
   );
