@@ -1,5 +1,5 @@
-import { React, useState, useEffect } from 'react'
-import SearchBar from '../components/SearchBar'
+import { React, useState, useEffect } from "react";
+import SearchBar from "../components/SearchBar";
 // import SearchBar from './search-bar'
 // import ParkResuls from './park-results'
 
@@ -33,11 +33,11 @@ function HomePage() {
 
   return (
     <div>
-      <SearchBar />
-      {/* <SearchBar getData={getData} getParkData={getParkData} />
-      {parkData ? <ParkResuls results={parkData} /> : ''} */}
+      {/* <SearchBar></SearchBar>  you shouldn't do it like this unless you are passing a Children to it*/}
+      {/* <SearchBar getData={getData} getParkData={getParkData} /> */}
+      {parkData ? <ParkResuls results={parkData} /> : ""}
     </div>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;
