@@ -11,8 +11,6 @@ function ParkPage({ parkCode }) {
     zipCode: 60659,
   });
 
-  
-
   useEffect(() => {
     async function loadPark() {
       setParkFetch({
@@ -39,11 +37,12 @@ function ParkPage({ parkCode }) {
       }
     }
     loadPark();
-  }, []);
+  },);
 
   const { isLoading, errorMessage, data, zipCode } = parkFetch;
 
   const [weather] = useWeather(zipCode);
+  console.log(weather);
   let contents;
   if (isLoading) {
     contents = <div>Loading Park</div>;
@@ -53,9 +52,9 @@ function ParkPage({ parkCode }) {
     const [
       fullName,
       description,
-      topics,
-      activities,
-      addresses,
+      // topics,
+      // activities,
+      // addresses,
       weatherInfo,
       images,
     ] = data;
@@ -64,11 +63,12 @@ function ParkPage({ parkCode }) {
         <h1>{fullName}</h1>
         <h4>{description}</h4>
         <div>{weatherInfo}</div>
-        <img src={images[0].url} width="20%" />
+        <img src={images[0].url} width="20%" alt="random_park_pic"/>
         <div>
           {weather.main ? (
             <div>
               <p>Weather in {weather.name}</p>
+              <div>{weather.weather[0].description}</div>
               <div>{Math.round(weather.main.temp)} degrees</div>
               <div>
                 min: {weather.main.temp_min} max:{weather.main.temp_max}
