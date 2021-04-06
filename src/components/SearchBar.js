@@ -1,18 +1,40 @@
 import React, { useState } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import MultiSelect from 'react-multi-select-component'
-// import 'react-tabs/style/react-tabs.css'
+import useGetNPSData from '../hooks/use-get-nps-data'
 
 const SearchBar = () => {
-  const options = [
+  const parkNames = [
     { label: 'Yellowstone National Park', value: '1' },
     { label: 'Arcadia National Park', value: '2' },
+  ]
+
+  const states = [
+    { label: 'Illinois', value: 'IL' },
+    { label: 'Colorado', value: 'CO' },
+  ]
+
+  const activities = [
+    { label: '🏃 Running', value: 'running' },
+    { label: '🏊🏼‍♂️ Swimming', value: 'swimming' },
+    { label: '🚴‍♀️ Biking', value: 'biking' },
+  ]
+
+  const topics = [
+    { label: 'Presidents', value: 'presidents' },
+    { label: 'Geology', value: 'geology' },
   ]
 
   const [selectedParks, setSelectedParks] = useState([])
   const [selectedStates, setSelectedStates] = useState([])
   const [selectedActivities, setSelectedActivities] = useState([])
   const [selectedTopics, setSelectedTopics] = useState([])
+
+  let selection = JSON.stringify(
+    [selectedParks, selectedStates, selectedActivities, selectedTopics].flat()
+  )
+
+  console.log(selection)
 
   return (
     <div class="bg-white min-h-28 w-4/5 m-auto py-8 px-8 rounded-2xl border-2 border-gray-100 shadow-lg">
@@ -42,9 +64,9 @@ const SearchBar = () => {
             <div class="flex gap-4 flex-col lg:flex-row">
               <MultiSelect
                 class="bg-gray-100 p-3 w-full rounded-3xl pl-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                options={options}
-                value={selectedStates}
-                onChange={setSelectedStates}
+                options={parkNames}
+                value={selectedParks}
+                onChange={setSelectedParks}
                 labelledBy="Select"
               />
               <button class="text-white bg-green-700 hover:bg-green-500 focus:bg-green-500 py-4 px-10 rounded-lg transition">
@@ -64,9 +86,9 @@ const SearchBar = () => {
               <div class="flex gap-4 h-full">
                 <MultiSelect
                   class="bg-gray-100 p-3 w-full rounded-3xl pl-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                  options={options}
-                  value={selectedParks}
-                  onChange={setSelectedParks}
+                  options={states}
+                  value={selectedStates}
+                  onChange={setSelectedStates}
                   labelledBy="Select"
                 />
               </div>
@@ -79,7 +101,7 @@ const SearchBar = () => {
               <div class="flex gap-4 h-full">
                 <MultiSelect
                   class="bg-gray-100 p-3 w-full rounded-3xl pl-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                  options={options}
+                  options={activities}
                   value={selectedActivities}
                   onChange={setSelectedActivities}
                   labelledBy="Select"
@@ -94,7 +116,7 @@ const SearchBar = () => {
               <div class="flex gap-4 h-full">
                 <MultiSelect
                   class="bg-gray-100 p-3 w-full rounded-3xl pl-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                  options={options}
+                  options={topics}
                   value={selectedTopics}
                   onChange={setSelectedTopics}
                   labelledBy="Select"
@@ -110,7 +132,14 @@ const SearchBar = () => {
           Feel free to select as many or as few options as necessary
         </p>
       </Tabs>
-      {/* <pre>{JSON.stringify(selected)}</pre> */}
+      <pre>
+        {JSON.stringify({
+          selectedParks,
+          selectedStates,
+          selectedActivities,
+          selectedTopics,
+        })}
+      </pre>
     </div>
   )
 }
