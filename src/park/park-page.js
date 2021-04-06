@@ -1,64 +1,54 @@
-import "./park-page.css";
-import { useState, useEffect } from "react";
-import getPark from "./get-park";
-import useWeather from "../hooks/use-weather";
+import './park-page.css'
+import { useState, useEffect } from 'react'
+import getPark from './get-park'
+import useWeather from '../hooks/use-weather'
 
 function ParkPage({ parkCode }) {
   const [parkFetch, setParkFetch] = useState({
     isLoading: true,
-    errorMessage: "",
+    errorMessage: '',
     data: null,
     zipCode: 60659,
-  });
-
-  
+  })
 
   useEffect(() => {
     async function loadPark() {
       setParkFetch({
         isLoading: true,
-        errorMessage: "",
+        errorMessage: '',
         data: null,
-      });
+      })
 
       try {
-        const park = await getPark(parkCode);
+        const park = await getPark(parkCode)
         setParkFetch({
           isLoading: false,
-          errorMessage: "",
+          errorMessage: '',
           data: park,
           zipCode: park[4][0].postalCode,
-        });
+        })
       } catch (err) {
         setParkFetch({
           isLoading: false,
           errorMessage:
-            "Something went wrong loading the park. Please try again later.",
+            'Something went wrong loading the park. Please try again later.',
           data: null,
-        });
+        })
       }
     }
-    loadPark();
-  }, []);
+    loadPark()
+  }, [])
 
-  const { isLoading, errorMessage, data, zipCode } = parkFetch;
+  const { isLoading, errorMessage, data, zipCode } = parkFetch
 
-  const [weather] = useWeather(zipCode);
-  let contents;
+  const [weather] = useWeather(zipCode)
+  let contents
   if (isLoading) {
-    contents = <div>Loading Park</div>;
-  } else if (errorMessage !== "") {
-    contents = <div>{errorMessage}</div>;
+    contents = <div>Loading Park</div>
+  } else if (errorMessage !== '') {
+    contents = <div>{errorMessage}</div>
   } else {
-    const [
-      fullName,
-      description,
-      topics,
-      activities,
-      addresses,
-      weatherInfo,
-      images,
-    ] = data;
+    const [fullName, description, weatherInfo, images] = data
     contents = (
       <div>
         <h1>{fullName}</h1>
@@ -75,14 +65,14 @@ function ParkPage({ parkCode }) {
               </div>
             </div>
           ) : (
-            "loading weather information"
+            'loading weather information'
           )}
         </div>
       </div>
-    );
+    )
   }
 
-  return <div>{contents}</div>;
+  return <div>{contents}</div>
 }
 
-export default ParkPage;
+export default ParkPage
