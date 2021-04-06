@@ -10,7 +10,17 @@ async function getPark(code) {
 
     const json = await response.json();
     //TODO throw an error if the json file we got back was bad
-    return json.data[0];
+    const {
+      fullName,
+      description,
+      topics,
+      activities,
+      addresses,
+      weatherInfo,
+      images
+    } = json.data[0];
+    console.log(json.data[0]);
+    return [fullName, description, topics, activities,addresses, weatherInfo, images]
   } catch (err) {
     console.error(err);
     throw err;
