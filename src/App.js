@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact>
-          <HomePage />
+            <HomePage />
         </Route>
         <Route path="/park/:code" children={<SetParkPage />} />
       </Switch>
