@@ -1,3 +1,4 @@
+
 import { React, useState, useEffect } from "react";
 import Nav from "../components/HomePage/Nav";
 import SearchBar from "../components/SearchBar";
@@ -40,6 +41,7 @@ function HomePage() {
   };
 
   return (
+
     <div id="content">
         <Nav />
         <Header />
@@ -49,9 +51,6 @@ function HomePage() {
         <ThirdSection />
         <FourthSection />
         <Footer />
-        {/* <SearchBar></SearchBar>  you shouldn't do it like this unless you are passing a Children to it*/}
-        {/* <SearchBar getData={getData} getParkData={getParkData} /> */}
-        {parkData ? <ParkResuls results={parkData} /> : ""}
     </div>
   );
 }
