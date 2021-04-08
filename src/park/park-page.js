@@ -69,6 +69,7 @@ function ParkPage({ parkCode }) {
           {weather.main ? (
             <div>
               <p>Weather in {weather.name}</p>
+              <p>{weather.weather[0].description}</p>
               <div>{Math.round(weather.main.temp)} degrees</div>
               <div>
                 min: {weather.main.temp_min} max:{weather.main.temp_max}
