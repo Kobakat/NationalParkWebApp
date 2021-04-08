@@ -1,0 +1,65 @@
+nav {
+  grid-column: 1 / 13;
+  background: #fefef8 !important;
+}
+
+.nav-bar {
+  list-style-type: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.logo {
+  grid-column: 1 /3;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #743100;
+  font-size: 1.25rem;
+}
+
+.nav-links a {
+  color: #743100;
+  text-decoration: none;
+  font-family: "Nunito" sans-serif;
+  position: relative;
+}
+
+.nav-links a:not(.btn-cta)::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #743100;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-links a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.nav-links:nth-child(2) {
+  grid-column: 9;
+}
+
+.btn-cta {
+  border-radius: 1.875rem;
+  margin: 0;
+  border: none;
+  padding: 0.9rem;
+  background-color: #e2aa60;
+  opacity: 0.8;
+  transition: 0.3s;
+  color: white !important;
+}
+
+.btn-cta:hover {
+  opacity: 1;
+}
