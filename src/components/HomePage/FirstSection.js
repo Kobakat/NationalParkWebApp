@@ -13,6 +13,10 @@ function FirstSection() {
             Our curated list of top <br />
             destinations countrywide &rarr;
           </p>
+          <p className="right-arrow-text down-arrow-text">
+            Our curated list of top <br />
+            destinations countrywide &darr;
+          </p>
           <button>Explore</button>
         </div>
         <div className="column">
@@ -24,7 +28,7 @@ function FirstSection() {
           </a>
           <a href="">
             <div className="icon-bg">
-              <img src="images/icons8-grand-canyon.png" alt="Grand Canyon" />
+              <img src="images/icons8-grand-canyon-48.png" alt="Grand Canyon" />
             </div>
             <b>Lorem, ipsum dolor.</b>
           </a>
