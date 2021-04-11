@@ -1,40 +1,40 @@
-import React, { useState } from 'react'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import MultiSelect from 'react-multi-select-component'
-import useGetNPSData from '../hooks/use-get-nps-data'
+import { useState, useEffect } from "react";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { getActivities, getTopics, getStates } from "./get-filters";
+import MultiSelect from "react-multi-select-component";
+import useGetNPSData from "../hooks/use-get-nps-data";
 
-const SearchBar = () => {
-  const parkNames = [
-    { label: 'Yellowstone National Park', value: '1' },
-    { label: 'Arcadia National Park', value: '2' },
-  ]
+function SearchBar() {
+  const [parkNames, setParkNames] = useState([]);
+  const [states, setStates] = useState([]);
+  const [activities, setActivities] = useState([]);
+  const [topics, setTopics] = useState([]);
 
-  const states = [
-    { label: 'Illinois', value: 'IL' },
-    { label: 'Colorado', value: 'CO' },
-  ]
+  useEffect(() => {
+    async function SearchParameters() {
+      try {
+        const stateArray = getStates();
+        const activityArray = await getActivities();
+        const topicArray = await getTopics();
 
-  const activities = [
-    { label: '🏃 Running', value: 'running' },
-    { label: '🏊🏼‍♂️ Swimming', value: 'swimming' },
-    { label: '🚴‍♀️ Biking', value: 'biking' },
-  ]
+        setStates(stateArray);
+        setActivities(activityArray);
+        setTopics(topicArray);
+      } catch (err) {}
+    }
+    SearchParameters();
+  }, []);
 
-  const topics = [
-    { label: 'Presidents', value: 'presidents' },
-    { label: 'Geology', value: 'geology' },
-  ]
-
-  const [selectedParks, setSelectedParks] = useState([])
-  const [selectedStates, setSelectedStates] = useState([])
-  const [selectedActivities, setSelectedActivities] = useState([])
-  const [selectedTopics, setSelectedTopics] = useState([])
+  const [selectedParks, setSelectedParks] = useState([]);
+  const [selectedStates, setSelectedStates] = useState([]);
+  const [selectedActivities, setSelectedActivities] = useState([]);
+  const [selectedTopics, setSelectedTopics] = useState([]);
 
   let selection = JSON.stringify(
     [selectedParks, selectedStates, selectedActivities, selectedTopics].flat()
-  )
+  );
 
-  console.log(selection)
+  console.log(selection);
 
   return (
     <div class="bg-white min-h-28 w-4/5 m-auto py-8 px-8 rounded-2xl border-2 border-gray-100 shadow-lg">
@@ -132,16 +132,8 @@ const SearchBar = () => {
           Feel free to select as many or as few options as necessary
         </p>
       </Tabs>
-      <pre>
-        {JSON.stringify({
-          selectedParks,
-          selectedStates,
-          selectedActivities,
-          selectedTopics,
-        })}
-      </pre>
     </div>
-  )
+  );
 }
 
-export default SearchBar
+export default SearchBar;
