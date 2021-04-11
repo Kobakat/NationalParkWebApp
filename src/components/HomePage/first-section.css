@@ -107,6 +107,7 @@
 .column a:hover {
   background-color: rgba(204, 204, 204, 0.568);
   border-radius: 30px;
+  text-decoration: none;
 }
 
 .column a b {
