@@ -1,4 +1,5 @@
 import React from "react";
+import ParkwayLogo from "../HomePage/images/ParkwayLogo.svg";
 import "./section-footer.css";
 
 function PageFooter() {
@@ -8,7 +9,7 @@ function PageFooter() {
         <div className="footer-content">
           <div className="items">
             <a href="#" className="logo">
-              The National Parks
+              <img src={ParkwayLogo} alt="" />
             </a>
             <p>
               The National Parks is a website brought to you by people who know
@@ -21,16 +22,13 @@ function PageFooter() {
             <h3>Product</h3>
             <ul>
               <li>
-                <a href="#">Lorem ipsum</a>
-              </li>
-              <li>
                 <a href="#">Sign up</a>
               </li>
               <li>
-                <a href="#">Parks</a>
+                <a href="#">Activities</a>
               </li>
               <li>
-                <a href="#">Lorem ipsum</a>
+                <a href="#">Park List</a>
               </li>
               <li>
                 <a href="#">Lorem ipsum</a>
@@ -46,9 +44,6 @@ function PageFooter() {
               <li>
                 <a href="#">Our Mission</a>
               </li>
-              <li>
-                <a href="#">Privacy Policy</a>
-              </li>
             </ul>
           </div>
           <div className="items">
@@ -58,13 +53,13 @@ function PageFooter() {
                 <a href="">Contact Us</a>
               </li>
               <li>
-                <a href="">Lorem ipsum</a>
+                <a href="">Parkway FAQ</a>
               </li>
             </ul>
           </div>
         </div>
         <hr />
-        <p className="end">@ 2021 The National Parks Web-App</p>
+        <p className="end">@ 2021 Parkway Web-App</p>
       </div>
     </footer>
   );
