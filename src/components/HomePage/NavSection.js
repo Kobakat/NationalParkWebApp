@@ -1,10 +1,9 @@
 import React from "react";
-import ParkwayLogo from "../HomePage/ParkwayLogo.svg";
-import "./nav.css";
+import ParkwayLogo from "../HomePage/images/ParkwayLogo.svg";
+import "./section-nav.css";
 
 function Nav() {
   return (
-    // Navigation Menu
     <nav>
       <ul className="nav-bar">
         <div className="links-container">
@@ -32,5 +31,4 @@ function Nav() {
     </nav>
   );
 }
-
 export default Nav;

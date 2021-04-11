@@ -1,11 +1,11 @@
 import React from "react";
-import "./fourth-section.css";
+import "./section-four.css";
 
-function FourthSection() {
+function SectionFour() {
   return (
     <section className="explore-the-country">
       <h2 className="section-title">Explore the country</h2>
-      <div className="activities-container">
+      <div className="explore-container">
         <div className="box box2">
           <div className="imgBx">
             <img src="https://via.placeholder.com/300x400" alt="" />
@@ -35,4 +35,4 @@ function FourthSection() {
   );
 }
 
-export default FourthSection;
+export default SectionFour;

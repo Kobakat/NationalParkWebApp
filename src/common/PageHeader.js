@@ -1,7 +1,7 @@
 import React from "react";
-import "./header.css";
+import "./section-header.css";
 
-function Header() {
+function PageHeader() {
   return (
     <header className="landing">
       <h1>Explore America</h1>
@@ -13,4 +13,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default PageHeader;

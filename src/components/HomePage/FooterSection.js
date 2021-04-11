@@ -1,5 +1,5 @@
 import React from "react";
-import "./page-footer.css";
+import "./section-footer.css";
 
 function PageFooter() {
   return (
@@ -69,5 +69,4 @@ function PageFooter() {
     </footer>
   );
 }
-
 export default PageFooter;
