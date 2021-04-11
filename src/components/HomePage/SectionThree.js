@@ -1,8 +1,7 @@
 import React from "react";
-import "./third-section.css";
+import "./section-three.css";
 
-function ThirdSection() {
+function SectionThree() {
   return <section className="carousel-section">Section 3</section>;
 }
-
-export default ThirdSection;
+export default SectionThree;

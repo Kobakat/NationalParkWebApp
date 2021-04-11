@@ -1,13 +1,16 @@
 import React from "react";
-import "./second-section.css";
+import "./section-two.css";
 
-function SecondSection() {
+function SectionTwo() {
   return (
     <section className="discover-top-activities">
       <h2 className="section-title">Discover top activities</h2>
-      <div className="foocontainer">
+      <div className="inner-container">
         <main className="grid">
           <article>
+            {/* Hook up NPS API here for images */}
+            {/* Idea: Make a card for each type of activity with corresponding image and text */}
+            {/* Then with Javascript render a random activity card triplet each time */}
             <img src="https://picsum.photos/300/200///" alt="" />
             <div className="text">
               <h3>Rock Climbing</h3>
@@ -40,46 +43,7 @@ function SecondSection() {
           </article>
         </main>
       </div>
-      {/* <div className="activities-container">
-        <div className="box">
-          <div className="imgBx">
-            <img src="https://via.placeholder.com/300x500" alt="" />
-          </div>
-          <div className="details">
-            <h3>
-              Rock Climbing
-              <br />
-              <span>Reaching new heights</span>
-            </h3>
-          </div>
-        </div>
-        <div className="box">
-          <div className="imgBx">
-            <img src="https://via.placeholder.com/300x500" alt="" />
-          </div>
-          <div className="details">
-            <h3>
-              Camping
-              <br />
-              <span>Night by the fire</span>
-            </h3>
-          </div>
-        </div>
-        <div className="box">
-          <div className="imgBx">
-            <img src="https://via.placeholder.com/300x500" alt="" />
-          </div>
-          <div className="details">
-            <h3>
-              Boating
-              <br />
-              <span>A day on the lake</span>
-            </h3>
-          </div>
-        </div>
-      </div> */}
     </section>
   );
 }
-
-export default SecondSection;
+export default SectionTwo;

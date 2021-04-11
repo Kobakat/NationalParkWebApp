@@ -1,15 +1,14 @@
-
 import { React, useState, useEffect } from "react";
-import Nav from "../components/HomePage/Nav";
+import NavSection from "../components/HomePage/NavSection";
 import SearchBar from "../components/SearchBar";
 import ParkResuls from "./park-results";
-import Header from "../components/HomePage/Header";
-import MainSection from "../components/HomePage/MainSection";
-import FirstSection from "../components/HomePage/FirstSection";
-import SecondSection from "../components/HomePage/SecondSection";
-import ThirdSection from "../components/HomePage/ThirdSection";
-import FourthSection from "../components/HomePage/FourthSection";
-import Footer from "../common/page-footer";
+import PageHeader from "../common/PageHeader";
+import HeroSection from "../components/HomePage/HeroSection";
+import SectionOne from "../components/HomePage/SectionOne";
+import SectionTwo from "../components/HomePage/SectionTwo";
+import SectionThree from "../components/HomePage/SectionThree";
+import SectionFour from "../components/HomePage/SectionFour";
+import PageFooter from "../components/HomePage/FooterSection";
 import "../home/home-page.css";
 
 function HomePage() {
@@ -41,16 +40,15 @@ function HomePage() {
   };
 
   return (
-
     <div id="content">
-        <Nav />
-        <Header />
-        <MainSection />
-        <FirstSection />
-        <SecondSection />
-        <ThirdSection />
-        <FourthSection />
-        <Footer />
+      <NavSection />
+      <PageHeader />
+      <HeroSection />
+      <SectionOne />
+      <SectionTwo />
+      <SectionThree />
+      <SectionFour />
+      <PageFooter />
     </div>
   );
 }
