@@ -1,13 +1,13 @@
 header {
   grid-column: 2/12;
-  grid-row: 2 / 4;
+  grid-row: 2 / 3;
   background: #fefef8 !important;
   display: inline;
 }
 
 header h1 {
   color: #743100;
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   position: relative;
   margin-top: 0.1rem;
   margin-bottom: 0;
