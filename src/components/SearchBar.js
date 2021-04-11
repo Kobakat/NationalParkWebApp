@@ -1,54 +1,54 @@
-import React, { useState } from 'react'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import MultiSelect from 'react-multi-select-component'
-import useGetNPSData from '../hooks/use-get-nps-data'
+import React, { useState } from "react";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import MultiSelect from "react-multi-select-component";
+import useGetNPSData from "../hooks/use-get-nps-data";
 
 const SearchBar = () => {
   const parkNames = [
-    { label: 'Yellowstone National Park', value: '1' },
-    { label: 'Arcadia National Park', value: '2' },
-  ]
+    { label: "Yellowstone National Park", value: "1" },
+    { label: "Arcadia National Park", value: "2" },
+  ];
 
   const states = [
-    { label: 'Illinois', value: 'IL' },
-    { label: 'Colorado', value: 'CO' },
-  ]
+    { label: "Illinois", value: "IL" },
+    { label: "Colorado", value: "CO" },
+  ];
 
   const activities = [
-    { label: '🏃 Running', value: 'running' },
-    { label: '🏊🏼‍♂️ Swimming', value: 'swimming' },
-    { label: '🚴‍♀️ Biking', value: 'biking' },
-  ]
+    { label: "🏃 Running", value: "running" },
+    { label: "🏊🏼‍♂️ Swimming", value: "swimming" },
+    { label: "🚴‍♀️ Biking", value: "biking" },
+  ];
 
   const topics = [
-    { label: 'Presidents', value: 'presidents' },
-    { label: 'Geology', value: 'geology' },
-  ]
+    { label: "Presidents", value: "presidents" },
+    { label: "Geology", value: "geology" },
+  ];
 
-  const [selectedParks, setSelectedParks] = useState([])
-  const [selectedStates, setSelectedStates] = useState([])
-  const [selectedActivities, setSelectedActivities] = useState([])
-  const [selectedTopics, setSelectedTopics] = useState([])
+  const [selectedParks, setSelectedParks] = useState([]);
+  const [selectedStates, setSelectedStates] = useState([]);
+  const [selectedActivities, setSelectedActivities] = useState([]);
+  const [selectedTopics, setSelectedTopics] = useState([]);
 
   let selection = JSON.stringify(
     [selectedParks, selectedStates, selectedActivities, selectedTopics].flat()
-  )
+  );
 
-  console.log(selection)
+  console.log(selection);
 
   return (
-    <div class="bg-white min-h-28 w-4/5 m-auto py-8 px-8 rounded-2xl border-2 border-gray-100 shadow-lg">
+    <div class="absolute ml-24 pb-3 max-w-3xl bg-white min-h-28 w-full m-auto py-8 px-8 rounded-2xl border-2 border-gray-100 shadow-lg">
       <Tabs>
         <div class="border-b-2">
           <TabList>
             <div class="flex gap-2 pb-4 flex-col lg:flex-row text-center">
               <Tab selectedClassName="bg-green-700 text-white rounded-lg">
-                <button class="py-4 px-10 rounded-lg hover:bg-green-500 hover:text-white cursor-pointer w-full transition">
+                <button class="py-0.5 pb-0 px-2 rounded-lg hover:bg-green-500 hover:text-white cursor-pointer w-full transition">
                   Park Name
                 </button>
               </Tab>
               <Tab selectedClassName="bg-green-700 text-white rounded-lg">
-                <button class="py-4 px-10 rounded-lg hover:bg-green-500 hover:text-white cursor-pointer w-full transition">
+                <button class="py-0.5 px-2 rounded-lg hover:bg-green-500 hover:text-white cursor-pointer w-full transition">
                   Filter
                 </button>
               </Tab>
@@ -58,7 +58,7 @@ const SearchBar = () => {
 
         <TabPanel>
           <div class="flex flex-col gap-4 pt-6">
-            <label class="text-green-700" htmlFor="park-name">
+            <label class="text-left text-green-700" htmlFor="park-name">
               Park Name
             </label>
             <div class="flex gap-4 flex-col lg:flex-row">
@@ -69,7 +69,7 @@ const SearchBar = () => {
                 onChange={setSelectedParks}
                 labelledBy="Select"
               />
-              <button class="text-white bg-green-700 hover:bg-green-500 focus:bg-green-500 py-4 px-10 rounded-lg transition">
+              <button class="text-white bg-green-700 hover:bg-green-500 focus:bg-green-500 py-0.5 px-5 rounded-lg transition">
                 Search
               </button>
             </div>
@@ -132,16 +132,17 @@ const SearchBar = () => {
           Feel free to select as many or as few options as necessary
         </p>
       </Tabs>
-      <pre>
+      {/* uncomment out when testing */}
+      {/* <pre>
         {JSON.stringify({
           selectedParks,
           selectedStates,
           selectedActivities,
           selectedTopics,
         })}
-      </pre>
+      </pre> */}
     </div>
-  )
-}
+  );
+};
 
-export default SearchBar
+export default SearchBar;
