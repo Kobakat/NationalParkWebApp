@@ -22,7 +22,7 @@ function Nav() {
             <a href="/log-in">Log in</a>
           </li>
           <li className="nav-links">
-            <a className="btn-cta" href="">
+            <a className="btn-cta" href="https://nps.gov">
               Sign up
             </a>
           </li>

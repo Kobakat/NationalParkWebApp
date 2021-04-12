@@ -8,7 +8,7 @@ function PageFooter() {
       <div className="container">
         <div className="footer-content">
           <div className="items">
-            <a href="#" className="logo">
+            <a href="https://nps.gov" className="logo">
               <img src={ParkwayLogo} alt="" />
             </a>
             <p>
@@ -22,16 +22,16 @@ function PageFooter() {
             <h3>Product</h3>
             <ul>
               <li>
-                <a href="#">Sign up</a>
+                <a href="https://nps.gov">Sign up</a>
               </li>
               <li>
-                <a href="#">Activities</a>
+                <a href="https://nps.gov">Activities</a>
               </li>
               <li>
-                <a href="#">Park List</a>
+                <a href="https://nps.gov">Park List</a>
               </li>
               <li>
-                <a href="#">Lorem ipsum</a>
+                <a href="https://nps.gov">Lorem ipsum</a>
               </li>
             </ul>
           </div>
@@ -39,10 +39,10 @@ function PageFooter() {
             <h3>Legal</h3>
             <ul>
               <li>
-                <a href="#">About Us</a>
+                <a href="https://nps.gov">About Us</a>
               </li>
               <li>
-                <a href="#">Our Mission</a>
+                <a href="https://nps.gov">Our Mission</a>
               </li>
             </ul>
           </div>
@@ -50,10 +50,10 @@ function PageFooter() {
             <h3>Support</h3>
             <ul>
               <li>
-                <a href="">Contact Us</a>
+                <a href="https://nps.gov">Contact Us</a>
               </li>
               <li>
-                <a href="">Parkway FAQ</a>
+                <a href="https://nps.gov">Parkway FAQ</a>
               </li>
             </ul>
           </div>

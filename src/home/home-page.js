@@ -1,7 +1,5 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import NavSection from "../components/HomePage/NavSection";
-import SearchBar from "../components/SearchBar";
-import ParkResuls from "./park-results";
 import PageHeader from "../common/PageHeader";
 import HeroSection from "../components/HomePage/HeroSection";
 import SectionOne from "../components/HomePage/SectionOne";
@@ -17,8 +15,6 @@ function HomePage() {
     params: null,
   });
   const [parkData, setParkData] = useState(null);
-
-  const { query, params } = searchParams;
 
   const getData = (query, params) => {
     setSearchParams({
