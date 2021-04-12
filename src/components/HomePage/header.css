@@ -60,6 +60,7 @@
   display: none;
 }
 @media (max-width: 684px) {
+
   /*Mobile View */
   .header {
     padding: 0px 10px;
