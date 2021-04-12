@@ -2,6 +2,7 @@
   grid-column: 1 /13;
   grid-row: 18 / 22;
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 .section-title {
@@ -53,7 +54,7 @@
   background: #fefef8;
   border-radius: 20px;
   border: none;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: #545700;
   padding: 10px;
   margin-bottom: 0.5rem;
