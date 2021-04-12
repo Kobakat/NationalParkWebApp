@@ -16,8 +16,12 @@ async function getResults(query, { filters }) {
         fullName: park.fullName,
         parkCode: park.parkCode,
         states: park.states,
-        topics: park.topics,
-        activities: park.activities,
+        topics: park.topics.map((topic) => {
+          return topic.name;
+        }),
+        activities: park.activities.map((activity) => {
+          return activity.name;
+        }),
       };
     });
 
@@ -25,12 +29,15 @@ async function getResults(query, { filters }) {
     const filteredResults = parks.map((park) => {
       const containsActivity =
         filters.activities.length === 0 ||
-        park.activities.includes(filters.activities);
+        filters.activities.every((r) => park.activities.includes(r));
+      console.log(containsActivity);
       const containsTopic =
-        filters.topics.length === 0 || park.activities.includes(filters.topics);
+        filters.topics.length === 0 ||
+        filters.topics.every((r) => park.topics.includes(r));
+      console.log(containsTopic);
       const containsState =
         filters.states.length === 0 || park.states.includes(filters.states);
-
+      console.log(containsState);
       if (containsActivity && containsTopic && containsState) return park;
       else return null;
     });

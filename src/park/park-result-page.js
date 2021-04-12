@@ -1,4 +1,5 @@
 import getResults from "./get-results";
+import "./park-result-page.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -60,7 +61,6 @@ function ParkResultPage({ search }) {
     });
   }
 
-  console.log(content);
   return <div>{content}</div>;
 }
 

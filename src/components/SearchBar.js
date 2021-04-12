@@ -6,7 +6,7 @@ import MultiSelect from "react-multi-select-component";
 import useGetNPSData from "../hooks/use-get-nps-data";
 
 function SearchBar({ callback }) {
-  const [parkNames, setParkNames] = useState([]);
+  //These states are for the possible search bar filter options
   const [states, setStates] = useState([]);
   const [activities, setActivities] = useState([]);
   const [topics, setTopics] = useState([]);
@@ -16,6 +16,7 @@ function SearchBar({ callback }) {
     console.log(`Search is now set to: ${e.target.value}`);
   };
 
+  //When this runs it populates the search bars filter options
   useEffect(() => {
     async function SearchParameters() {
       try {
@@ -31,12 +32,13 @@ function SearchBar({ callback }) {
     SearchParameters();
   }, []);
 
+  //These are the current states of the search bar
   const [selectedParks, setSelectedParks] = useState([]);
   const [selectedStates, setSelectedStates] = useState([]);
   const [selectedActivities, setSelectedActivities] = useState([]);
   const [selectedTopics, setSelectedTopics] = useState([]);
 
-  //This function will pass the the parent component the search parameters
+  //This function will pass the the parent component the search parameters the user has inputed
   const passParams = () => {
     const params = {
       query: selectedParks,
@@ -47,9 +49,10 @@ function SearchBar({ callback }) {
     callback({ params });
   };
 
+  //We will pass up the new parameters everytime the user changes one of the inputs
   useEffect(() => {
     passParams();
-  }, [selectedParks, selectedStates, selectedParks, selectedActivities]);
+  }, [selectedParks, selectedStates, selectedTopics, selectedActivities]);
 
   return (
     <div class="bg-white min-h-28 w-4/5 m-auto py-8 px-8 rounded-2xl border-2 border-gray-100 shadow-lg">
