@@ -50,15 +50,18 @@ function ParkResultPage({ search }) {
   const { data } = resultFetch;
 
   if (data !== null) {
-    content = data.map((parks) => {
-      return (
-        <div className="foo" key={parks.parkCode}>
-          <Link to={`park/${parks.parkCode}`}>
-            <button className="bar">{parks.fullName}</button>
-          </Link>
-        </div>
-      );
-    });
+    if (data.length === 0) content = <p>No Parks found</p>;
+    else {
+      content = data.map((parks) => {
+        return (
+          <div className="foo" key={parks.parkCode}>
+            <Link to={`park/${parks.parkCode}`}>
+              <button className="bar">{parks.fullName}</button>
+            </Link>
+          </div>
+        );
+      });
+    }
   }
 
   return <div>{content}</div>;

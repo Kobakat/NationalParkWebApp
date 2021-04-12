@@ -7,7 +7,7 @@ import SecondSection from "../components/HomePage/SecondSection";
 import ThirdSection from "../components/HomePage/ThirdSection";
 import FourthSection from "../components/HomePage/FourthSection";
 import Footer from "../common/page-footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../home/home-page.css";
 
 function HomePage({ callback }) {
@@ -15,12 +15,11 @@ function HomePage({ callback }) {
 
   const searchBarCallback = (childData) => {
     setSearchBarParams(childData);
-    passParams();
   };
 
-  const passParams = () => {
+  useEffect(() => {
     callback({ searchBarParams });
-  };
+  }, [searchBarParams]);
 
   return (
     <div id="content">

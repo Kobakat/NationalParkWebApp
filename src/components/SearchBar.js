@@ -46,6 +46,7 @@ function SearchBar({ callback }) {
       topics: selectedTopics,
       states: selectedStates,
     };
+
     callback({ params });
   };
 
