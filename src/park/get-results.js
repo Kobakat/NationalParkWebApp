@@ -24,12 +24,12 @@ async function getResults(query, { filters }) {
     //Removes any elements of the results that don't contain all the specified filters
     const filteredResults = parks.map((park) => {
       const containsActivity =
-        filters.activities == null ||
+        filters.activities.length === 0 ||
         park.activities.includes(filters.activities);
       const containsTopic =
-        filters.topics == null || park.activities.includes(filters.topics);
+        filters.topics.length === 0 || park.activities.includes(filters.topics);
       const containsState =
-        filters.state == null || park.astates.includes(filters.states);
+        filters.states.length === 0 || park.states.includes(filters.states);
 
       if (containsActivity && containsTopic && containsState) return park;
       else return null;

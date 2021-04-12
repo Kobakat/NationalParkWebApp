@@ -5,10 +5,16 @@ import { getActivities, getTopics, getStates } from "./get-filters";
 import MultiSelect from "react-multi-select-component";
 import useGetNPSData from "../hooks/use-get-nps-data";
 
-function SearchBar() {
+function SearchBar({ callback }) {
+  const [parkNames, setParkNames] = useState([]);
   const [states, setStates] = useState([]);
   const [activities, setActivities] = useState([]);
   const [topics, setTopics] = useState([]);
+
+  const handleChangeSearchBar = (e) => {
+    setSelectedParks(e.target.value);
+    console.log(`Search is now set to: ${e.target.value}`);
+  };
 
   useEffect(() => {
     async function SearchParameters() {
@@ -30,11 +36,20 @@ function SearchBar() {
   const [selectedActivities, setSelectedActivities] = useState([]);
   const [selectedTopics, setSelectedTopics] = useState([]);
 
-  let selection = JSON.stringify(
-    [selectedParks, selectedStates, selectedActivities, selectedTopics].flat()
-  );
+  //This function will pass the the parent component the search parameters
+  const passParams = () => {
+    const params = {
+      query: selectedParks,
+      activities: selectedActivities,
+      topics: selectedTopics,
+      states: selectedStates,
+    };
+    callback({ params });
+  };
 
-  console.log(selection);
+  useEffect(() => {
+    passParams();
+  }, [selectedParks, selectedStates, selectedParks, selectedActivities]);
 
   return (
     <div class="bg-white min-h-28 w-4/5 m-auto py-8 px-8 rounded-2xl border-2 border-gray-100 shadow-lg">
@@ -62,12 +77,11 @@ function SearchBar() {
               Park Name
             </label>
             <div class="flex gap-4 flex-col lg:flex-row">
-              <MultiSelect
-                class="bg-gray-100 p-3 w-full rounded-3xl pl-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                options={"Test"}
-                value={selectedParks}
-                onChange={setSelectedParks}
-                labelledBy="Select"
+              <input
+                type="text"
+                id="name"
+                placeholder="Yellowstone"
+                onChange={handleChangeSearchBar}
               />
               <Link to="/results">
                 <button class="text-white bg-green-700 hover:bg-green-500 focus:bg-green-500 py-4 px-10 rounded-lg transition">

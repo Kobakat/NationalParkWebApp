@@ -9,8 +9,8 @@ function ParkResultPage({ search }) {
     data: null,
   });
 
-  const { query } = search;
-  const { activities, topics, states } = search;
+  const { query } = search.searchBarParams.params;
+  const { activities, topics, states } = search.searchBarParams.params;
 
   const filters = {
     activities: activities,
@@ -27,7 +27,7 @@ function ParkResultPage({ search }) {
       });
 
       try {
-        const results = await getResults(query, filters);
+        const results = await getResults(query, { filters });
         setResultFetch({
           isLoading: false,
           errorMessage: "",
@@ -47,17 +47,20 @@ function ParkResultPage({ search }) {
 
   let content;
   const { data } = resultFetch;
+
   if (data !== null) {
     content = data.map((parks) => {
       return (
-        <div key={parks.id}>
+        <div className="foo" key={parks.parkCode}>
           <Link to={`park/${parks.parkCode}`}>
-            <button>{parks.fullName}</button>
+            <button className="bar">{parks.fullName}</button>
           </Link>
         </div>
       );
     });
   }
+
+  console.log(content);
   return <div>{content}</div>;
 }
 
