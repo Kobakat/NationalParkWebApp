@@ -10,6 +10,7 @@ import Rafting from "./images/icons8-rafting-48.png";
 import "./section-one.css";
 import { Link } from "react-router-dom";
 
+
 function SectionOne() {
   return (
     <section className="official-national-parks">

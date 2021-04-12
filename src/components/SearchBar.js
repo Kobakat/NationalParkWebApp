@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import MultiSelect from "react-multi-select-component";
-import useGetNPSData from "../hooks/use-get-nps-data";
 
-const SearchBar = () => {
+const SearchBar = () => { 
   const parkNames = [
     { label: "Yellowstone National Park", value: "1" },
     { label: "Arcadia National Park", value: "2" },
