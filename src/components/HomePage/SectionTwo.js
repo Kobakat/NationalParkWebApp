@@ -16,11 +16,10 @@ function SectionTwo() {
             <div className="text">
               <h3>Rock Climbing</h3>
               <span>Reaching new heights</span>
-              <a href="https://nps.gov">
-                <Link to="/activities/climbing">
-                  <button>Show Me</button>
-                </Link>
-              </a>
+
+              <Link to="/activities/climbing">
+                <button>Show Me</button>
+              </Link>
             </div>
           </article>
           <article>
@@ -29,9 +28,9 @@ function SectionTwo() {
               <h3>Camping</h3>
               <span>Night by the fire</span>
               <br />
-              <a href="https://nps.gov">
+              <Link to="/activities/camping">
                 <button>Show Me</button>
-              </a>
+              </Link>
             </div>
           </article>
           <article>
@@ -39,9 +38,9 @@ function SectionTwo() {
             <div className="text">
               <h3>Boating</h3>
               <span>A day on the lake</span>
-              <a href="https://nps.gov">
+              <Link to="/activities/boating">
                 <button>Show Me</button>
-              </a>
+              </Link>
             </div>
           </article>
         </main>
