@@ -24,7 +24,6 @@ body {
   grid-auto-rows: minmax(6.25rem, auto);
   grid-gap: 0.625rem;
   text-align: center;
-  /* padding: 1.875rem; */
 }
 
 #content > * {

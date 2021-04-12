@@ -11,7 +11,6 @@ nav {
 .nav-bar {
   list-style-type: none;
   margin: 0;
-  /* display: grid; */
   display: flex;
   grid-template-columns: repeat(12, 1fr);
 }
@@ -52,7 +51,7 @@ nav {
 }
 
 .nav-links a {
-  color: #743100;
+  color: #9b5933;
   text-decoration: none !important;
   font-family: "Nunito" sans-serif;
 }
