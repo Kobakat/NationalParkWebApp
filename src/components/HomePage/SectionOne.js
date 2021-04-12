@@ -8,6 +8,8 @@ import Mountain from "./images/icons8-mountain-48.png";
 import Park from "./images/icons8-national-park-48.png";
 import Rafting from "./images/icons8-rafting-48.png";
 import "./section-one.css";
+import { Link } from "react-router-dom";
+
 
 function SectionOne() {
   return (
@@ -28,74 +30,75 @@ function SectionOne() {
           <button>Explore</button>
         </div>
         <div className="column">
-          <a href="">
+          <Link to="/park/yell">
             <div className="icon-bg">
               {/* TODO: When the text from the API is implemented adjust icons to match*/}
               <img src={Mountain} alt="Mountain" />
             </div>
             {/* Add text from NPS API below inside of <b> tag */}
-            <b>Lorem, ipsum dolor.</b>
-          </a>
-          <a href="">
+
+            <b>Yellowstone National Park</b>
+          </Link>
+          <Link to="/park/yell">
             <div className="icon-bg">
               <img src={GrandCanyon} alt="Grand Canyon" />
             </div>
             {/* Add text from nps api below inside of <b> tag */}
-            <b>Lorem, ipsum dolor.</b>
-          </a>
-          <a href="">
+            <b>Grand Canyon National Park</b>
+          </Link>
+          <Link to="/park/yell">
             <div className="icon-bg">
               <img src={Climbing} alt="Climbing" />
             </div>
             {/* Add text from nps api below inside of <b> tag */}
-            <b>Lorem, ipsum dolor.</b>
-          </a>
+            <b>Yosemite National Park</b>
+          </Link>
         </div>
         <div className="column column2">
-          <a href="">
+          <Link to="/park/yell">
             <div className="icon-bg">
               <img src={Rafting} alt="Rafting" />
             </div>
             {/* Add text from nps api below inside of <b> tag */}
-            <b>Lorem, ipsum dolor.</b>
-          </a>
-          <a href="">
+            <b>Acadia National Park</b>
+          </Link>
+          <Link to="/park/yell">
             <div className="icon-bg">
               <img src={Hills} alt="Hills" />
             </div>
             {/* Add text from nps api below inside of <b> tag */}
-            <b>Lorem, ipsum dolor.</b>
-          </a>
-          <a href="">
+            <b>Grand Teton National Park</b>
+          </Link>
+          <Link to="/park/yell">
             <div className="icon-bg">
               <img src={Alps} alt="Alps" />
             </div>
             {/* Add text from nps api below inside of <b> tag */}
-            <b>Lorem, ipsum dolor.</b>
-          </a>
+            <b>Rocky Mountains National Park</b>
+          </Link>
         </div>
         <div className="column column3">
-          <a href="">
+          <Link to="/park/yell">
             <div className="icon-bg">
               <img src={Mountain} alt="Mountain" />
             </div>
             {/* Add text from nps api below inside of <b> tag */}
-            <b>Lorem, ipsum dolor.</b>
-          </a>
-          <a href="">
+            <b>Zion National Park</b>
+          </Link>
+          <Link to="/park/yell">
             <div className="icon-bg">
               <img src={Lake} alt="Lake" />
             </div>
             {/* Add text from nps api below inside of <b> tag */}
-            <b>Lorem, ipsum dolor.</b>
-          </a>
-          <a href="">
+            <b>Great Smoky National Park</b>
+          </Link>
+          <Link to="/park/yell">
             <div className="icon-bg">
               <img src={Park} alt="Park" />
             </div>
             {/* Add text from nps api below inside of <b> tag */}
-            <b>Lorem, ipsum dolor.</b>
-          </a>
+            <b>Glacier National Park</b>
+          </Link>
         </div>
       </div>
     </section>

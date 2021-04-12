@@ -1,43 +1,43 @@
-import React, { useState } from "react";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import MultiSelect from "react-multi-select-component";
-import useGetNPSData from "../hooks/use-get-nps-data";
+import React, { useState } from 'react'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+import MultiSelect from 'react-multi-select-component'
+import useGetNPSData from '../hooks/use-get-nps-data'
 
 const SearchBar = () => {
   const parkNames = [
-    { label: "Yellowstone National Park", value: "1" },
-    { label: "Arcadia National Park", value: "2" },
-  ];
+    { label: 'Yellowstone National Park', value: '1' },
+    { label: 'Arcadia National Park', value: '2' },
+  ]
 
   const states = [
-    { label: "Illinois", value: "IL" },
-    { label: "Colorado", value: "CO" },
-  ];
+    { label: 'Illinois', value: 'IL' },
+    { label: 'Colorado', value: 'CO' },
+  ]
 
   const activities = [
-    { label: "🏃 Running", value: "running" },
-    { label: "🏊🏼‍♂️ Swimming", value: "swimming" },
-    { label: "🚴‍♀️ Biking", value: "biking" },
-  ];
+    { label: '🏃 Running', value: 'running' },
+    { label: '🏊🏼‍♂️ Swimming', value: 'swimming' },
+    { label: '🚴‍♀️ Biking', value: 'biking' },
+  ]
 
   const topics = [
-    { label: "Presidents", value: "presidents" },
-    { label: "Geology", value: "geology" },
-  ];
+    { label: 'Presidents', value: 'presidents' },
+    { label: 'Geology', value: 'geology' },
+  ]
 
-  const [selectedParks, setSelectedParks] = useState([]);
-  const [selectedStates, setSelectedStates] = useState([]);
-  const [selectedActivities, setSelectedActivities] = useState([]);
-  const [selectedTopics, setSelectedTopics] = useState([]);
+  const [selectedParks, setSelectedParks] = useState([])
+  const [selectedStates, setSelectedStates] = useState([])
+  const [selectedActivities, setSelectedActivities] = useState([])
+  const [selectedTopics, setSelectedTopics] = useState([])
 
   let selection = JSON.stringify(
     [selectedParks, selectedStates, selectedActivities, selectedTopics].flat()
-  );
+  )
 
-  console.log(selection);
+  console.log(selection)
 
   return (
-    <div class="absolute ml-24 pb-3 max-w-3xl bg-white min-h-28 w-full m-auto py-8 px-8 rounded-2xl border-2 border-gray-100 shadow-lg">
+    <div class="lg:absolute lg:ml-24 pb-3 max-w-3xl bg-white min-h-28 w-full m-auto py-8 px-8 rounded-2xl border-2 border-gray-100 shadow-lg">
       <Tabs>
         <div class="border-b-2">
           <TabList>
@@ -132,6 +132,7 @@ const SearchBar = () => {
           Feel free to select as many or as few options as necessary
         </p>
       </Tabs>
+
       {/* uncomment out when testing */}
       {/* <pre>
         {JSON.stringify({
@@ -142,7 +143,7 @@ const SearchBar = () => {
         })}
       </pre> */}
     </div>
-  );
-};
+  )
+}
 
-export default SearchBar;
+export default SearchBar
