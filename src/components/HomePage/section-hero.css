@@ -1,0 +1,10 @@
+main {
+  grid-column: 1 / 13;
+  grid-row: 3 / 8;
+  margin-bottom: 2rem;
+  /* background: none !important; */
+}
+
+main .landing-image {
+  margin-top: 5rem;
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const useWeather = (city) => {
   const [responseObj, setResponseObj] = useState({});
@@ -22,7 +22,7 @@ const useWeather = (city) => {
         .then((response) => {
           setResponseObj(response);
         });
-    }, [city]);
+    }, [city, unit]);
   
   
   return [responseObj];

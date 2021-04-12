@@ -1,41 +1,54 @@
-import { React, useState, useEffect } from 'react'
-import SearchBar from '../components/SearchBar'
-// import SearchBar from './search-bar'
-// import ParkResuls from './park-results'
+import { React, useState, useEffect } from "react";
+import NavSection from "../components/HomePage/NavSection";
+import SearchBar from "../components/SearchBar";
+import ParkResuls from "./park-results";
+import PageHeader from "../common/PageHeader";
+import HeroSection from "../components/HomePage/HeroSection";
+import SectionOne from "../components/HomePage/SectionOne";
+import SectionTwo from "../components/HomePage/SectionTwo";
+import SectionThree from "../components/HomePage/SectionThree";
+import SectionFour from "../components/HomePage/SectionFour";
+import PageFooter from "../components/HomePage/FooterSection";
+import "../home/home-page.css";
 
 function HomePage() {
   const [searchParams, setSearchParams] = useState({
     query: null,
     params: null,
-  })
-  const [parkData, setParkData] = useState(null)
+  });
+  const [parkData, setParkData] = useState(null);
 
-  const { query, params } = searchParams
+  const { query, params } = searchParams;
 
   const getData = (query, params) => {
     setSearchParams({
       query: query,
       params: params,
-    })
-  }
+    });
+  };
 
   const getParkData = async (query, params) => {
-    const url = `https://developer.nps.gov/api/v1/parks?q=${query}&api_key=Cy9A26aUd3kGBHQMyt9MonLzWyxCDu5aO49JJ0v0`
+    const url = `https://developer.nps.gov/api/v1/parks?q=${query}&api_key=Cy9A26aUd3kGBHQMyt9MonLzWyxCDu5aO49JJ0v0`;
     try {
-      const data = await fetch(url)
-      const parkJson = await data.json()
-      console.log(parkJson)
-      if (parkJson !== null) setParkData(parkJson)
+      const data = await fetch(url);
+      const parkJson = await data.json();
+      console.log(parkJson);
+      if (parkJson !== null) setParkData(parkJson);
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
-  }
+  };
 
   return (
-    <div>
-      <SearchBar />
-      {/* <SearchBar getData={getData} getParkData={getParkData} /> */}
-      {/* {parkData ? <ParkResuls results={parkData} /> : ''} */}
+    <div id="content">
+      <NavSection />
+      <PageHeader />
+      <HeroSection />
+      <SectionOne />
+      <SectionTwo />
+      <SectionThree />
+      <SectionFour />
+      <PageFooter />
     </div>
   )
 }
