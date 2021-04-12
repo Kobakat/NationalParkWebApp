@@ -36,12 +36,6 @@ const SearchBar = () => {
 
   console.log(selection);
 
-  let selection = JSON.stringify(
-    [selectedParks, selectedStates, selectedActivities, selectedTopics].flat()
-  )
-
-  console.log(selection)
-
   return (
     <div class="absolute ml-24 pb-3 max-w-3xl bg-white min-h-28 w-full m-auto py-8 px-8 rounded-2xl border-2 border-gray-100 shadow-lg">
       <Tabs>
