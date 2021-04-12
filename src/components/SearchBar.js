@@ -3,7 +3,8 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import MultiSelect from "react-multi-select-component";
 import useGetNPSData from "../hooks/use-get-nps-data";
 
-const SearchBar = () => {
+
+const SearchBar = () => { 
   const parkNames = [
     { label: "Yellowstone National Park", value: "1" },
     { label: "Arcadia National Park", value: "2" },
@@ -35,12 +36,6 @@ const SearchBar = () => {
   );
 
   console.log(selection);
-
-  let selection = JSON.stringify(
-    [selectedParks, selectedStates, selectedActivities, selectedTopics].flat()
-  )
-
-  console.log(selection)
 
   return (
     <div class="absolute ml-24 pb-3 max-w-3xl bg-white min-h-28 w-full m-auto py-8 px-8 rounded-2xl border-2 border-gray-100 shadow-lg">
@@ -152,4 +147,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar
+export default SearchBar;

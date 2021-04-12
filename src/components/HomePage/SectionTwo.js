@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./section-two.css";
 
 function SectionTwo() {
@@ -15,8 +16,10 @@ function SectionTwo() {
             <div className="text">
               <h3>Rock Climbing</h3>
               <span>Reaching new heights</span>
-              <a href="">
-                <button>Show Me</button>
+              <a href="https://nps.gov">
+                <Link to="/activities/climbing">
+                  <button>Show Me</button>
+                </Link>
               </a>
             </div>
           </article>
@@ -26,7 +29,7 @@ function SectionTwo() {
               <h3>Camping</h3>
               <span>Night by the fire</span>
               <br />
-              <a href="">
+              <a href="https://nps.gov">
                 <button>Show Me</button>
               </a>
             </div>
@@ -36,7 +39,7 @@ function SectionTwo() {
             <div className="text">
               <h3>Boating</h3>
               <span>A day on the lake</span>
-              <a href="">
+              <a href="https://nps.gov">
                 <button>Show Me</button>
               </a>
             </div>
