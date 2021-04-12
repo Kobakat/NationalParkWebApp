@@ -51,16 +51,21 @@
 .signup-btn {
   padding: 10px 10px;
   height: 2.4rem;
-  border-radius: 3px;
-  color: #743100;
+  border-radius: 30px;
+  opacity: 0.8;
+  transition: 0.3s;
+  color: #fafafa;
+  background-color: #e2aa60;
   cursor: pointer;
   align-items: center;
+}
+.signup-btn:hover {
+  opacity: 1;
 }
 .mobile-menu {
   display: none;
 }
 @media (max-width: 684px) {
-
   /*Mobile View */
   .header {
     padding: 0px 10px;
@@ -124,5 +129,5 @@
 }
 
 .header-link {
-  color: #743100;
+  color: #9b5933;
 }
