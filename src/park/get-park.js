@@ -17,10 +17,18 @@ async function getPark(code) {
       activities,
       addresses,
       weatherInfo,
-      images
+      images,
     } = json.data[0];
-    console.log(json.data[0]);
-    return [fullName, description, topics, activities,addresses, weatherInfo, images]
+
+    return [
+      fullName,
+      description,
+      topics,
+      activities,
+      addresses,
+      weatherInfo,
+      images,
+    ];
   } catch (err) {
     console.error(err);
     throw err;

@@ -1,4 +1,5 @@
 import HomePage from "./home/home-page";
+import ParkResultsPage from "./park/park-result-page";
 import ParkPage from "./park/park-page";
 import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
 
@@ -7,9 +8,12 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact>
-            <HomePage />
+          <HomePage />
         </Route>
         <Route path="/park/:code" children={<SetParkPage />} />
+        <Route path="/results">
+          <ParkResultsPage />
+        </Route>
       </Switch>
     </BrowserRouter>
   );

@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { getActivities, getTopics, getStates } from "./get-filters";
 import MultiSelect from "react-multi-select-component";
 import useGetNPSData from "../hooks/use-get-nps-data";
 
 function SearchBar() {
-  const [parkNames, setParkNames] = useState([]);
   const [states, setStates] = useState([]);
   const [activities, setActivities] = useState([]);
   const [topics, setTopics] = useState([]);
@@ -64,14 +64,16 @@ function SearchBar() {
             <div class="flex gap-4 flex-col lg:flex-row">
               <MultiSelect
                 class="bg-gray-100 p-3 w-full rounded-3xl pl-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                options={parkNames}
+                options={"Test"}
                 value={selectedParks}
                 onChange={setSelectedParks}
                 labelledBy="Select"
               />
-              <button class="text-white bg-green-700 hover:bg-green-500 focus:bg-green-500 py-4 px-10 rounded-lg transition">
-                Search
-              </button>
+              <Link to="/results">
+                <button class="text-white bg-green-700 hover:bg-green-500 focus:bg-green-500 py-4 px-10 rounded-lg transition">
+                  Search
+                </button>
+              </Link>
             </div>
           </div>
         </TabPanel>
@@ -123,9 +125,11 @@ function SearchBar() {
                 />
               </div>
             </div>
-            <button class="text-white bg-green-700 hover:bg-green-500 focus:bg-green-500 py-4 px-10 w-full md:w-40 rounded-lg transition">
-              Search
-            </button>
+            <Link to="/results">
+              <button class="text-white bg-green-700 hover:bg-green-500 focus:bg-green-500 py-4 px-10 rounded-lg transition">
+                Search
+              </button>
+            </Link>
           </div>
         </TabPanel>
         <p class="text-center mt-6 text-sm text-gray-300 hover:text-black transition">
