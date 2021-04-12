@@ -50,7 +50,7 @@ function HomePage() {
       <SectionFour />
       <PageFooter />
     </div>
-  );
+  )
 }
 
-export default HomePage;
+export default HomePage
