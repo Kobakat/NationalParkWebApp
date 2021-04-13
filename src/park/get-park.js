@@ -22,8 +22,19 @@ async function getPark(code) {
       entrancePasses,
       operatingHours,
     } = json.data[0];
-    console.log(json.data[0]);
-    return [fullName, description, topics, activities,addresses, weatherInfo, images, entranceFees, entrancePasses, operatingHours]
+
+    return [
+      fullName,
+      description,
+      topics,
+      activities,
+      addresses,
+      weatherInfo,
+      images,
+      entranceFees,
+      entrancePasses,
+      operatingHours,
+    ];
   } catch (err) {
     console.error(err);
     throw err;
