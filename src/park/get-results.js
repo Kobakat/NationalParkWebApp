@@ -1,6 +1,10 @@
 async function getResults(query, { filters }) {
   try {
-    const url = `https://developer.nps.gov/api/v1/parks?q=${query}&api_key=Cy9A26aUd3kGBHQMyt9MonLzWyxCDu5aO49JJ0v0`;
+    let url;
+    if (query.length === 0)
+      url = `https://developer.nps.gov/api/v1/parks?limit=500&api_key=Cy9A26aUd3kGBHQMyt9MonLzWyxCDu5aO49JJ0v0`;
+    else
+      url = `https://developer.nps.gov/api/v1/parks?q=${query}&api_key=Cy9A26aUd3kGBHQMyt9MonLzWyxCDu5aO49JJ0v0`;
     const response = await fetch(url);
 
     if (!response.ok)
@@ -10,6 +14,7 @@ async function getResults(query, { filters }) {
 
     const json = await response.json();
 
+    console.log(url);
     //Maps the results to an array of relevant information for the result algorithm to determine if it should be displayed
     const parks = json.data.map((park) => {
       return {
@@ -17,10 +22,10 @@ async function getResults(query, { filters }) {
         parkCode: park.parkCode,
         states: park.states.split(","),
         topics: park.topics.map((topic) => {
-          return topic.value;
+          return topic.name;
         }),
         activities: park.activities.map((activity) => {
-          return activity.value;
+          return activity.name;
         }),
       };
     });
@@ -38,8 +43,6 @@ async function getResults(query, { filters }) {
         return activity.value;
       }),
     };
-
-    console.log(valueFilters);
 
     //Removes any elements of the results that don't contain all the specified filters
     const filteredResults = parks.map((park) => {
