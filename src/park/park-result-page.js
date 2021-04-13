@@ -10,8 +10,13 @@ function ParkResultPage({ search }) {
     data: null,
   });
 
-  const { query } = search.searchBarParams.params;
-  const { activities, topics, states } = search.searchBarParams.params;
+  //Todo fucking fix me
+  const { query } = search.searchBarParams.searchBarParams.params;
+  const {
+    activities,
+    topics,
+    states,
+  } = search.searchBarParams.searchBarParams.params;
 
   const filters = {
     activities: activities,

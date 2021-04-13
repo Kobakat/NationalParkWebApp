@@ -1,103 +1,211 @@
 async function getActivities() {
-  try {
-    const url = `https://developer.nps.gov/api/v1/activities?&api_key=Cy9A26aUd3kGBHQMyt9MonLzWyxCDu5aO49JJ0v0`;
-    const response = await fetch(url);
-
-    if (!response.ok)
-      throw new Error(
-        `Something went wrong, server responded with ${response.status}`
-      );
-
-    const json = await response.json();
-
-    const activityNames = json.data.map((activity) => {
-      return activity.name;
-    });
-
-    return activityNames;
-  } catch (err) {
-    console.error(err);
-    throw err;
-  }
+  return [
+    { label: "Arts and Culture", value: "Arts and Culture" },
+    { label: "Astronomy", value: "Astronomy" },
+    { label: "Auto and ATV", value: "Auto and ATV" },
+    { label: "Biking", value: "Biking" },
+    { label: "Boating", value: "Boating" },
+    { label: "Camping", value: "Camping" },
+    { label: "Canyoneering", value: "Canyoneering" },
+    { label: "Caving", value: "Caving" },
+    { label: "Climbing", value: "Climbing" },
+    { label: "Compass and GPS", value: "Compass and GPS" },
+    { label: "Dog Sledding", value: "Dog Sledding" },
+    { label: "Fishing", value: "Fishing" },
+    { label: "Flying", value: "Flying" },
+    { label: "Food", value: "Food" },
+    { label: "Golfing", value: "Golfing" },
+    { label: "Guided Tours", value: "Guided Tours" },
+    { label: "Hands-On", value: "Hands" },
+    { label: "Hiking", value: "Hiking" },
+    { label: "Horse Trekking", value: "Horse Trekking" },
+    { label: "Hunting and Gathering", value: "Hunting and Gathering" },
+    { label: "Ice Skating", value: "Ice Skating" },
+    { label: "Junior Ranger Program", value: "Junior Ranger Program" },
+    { label: "Living History", value: "Living History" },
+    { label: "Museum Exhibits", value: "Museum Exhibits" },
+    { label: "Paddling", value: "Paddling" },
+    { label: "Park Film", value: "Park Film" },
+    { label: "Playground", value: "Playground" },
+    { label: "SCUBA Diving", value: "SCUBA Diving" },
+    { label: "Shopping", value: "Shopping" },
+    { label: "Skiing", value: "Skiing" },
+    { label: "Snorkeling", value: "Snorkeling" },
+    { label: "Snow Play", value: "Snow Play" },
+    { label: "Snowmobiling", value: "Snowmobiling" },
+    { label: "Snowshoeing", value: "Snowshoeing" },
+    { label: "Surfing", value: "Surfing" },
+    { label: "Swimming", value: "Swimming" },
+    { label: "Team Sports", value: "Team Sports" },
+    { label: "Tubing", value: "Tubing" },
+    { label: "Water Skiing", value: "Water Skiing" },
+    { label: "Wildlife Watching", value: "Wildlife Watching" },
+  ];
 }
 
-async function getTopics() {
-  try {
-    const url = `https://developer.nps.gov/api/v1/topics?&api_key=Cy9A26aUd3kGBHQMyt9MonLzWyxCDu5aO49JJ0v0`;
-    const response = await fetch(url);
-
-    if (!response.ok)
-      throw new Error(
-        `Something went wrong, server responded with ${response.status}`
-      );
-
-    const json = await response.json();
-
-    const topicNames = json.data.map((topic) => {
-      return topic.name;
-    });
-
-    return topicNames;
-  } catch (err) {
-    console.error(err);
-    throw err;
-  }
+function getTopics() {
+  return [
+    { label: "African American Heritage", value: "African American Heritage" },
+    { label: "American Revolution", value: "American Revolution" },
+    { label: "Ancient Seas", value: "Ancient Seas" },
+    { label: "Animals", value: "Animals" },
+    { label: "Archeology", value: "Archeology" },
+    { label: "Architecture and Building", value: "Architecture and Building" },
+    { label: "Arctic", value: "Arctic" },
+    { label: "Arts", value: "Arts" },
+    { label: "Asian American Heritage", value: "Asian American Heritage" },
+    { label: "Aviation", value: "Aviation" },
+    { label: "Banking", value: "Banking" },
+    { label: "Birthplace", value: "Birthplace" },
+    {
+      label: "Burial, Cemetery and Gravesite",
+      value: "Burial, Cemetery and Gravesite",
+    },
+    { label: "Canyons and Canyonlands", value: "Canyons and Canyonlands" },
+    { label: "Caves, Caverns and Karst", value: "Caves, Caverns and Karst" },
+    { label: "Climate Change", value: "Climate Change" },
+    {
+      label: "Coasts, Islands and Atolls",
+      value: "Coasts, Islands and Atolls",
+    },
+    {
+      label: "Colonization and Settlement",
+      value: "Colonization and Settlement",
+    },
+    { label: "Commerce", value: "Commerce" },
+    { label: "Dams", value: "Dams" },
+    { label: "Dunes", value: "Dunes" },
+    { label: "Engineering", value: "Engineering" },
+    { label: "Enslavement", value: "Enslavement" },
+    { label: "Estuaries and Mangroves", value: "Estuaries and Mangroves" },
+    { label: "Explorers and Expeditions", value: "Explorers and Expeditions" },
+    { label: "Farming and Agriculture", value: "Farming and Agriculture" },
+    { label: "Fire", value: "Fire" },
+    {
+      label: "Foothills, Plains and Valleys",
+      value: "Foothills, Plains and Valleys",
+    },
+    { label: "Forests and Woodlands", value: "Forests and Woodlands" },
+    { label: "Forts", value: "Forts" },
+    { label: "Fossils and Paleontology", value: "Fossils and Paleontology" },
+    { label: "Geology", value: "Geology" },
+    { label: "Geothermal", value: "Geothermal" },
+    { label: "Glaciers", value: "Glaciers" },
+    { label: "Grasslands", value: "Grasslands" },
+    { label: "Great Depression", value: "Great Depression" },
+    { label: "Groundwater", value: "Groundwater" },
+    {
+      label: "Hispanic American Heritage",
+      value: "Hispanic American Heritage",
+    },
+    { label: "Immigration", value: "Immigration" },
+    { label: "Impact Craters", value: "Impact Craters" },
+    { label: "Incarceration", value: "Incarceration" },
+    { label: "Industry", value: "Industry" },
+    { label: "LGBTQ American Heritage", value: "LGBTQ American Heritage" },
+    { label: "Laborer and Worker", value: "Laborer and Worker" },
+    { label: "Lakes", value: "Lakes" },
+    { label: "Landscape Design", value: "Landscape Design" },
+    { label: "Latino American Heritage", value: "Latino American Heritage" },
+    { label: "Maritime", value: "Maritime" },
+    { label: "Medicine", value: "Medicine" },
+    { label: "Migrations", value: "Migrations" },
+    { label: "Military", value: "Military" },
+    { label: "Monuments and Memorials", value: "Monuments and Memorials" },
+    { label: "Mountains", value: "Mountains" },
+    { label: "Music", value: "Music" },
+    { label: "Native American Heritage", value: "Native American Heritage" },
+    { label: "Natural Sounds", value: "Natural Sounds" },
+    { label: "Night Sky", value: "Night Sky" },
+    { label: "Oceans", value: "Oceans" },
+    { label: "Pacific Islander Heritage", value: "Pacific Islander Heritage" },
+    { label: "Presidents", value: "Presidents" },
+    { label: "Reconstruction", value: "Reconstruction" },
+    { label: "Religion and Spirituality", value: "Religion and Spirituality" },
+    { label: "River and Riparian", value: "River and Riparian" },
+    {
+      label: "Rock Landscapes and Features",
+      value: "Rock Landscapes and Features",
+    },
+    { label: "Scenic Views", value: "Scenic Views" },
+    { label: "Schools and Education", value: "Schools and Education" },
+    {
+      label: "Science, Technology and Innovation",
+      value: "Science, Technology and Innovation",
+    },
+    { label: "Social Movements", value: "Social Movements" },
+    { label: "The Tropics", value: "The Tropics" },
+    { label: "Thickets and Shrublands", value: "Thickets and Shrublands" },
+    { label: "Tragic Events", value: "Tragic Events" },
+    { label: "Trails", value: "Trails" },
+    { label: "Transportation", value: "Transportation" },
+    { label: "Unique Species", value: "Unique Species" },
+    { label: "Urban America", value: "Urban America" },
+    { label: "Volcanoes", value: "Volcanoes" },
+    { label: "Wars and Conflicts", value: "Wars and Conflicts" },
+    { label: "Waterfalls", value: "Waterfalls" },
+    { label: "Watersheds", value: "Watersheds" },
+    { label: "Westward Expansion", value: "Westward Expansion" },
+    { label: "Wetlands", value: "Wetlands" },
+    { label: "Wilderness", value: "Wilderness" },
+    { label: "Women's History", value: "Women's History" },
+  ];
 }
 
 //Lmao theres 1000% a non troll way to do this
 function getStates() {
   return [
-    "AL",
-    "AK",
-    "AZ",
-    "AR",
-    "CA",
-    "CO",
-    "CT",
-    "DE",
-    "DC",
-    "FL",
-    "GA",
-    "HI",
-    "ID",
-    "IL",
-    "IN",
-    "IA",
-    "KS",
-    "KY",
-    "LA",
-    "ME",
-    "MD",
-    "MA",
-    "MI",
-    "MN",
-    "MS",
-    "MO",
-    "MT",
-    "NE",
-    "NV",
-    "NH",
-    "NJ",
-    "NM",
-    "NY",
-    "NC",
-    "ND",
-    "OH",
-    "OK",
-    "OR",
-    "PA",
-    "RI",
-    "SC",
-    "SD",
-    "TN",
-    "TX",
-    "UT",
-    "VT",
-    "VA",
-    "WA",
-    "WV",
-    "WI",
-    "WY",
+    { label: "Alabama", value: "AL" },
+    { label: "Alaska", value: "AK" },
+    { label: "Arizona", value: "AZ" },
+    { label: "Arkansas", value: "AR" },
+    { label: "California", value: "CA" },
+    { label: "Colorado", value: "CO" },
+    { label: "Connecticut", value: "CT" },
+    { label: "Delaware", value: "DE" },
+    { label: "District of Columbia", value: "DC" },
+    { label: "Florida", value: "FL" },
+    { label: "Georgia", value: "GA" },
+    { label: "Hawaii", value: "HI" },
+    { label: "Idaho", value: "ID" },
+    { label: "Illinois", value: "IL" },
+    { label: "Indiana", value: "IN" },
+    { label: "Iowa", value: "IA" },
+    { label: "Kansas", value: "KS" },
+    { label: "Kentucky", value: "KY" },
+    { label: "Louisiana", value: "LA" },
+    { label: "Maine", value: "ME" },
+    { label: "Maryland", value: "MD" },
+    { label: "Massachusetts", value: "MA" },
+    { label: "Michigan", value: "MI" },
+    { label: "Minnesota", value: "MN" },
+    { label: "Mississippi", value: "MS" },
+    { label: "Missouri", value: "MO" },
+    { label: "Montana", value: "MT" },
+    { label: "Nebraska", value: "NE" },
+    { label: "Nevada", value: "NV" },
+    { label: "New Hampshire", value: "NH" },
+    { label: "New Jersey", value: "NJ" },
+    { label: "New Mexico", value: "NM" },
+    { label: "New York", value: "NY" },
+    { label: "North Carolina", value: "NC" },
+    { label: "North Dakota", value: "ND" },
+    { label: "Ohio", value: "OH" },
+    { label: "Oklahoma", value: "OK" },
+    { label: "Oregon", value: "OR" },
+    { label: "Pennsylvania", value: "PA" },
+    { label: "Rhode Island", value: "RI" },
+    { label: "South Carolina", value: "SC" },
+    { label: "South Dakota", value: "SD" },
+    { label: "Tennessee", value: "TN" },
+    { label: "Texas", value: "TX" },
+    { label: "Utah", value: "UT" },
+    { label: "Vermont", value: "VT" },
+    { label: "Virginia", value: "VA" },
+    { label: "Washington", value: "WA" },
+    { label: "West Virginia", value: "WV" },
+    { label: "Wisconsin", value: "WI" },
+    { label: "Wyoming", value: "WY" },
   ];
 }
 

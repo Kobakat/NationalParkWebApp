@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
-import { GrMenu } from 'react-icons/gr'
-import { GrClose } from 'react-icons/gr'
-import ParkwayLogo from './images/ParkwayLogo.svg'
-import './header.css'
+import { useState } from "react";
+import { GrMenu } from "react-icons/gr";
+import { GrClose } from "react-icons/gr";
+import ParkwayLogo from "./images/ParkwayLogo.svg";
+import "./header.css";
 
 const NavBar = () => {
-  const [click, setClick] = useState(false)
-  const handleClick = () => setClick(!click)
-  const closeMobileMenu = () => setClick(false)
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
   return (
     <div className="header">
       <div className="logo-nav">
@@ -16,7 +16,7 @@ const NavBar = () => {
             <img className="logo" src={ParkwayLogo} alt="Logo" />
           </a>
         </div>
-        <ul className={click ? 'nav-options active' : 'nav-options'}>
+        <ul className={click ? "nav-options active" : "nav-options"}>
           <li className="option" onClick={closeMobileMenu}>
             <a class="header-link" href="/about">
               About
@@ -59,7 +59,7 @@ const NavBar = () => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

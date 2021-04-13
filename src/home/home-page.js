@@ -25,7 +25,7 @@ function HomePage({ callback }) {
       <NavBar />
       <div id="content">
         <PageHeader />
-        <HeroSection />
+        <HeroSection callback={searchBarCallback} />
         <SectionOne />
         <SectionTwo />
         <SectionThree />

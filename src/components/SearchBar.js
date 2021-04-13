@@ -47,6 +47,7 @@ function SearchBar({ callback }) {
       states: selectedStates,
     };
 
+    console.log(typeof callback);
     callback({ params });
   };
 

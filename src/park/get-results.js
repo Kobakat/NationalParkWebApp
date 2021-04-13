@@ -15,29 +15,46 @@ async function getResults(query, { filters }) {
       return {
         fullName: park.fullName,
         parkCode: park.parkCode,
-        states: park.states,
+        states: park.states.split(","),
         topics: park.topics.map((topic) => {
-          return topic.name;
+          return topic.value;
         }),
         activities: park.activities.map((activity) => {
-          return activity.name;
+          return activity.value;
         }),
       };
     });
+
+    const valueFilters = {
+      states: filters.states.map((state) => {
+        return state.value;
+      }),
+
+      topics: filters.topics.map((topic) => {
+        return topic.value;
+      }),
+
+      activities: filters.activities.map((activity) => {
+        return activity.value;
+      }),
+    };
+
+    console.log(valueFilters);
 
     //Removes any elements of the results that don't contain all the specified filters
     const filteredResults = parks.map((park) => {
       const containsActivity =
         filters.activities.length === 0 ||
-        filters.activities.every((r) => park.activities.includes(r));
-      console.log(containsActivity);
+        valueFilters.activities.every((r) => park.activities.includes(r));
+      console.log("activity match: " + containsActivity);
       const containsTopic =
         filters.topics.length === 0 ||
-        filters.topics.every((r) => park.topics.includes(r));
-      console.log(containsTopic);
+        valueFilters.topics.every((r) => park.topics.includes(r));
+      console.log("topic match: " + containsTopic);
       const containsState =
-        filters.states.length === 0 || park.states.includes(filters.states);
-      console.log(containsState);
+        filters.states.length === 0 ||
+        valueFilters.states.every((r) => park.states.includes(r));
+      console.log("state match: " + containsState);
       if (containsActivity && containsTopic && containsState) return park;
       else return null;
     });
