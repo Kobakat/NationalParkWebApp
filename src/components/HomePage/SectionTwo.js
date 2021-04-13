@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./section-two.css";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import './section-two.css'
 
 function SectionTwo() {
   return (
     <section className="discover-top-activities">
       <h2 className="section-title">Discover top activities</h2>
       <div className="inner-container">
-        <main className="grid">
+        <main className="grid-section-2">
           <article>
             {/* Hook up NPS API here for images */}
             {/* Idea: Make a card for each type of activity with corresponding image and text */}
@@ -46,6 +46,6 @@ function SectionTwo() {
         </main>
       </div>
     </section>
-  );
+  )
 }
-export default SectionTwo;
+export default SectionTwo
