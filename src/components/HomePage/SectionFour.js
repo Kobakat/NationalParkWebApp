@@ -18,6 +18,7 @@ function SectionFour() {
         slidesPerView={3}
         loop={true}
         navigation
+        centeredSlides={true}
         pagination={{ clickable: true }}
         breakpoints={{
           // when window width is >= 640px

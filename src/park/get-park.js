@@ -26,6 +26,7 @@ async function getPark(code) {
       states,
     } = json.data[0]
     console.log(json.data[0])
+
     return [
       fullName,
       description,
@@ -41,6 +42,7 @@ async function getPark(code) {
       designation,
       states,
     ]
+
   } catch (err) {
     console.error(err)
     throw err

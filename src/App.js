@@ -1,17 +1,30 @@
 import HomePage from "./home/home-page";
+import ParkResultsPage from "./park/park-result-page";
 import ParkPage from "./park/park-page";
+import { useState } from "react";
 import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
 import RockClimbingList from "./park/activity-list";
 
 function App() {
+  const [searchBarParams, setSearchBarParams] = useState([]);
+
+  const searchBarCallback = (childData) => {
+    setSearchBarParams(childData);
+  };
+
+  console.log(searchBarParams);
+
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/" exact>
-          <HomePage />
+          <HomePage callback={searchBarCallback} />
         </Route>
         <Route path="/park/:code" children={<SetParkPage />} />
         <Route path="/activities/:activity" children={<SetActivitiesPage />} />
+        <Route path="/results">
+          <ParkResultsPage search={searchBarParams} />
+        </Route>
       </Switch>
     </BrowserRouter>
   );

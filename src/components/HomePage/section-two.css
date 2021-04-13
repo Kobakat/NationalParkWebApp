@@ -12,7 +12,7 @@
 
 .grid-section-2{
   display: grid;
-  margin: 80px;
+  margin-top: 2rem;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
   align-items: center;
@@ -20,6 +20,7 @@
 
 .grid-section-2> article {
   background: #9b5933;
+
   border: none;
   box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
