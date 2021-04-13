@@ -1,0 +1,56 @@
+.carousel-section {
+  grid-column: 1 / 13;
+  grid-row: 14 / 18;
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.carousel-slide img {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.carousel-text-container {
+  background-color: #9b5933;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  text-align: left !important;
+}
+
+.carousel-title {
+  color: #fefef8;
+  text-align: left;
+  padding: 3rem 2rem 0rem 2rem;
+  font-size: 2rem;
+}
+
+.carousel-text {
+  color: #fefef8;
+  font-size: 1rem;
+  text-align: left;
+  font-family: "Nunito", sans-serif;
+  padding: 2rem 2rem 0rem 2rem;
+}
+
+.carousel-button {
+  background: #fefef8;
+  border-radius: 8px;
+  border: none;
+  font-family: "Nunito", sans-serif;
+  color: #545700;
+  padding: 10px;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+  width: 50%;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-button:hover {
+  background-color: #464052;
+  color: #fff;
+  transform: translateY(-7px);
+}

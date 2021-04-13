@@ -3,6 +3,7 @@ import ParkResultsPage from "./park/park-result-page";
 import ParkPage from "./park/park-page";
 import { useState } from "react";
 import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
+import RockClimbingList from "./park/activity-list";
 
 function App() {
   const [searchBarParams, setSearchBarParams] = useState([]);
@@ -20,6 +21,7 @@ function App() {
           <HomePage callback={searchBarCallback} />
         </Route>
         <Route path="/park/:code" children={<SetParkPage />} />
+        <Route path="/activities/:activity" children={<SetActivitiesPage />} />
         <Route path="/results">
           <ParkResultsPage search={searchBarParams} />
         </Route>
@@ -31,6 +33,11 @@ function App() {
 function SetParkPage() {
   let { code } = useParams();
   return <ParkPage parkCode={code}></ParkPage>;
+}
+
+function SetActivitiesPage() {
+  let { activity } = useParams();
+  return <RockClimbingList activity={activity} />;
 }
 
 export default App;

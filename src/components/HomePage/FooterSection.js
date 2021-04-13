@@ -1,5 +1,6 @@
 import React from "react";
-import "./page-footer.css";
+import ParkwayLogo from "../HomePage/images/ParkwayLogo.svg";
+import "./section-footer.css";
 
 function PageFooter() {
   return (
@@ -7,8 +8,8 @@ function PageFooter() {
       <div className="container">
         <div className="footer-content">
           <div className="items">
-            <a href="#" className="logo">
-              The National Parks
+            <a href="https://nps.gov" className="logo">
+              <img src={ParkwayLogo} alt="" />
             </a>
             <p>
               The National Parks is a website brought to you by people who know
@@ -21,19 +22,16 @@ function PageFooter() {
             <h3>Product</h3>
             <ul>
               <li>
-                <a href="#">Lorem ipsum</a>
+                <a href="https://nps.gov">Sign up</a>
               </li>
               <li>
-                <a href="#">Sign up</a>
+                <a href="https://nps.gov">Activities</a>
               </li>
               <li>
-                <a href="#">Parks</a>
+                <a href="https://nps.gov">Park List</a>
               </li>
               <li>
-                <a href="#">Lorem ipsum</a>
-              </li>
-              <li>
-                <a href="#">Lorem ipsum</a>
+                <a href="https://nps.gov">Lorem ipsum</a>
               </li>
             </ul>
           </div>
@@ -41,13 +39,10 @@ function PageFooter() {
             <h3>Legal</h3>
             <ul>
               <li>
-                <a href="#">About Us</a>
+                <a href="https://nps.gov">About Us</a>
               </li>
               <li>
-                <a href="#">Our Mission</a>
-              </li>
-              <li>
-                <a href="#">Privacy Policy</a>
+                <a href="https://nps.gov">Our Mission</a>
               </li>
             </ul>
           </div>
@@ -55,19 +50,18 @@ function PageFooter() {
             <h3>Support</h3>
             <ul>
               <li>
-                <a href="">Contact Us</a>
+                <a href="https://nps.gov">Contact Us</a>
               </li>
               <li>
-                <a href="">Lorem ipsum</a>
+                <a href="https://nps.gov">Parkway FAQ</a>
               </li>
             </ul>
           </div>
         </div>
         <hr />
-        <p className="end">@ 2021 The National Parks Web-App</p>
+        <p className="end">@ 2021 Parkway Web-App</p>
       </div>
     </footer>
   );
 }
-
 export default PageFooter;

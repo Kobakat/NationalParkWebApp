@@ -18,6 +18,9 @@ async function getPark(code) {
       addresses,
       weatherInfo,
       images,
+      entranceFees,
+      entrancePasses,
+      operatingHours,
     } = json.data[0];
 
     return [
@@ -28,6 +31,9 @@ async function getPark(code) {
       addresses,
       weatherInfo,
       images,
+      entranceFees,
+      entrancePasses,
+      operatingHours,
     ];
   } catch (err) {
     console.error(err);

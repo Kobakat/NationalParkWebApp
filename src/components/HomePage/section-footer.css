@@ -1,9 +1,10 @@
 footer {
   grid-column: 1 / 13;
   grid-row: 22 / 26;
-  background: linear-gradient(#9b4225, #8e3a24) !important;
+  background: linear-gradient(#743100, #8e3a24) !important;
   color: #fafafa;
   padding: 60px 0;
+  margin: 1rem;
 }
 
 .container {
