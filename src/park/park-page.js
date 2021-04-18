@@ -3,6 +3,7 @@ import './park-page.css'
 import { useState, useEffect } from 'react'
 import getPark from './get-park'
 import useWeather from '../hooks/use-weather'
+import MapboxGLMap from '../components/MapboxGLMap'
 
 function ParkPage({ parkCode }) {
   const [parkFetch, setParkFetch] = useState({
@@ -63,6 +64,8 @@ function ParkPage({ parkCode }) {
       name,
       designation,
       states,
+      longitude,
+      latitude,
     ] = data
 
     //ACTIVITIES ARRAY
@@ -167,6 +170,8 @@ function ParkPage({ parkCode }) {
               {operatingHoursList}
             </div>
           </div>
+
+          <MapboxGLMap lat={latitude} lon={longitude} />
 
           <div class="grid md:grid-flow-col gap-10">
             <div class="shadow-lg">
