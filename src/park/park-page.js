@@ -166,15 +166,12 @@ function ParkPage({ parkCode }) {
               {description}
               <span class="block mt-4">{renderStates(states)}</span>
             </h4>
-            <MapboxGLMap
-              class="bg-green-800 text-white p-6 rounded-lg shadow-lg"
-              lat={latitude}
-              lon={longitude}
-            />
             <div class="bg-green-800 text-white p-6 rounded-lg shadow-lg">
               {operatingHoursList}
             </div>
           </div>
+
+          <MapboxGLMap lat={latitude} lon={longitude} />
 
           <div class="grid md:grid-flow-col gap-10">
             <div class="shadow-lg">

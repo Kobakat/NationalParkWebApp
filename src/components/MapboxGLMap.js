@@ -3,20 +3,12 @@ import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 const styles = {
-  width: '400px',
-  height: 'auto',
+  width: '100%',
+  height: '400px',
+  borderRadius: '.75rem',
 }
 
-// Set options
-// var marker = new mapboxgl.Marker({
-//   color: '#FFFFFF',
-//   draggable: true,
-// })
-//   .setLngLat([30.5, 50.5])
-//   .addTo(map)
-
 const MapboxGLMap = ({ lon, lat }) => {
-  console.log(lat, lon)
   const [map, setMap] = useState(null)
   const mapContainer = useRef(null)
 
