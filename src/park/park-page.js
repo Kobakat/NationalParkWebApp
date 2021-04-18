@@ -1,7 +1,6 @@
+import Layout from '../components/Globals/Layout'
 import './park-page.css'
 import { useState, useEffect } from 'react'
-import Nav from '../components/HomePage/NavBar'
-import FooterSection from '../components/HomePage/FooterSection'
 import getPark from './get-park'
 import useWeather from '../hooks/use-weather'
 
@@ -215,13 +214,7 @@ function ParkPage({ parkCode }) {
     )
   }
 
-  return (
-    <div>
-      <Nav />
-      {contents}
-      <FooterSection />
-    </div>
-  )
+  return <Layout>{contents}</Layout>
 }
 
 export default ParkPage

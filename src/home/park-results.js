@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 function ParkResults({ results }) {
-  let content;
-  const { data } = results;
+  let content
+  const { data } = results
   if (results !== null) {
     content = data.map((parks) => {
       return (
@@ -12,10 +12,10 @@ function ParkResults({ results }) {
             <button>{parks.fullName}</button>
           </Link>
         </div>
-      );
-    });
+      )
+    })
   }
-  return <div>{content}</div>;
+  return <div>{content}</div>
 }
 
-export default ParkResults;
+export default ParkResults

@@ -1,61 +1,62 @@
-import getResults from "./get-results";
-import "./park-result-page.css";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import getResults from './get-results'
+import './park-result-page.css'
+import Layout from '../components/Globals/Layout'
+import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 function ParkResultPage({ search }) {
   const [resultFetch, setResultFetch] = useState({
     isLoading: true,
-    errorMessage: "",
+    errorMessage: '',
     data: null,
-  });
+  })
 
   //Todo fucking fix me
-  const { query } = search.searchBarParams.searchBarParams.params;
+  const { query } = search.searchBarParams.searchBarParams.params
   const {
     activities,
     topics,
     states,
-  } = search.searchBarParams.searchBarParams.params;
+  } = search.searchBarParams.searchBarParams.params
 
   const filters = {
     activities: activities,
     topics: topics,
     states: states,
-  };
+  }
 
   useEffect(() => {
     async function fetchResults() {
       setResultFetch({
         isLoading: true,
-        errorMessage: "",
+        errorMessage: '',
         data: null,
-      });
+      })
 
       try {
-        const results = await getResults(query, { filters });
+        const results = await getResults(query, { filters })
         setResultFetch({
           isLoading: false,
-          errorMessage: "",
+          errorMessage: '',
           data: results,
-        });
+        })
       } catch (err) {
         setResultFetch({
           isLoading: false,
           errorMessage:
-            "Something went wrong loading the park. Please try again later.",
+            'Something went wrong loading the park. Please try again later.',
           data: null,
-        });
+        })
       }
     }
-    fetchResults();
-  }, []);
+    fetchResults()
+  }, [])
 
-  let content;
-  const { data } = resultFetch;
+  let content
+  const { data } = resultFetch
 
   if (data !== null) {
-    if (data.length === 0) content = <p>No Parks found</p>;
+    if (data.length === 0) content = <p>No Parks found</p>
     else {
       content = data.map((parks) => {
         return (
@@ -64,12 +65,12 @@ function ParkResultPage({ search }) {
               <button className="bar">{parks.fullName}</button>
             </Link>
           </div>
-        );
-      });
+        )
+      })
     }
   }
 
-  return <div>{content}</div>;
+  return <Layout>{content}</Layout>
 }
 
-export default ParkResultPage;
+export default ParkResultPage

@@ -1,15 +1,15 @@
-import React from "react";
-import ParkwayLogo from "../HomePage/images/ParkwayLogo.svg";
-import "./section-footer.css";
+import React from 'react'
+import { ReactComponent as Logo } from './ParkwayLogo.svg'
+import './section-footer.css'
 
-function PageFooter() {
+function Footer() {
   return (
     <footer>
       <div className="container">
         <div className="footer-content">
           <div className="items">
-            <a href="https://nps.gov" className="logo">
-              <img src={ParkwayLogo} alt="" />
+            <a href="https://nps.gov">
+              <Logo className="logo" />
             </a>
             <p>
               The National Parks is a website brought to you by people who know
@@ -62,6 +62,6 @@ function PageFooter() {
         <p className="end">@ 2021 Parkway Web-App</p>
       </div>
     </footer>
-  );
+  )
 }
-export default PageFooter;
+export default Footer
