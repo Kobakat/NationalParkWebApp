@@ -4,7 +4,6 @@ footer {
   background: linear-gradient(#743100, #8e3a24) !important;
   color: #fafafa;
   padding: 60px 0;
-  margin: 1rem;
 }
 
 .container {
@@ -62,7 +61,7 @@ a:hover {
   color: #fafafa;
 }
 .items h3::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 40px;
   height: 3px;

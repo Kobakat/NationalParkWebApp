@@ -1,28 +1,26 @@
-import NavBar from "../components/HomePage/NavBar";
-import PageHeader from "../common/PageHeader";
-import HeroSection from "../components/HomePage/HeroSection";
-import SectionOne from "../components/HomePage/SectionOne";
-import SectionTwo from "../components/HomePage/SectionTwo";
-import SectionThree from "../components/HomePage/SectionThree";
-import SectionFour from "../components/HomePage/SectionFour";
-import PageFooter from "../components/HomePage/FooterSection";
-import { useState, useEffect } from "react";
-import "../home/home-page.css";
+import Layout from '../components/Globals/Layout'
+import PageHeader from '../common/PageHeader'
+import HeroSection from '../components/HomePage/HeroSection'
+import SectionOne from '../components/HomePage/SectionOne'
+import SectionTwo from '../components/HomePage/SectionTwo'
+import SectionThree from '../components/HomePage/SectionThree'
+import SectionFour from '../components/HomePage/SectionFour'
+import { useState, useEffect } from 'react'
+import '../home/home-page.css'
 
 function HomePage({ callback }) {
-  const [searchBarParams, setSearchBarParams] = useState([]);
+  const [searchBarParams, setSearchBarParams] = useState([])
 
   const searchBarCallback = (childData) => {
-    setSearchBarParams(childData);
-  };
+    setSearchBarParams(childData)
+  }
 
   useEffect(() => {
-    callback({ searchBarParams });
-  }, [searchBarParams]);
+    callback({ searchBarParams })
+  }, [searchBarParams])
 
   return (
-    <>
-      <NavBar />
+    <Layout>
       <div id="content">
         <PageHeader />
         <HeroSection callback={searchBarCallback} />
@@ -30,9 +28,8 @@ function HomePage({ callback }) {
         <SectionTwo />
         <SectionThree />
         <SectionFour />
-        <PageFooter />
       </div>
-    </>
-  );
+    </Layout>
+  )
 }
-export default HomePage;
+export default HomePage
