@@ -63,7 +63,11 @@ function ParkPage({ parkCode }) {
       name,
       designation,
       states,
+      longitude,
+      latitude,
     ] = data
+
+    console.log(longitude, latitude)
 
     //ACTIVITIES ARRAY
     let activitiesList

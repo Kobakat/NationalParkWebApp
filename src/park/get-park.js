@@ -24,6 +24,8 @@ async function getPark(code) {
       name,
       designation,
       states,
+      longitude,
+      latitude,
     } = json.data[0]
     console.log(json.data[0])
 
@@ -41,8 +43,9 @@ async function getPark(code) {
       name,
       designation,
       states,
+      longitude,
+      latitude,
     ]
-
   } catch (err) {
     console.error(err)
     throw err
