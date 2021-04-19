@@ -70,8 +70,8 @@ function ParkPage({ parkCode }) {
     //ACTIVITIES ARRAY
     let activitiesList
     if (data !== null) {
-      activitiesList = activities.map((activity) => (
-        <li class="bg-green-700 text-white px-4 py-2 rounded-md">
+      activitiesList = activities.map((activity, index) => (
+        <li class="bg-green-700 text-white px-4 py-2 rounded-md" key={index}>
           {activity.name}
         </li>
       ))
@@ -80,8 +80,8 @@ function ParkPage({ parkCode }) {
     //TOPICS ARRAY
     let topicsList
     if (data !== null) {
-      topicsList = topics.map((topic) => (
-        <li class="bg-green-700 text-white px-4 py-2 rounded-md">
+      topicsList = topics.map((topic, index) => (
+        <li class="bg-green-700 text-white px-4 py-2 rounded-md" key={index}>
           {topic.name}
         </li>
       ))
@@ -90,9 +90,9 @@ function ParkPage({ parkCode }) {
     //ENTRANCEFEES ARRAY
     let entranceFeesList
     if (data !== null) {
-      entranceFeesList = entranceFees.map((fee) => {
+      entranceFeesList = entranceFees.map((fee, index) => {
         return (
-          <div class="font-body">
+          <div class="font-body" key={index}>
             <span class="font-bold">${fee.cost}</span>
             <span class="block mb-3">{fee.description}</span>
           </div>
@@ -103,9 +103,9 @@ function ParkPage({ parkCode }) {
     //ENTRANCEPASSES ARRAY
     let entrancePassesList
     if (data !== null) {
-      entrancePassesList = entrancePasses.map((pass) => {
+      entrancePassesList = entrancePasses.map((pass, index) => {
         return (
-          <div class="font-body">
+          <div class="font-body" key={index}>
             <span class="font-bold">${pass.cost}</span>
             <span class="block mb-3">{pass.description}</span>
           </div>
@@ -116,12 +116,13 @@ function ParkPage({ parkCode }) {
     // EXTRA IMAGES
     let imageList
     if (data) {
-      imageList = images.map((img) => {
+      imageList = images.map((img, index) => {
         return (
           <img
             class="m-auto object-cover w-full rounded-xl"
             src={img.url}
             alt={img.altText}
+            key={index}
           />
         )
       })
