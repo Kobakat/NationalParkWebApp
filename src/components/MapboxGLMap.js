@@ -8,7 +8,7 @@ const styles = {
   borderRadius: '.75rem',
 }
 
-const MapboxGLMap = ({ lon, lat }) => {
+const MapboxGLMap = ({ lon = 90, lat = 90 }) => {
   const [map, setMap] = useState(null)
   const mapContainer = useRef(null)
 
