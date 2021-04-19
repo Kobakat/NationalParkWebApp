@@ -1,0 +1,15 @@
+.bar {
+  background: #fefef8;
+  border-radius: 20px;
+  border: none;
+  font-family: "Nunito", sans-serif;
+  color: #545700;
+  padding: 10px;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  width: 50%;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
