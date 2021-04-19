@@ -1,4 +1,8 @@
 <p align="center">
+  <img alt="logo" src="https://user-images.githubusercontent.com/44657893/115175645-f9b42680-a090-11eb-95bc-b02a6c7bff0c.png">
+</p>
+
+<p align="center">
   <a href="https://github.com/Kobakat/NationalParkWebApp/commits/master" target="_blank">
     <img src="https://img.shields.io/github/last-commit/Kobakat/NationalParkWebApp?style=flat-square" alt="GitHub last commit">
   </a>
@@ -34,10 +38,6 @@ Parkway is a website brought to you by people who know and love the outdoors and
 _This website that has been created wouldn't have been possible without the wonderful people at the National Park Service (NPS) who have provided developers with a data filled API_
 
 _Our website only saves user data that is relevant to our park saving feature and user authentication. We have no use for collecting data for personal gain_
-
-<p align="center">
-  <img alt="logo" src="https://user-images.githubusercontent.com/44657893/115175645-f9b42680-a090-11eb-95bc-b02a6c7bff0c.png">
-</p>
 
 <!-- maybe add a gif of the responsive nature or image of mobile tablet and desktop frames -->
 
