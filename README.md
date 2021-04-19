@@ -14,7 +14,7 @@
   </br>
 
   <a href="https://github.com/Kobakat/NationalParkWebApp#contribute" target="_blank">
-    <img alt="Contributors" src="https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square">
+    <img alt="Contributors" src="https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square">
   </a>
 
   <a href="https://standardjs.com" target="_blank">
@@ -27,7 +27,7 @@
 </p>
 <hr>
 
-![](./images/ParkwayScreenGrab.png)
+<img width="1217" alt="ParkwayScreenGrab" src="https://user-images.githubusercontent.com/44657893/115175332-6a0e7800-a090-11eb-995e-f0ec2820cfb7.png">
 
 Parkway is a website brought to you by people who know and love the outdoors and want to share the beauty that is the national park service in this country.
 
@@ -36,7 +36,7 @@ _This website that has been created wouldn't have been possible without the wond
 _Our website only saves user data that is relevant to our park saving feature and user authentication. We have no use for collecting data for personal gain_
 
 <p align="center">
-  <img alt='logo name' src='./src/components/HomePage/images/ParkwayLogo.svg'>
+  ![ParkwayLogo](https://user-images.githubusercontent.com/44657893/115175645-f9b42680-a090-11eb-95bc-b02a6c7bff0c.png)
 </p>
 
 <!-- maybe add a gif of the responsive nature or image of mobile tablet and desktop frames -->
@@ -49,8 +49,6 @@ Our service is a free service as data should be open source and provided the NPS
 # Table of contents
 
 - [Development](#development)
-  - [Adding to Chrome](#adding-to-chrome)
-  - [Adding to Firefox](#adding-to-firefox)
 - [Contribute](#contribute)
 
 # Development
@@ -82,10 +80,10 @@ Thanks goes to these wonderful people ([design](https://allcontributors.org/docs
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/SnehMehta23"><img src="https://github.com/SnehMehta23.png" width="100px;" alt=""/><br /><sub><b>Yegor <3</b></sub></a><br /><a href="https://github.com/Kobakat/NationalParkWebApp/commits?author=SnehMehta23"></a></td>
-    <td align="center"><a href="https://github.com/tyler-morales"><img src="https://github.com/tyler-morales.png" width="100px;" alt=""/><br /><sub><b>Yegor <3</b></sub></a><br /><a href="https://github.com/Kobakat/NationalParkWebApp/commits?author=tyler-morales"></a></td>
-    <td align="center"><a href="https://github.com/Kobakat"><img src="https://github.com/Kobakat.png" width="100px;" alt=""/><br /><sub><b>Yegor <3</b></sub></a><br /><a href="https://github.com/Kobakat/NationalParkWebApp/commits?author=Kobakat"></a></td>
-    <td align="center"><a href="https://github.com/Raphsant"><img src="https://github.com/Raphsant.png" width="100px;" alt=""/><br /><sub><b>Yegor <3</b></sub></a><br /><a href="https://github.com/Kobakat/NationalParkWebApp/commits?author=Raphsant"></a></td>
+    <td align="center"><a href="https://github.com/SnehMehta23"><img src="https://github.com/SnehMehta23.png" width="100px;" alt=""/><br /><sub><b>SnehMehta <3</b></sub></a><br /><a href="https://github.com/Kobakat/NationalParkWebApp/commits?author=SnehMehta23"></a></td>
+    <td align="center"><a href="https://github.com/tyler-morales"><img src="https://github.com/tyler-morales.png" width="100px;" alt=""/><br /><sub><b>TMOCodes <3</b></sub></a><br /><a href="https://github.com/Kobakat/NationalParkWebApp/commits?author=tyler-morales"></a></td>
+    <td align="center"><a href="https://github.com/Kobakat"><img src="https://github.com/Kobakat.png" width="100px;" alt=""/><br /><sub><b>Kobakat <3</b></sub></a><br /><a href="https://github.com/Kobakat/NationalParkWebApp/commits?author=Kobakat"></a></td>
+    <td align="center"><a href="https://github.com/Raphsant"><img src="https://github.com/Raphsant.png" width="100px;" alt=""/><br /><sub><b>Raphy <3</b></sub></a><br /><a href="https://github.com/Kobakat/NationalParkWebApp/commits?author=Raphsant"></a></td>
   </tr>
 </table>
 
