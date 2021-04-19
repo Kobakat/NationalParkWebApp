@@ -45,6 +45,7 @@ _Our website only saves user data that is relevant to our park saving feature an
 # Table of contents
 
 - [Development](#development)
+- [Acknowledgements](#acknowledgements)
 - [Team](#team)
 - [Contributing](#contributing)
 
