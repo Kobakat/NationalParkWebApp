@@ -36,12 +36,10 @@ _This website that has been created wouldn't have been possible without the wond
 _Our website only saves user data that is relevant to our park saving feature and user authentication. We have no use for collecting data for personal gain_
 
 <p align="center">
-  <img alt="logo"src"https://user-images.githubusercontent.com/44657893/115175645-f9b42680-a090-11eb-95bc-b02a6c7bff0c.png">
+  <img alt="logo" src="https://user-images.githubusercontent.com/44657893/115175645-f9b42680-a090-11eb-95bc-b02a6c7bff0c.png">
 </p>
 
 <!-- maybe add a gif of the responsive nature or image of mobile tablet and desktop frames -->
-
-A one stop shop for all things planning for National Park trips, hikes, and much more. Come take a look at our work and visit the website using the link provided!
 
 Our service is a free service as data should be open source and provided the NPS API stays active we will be active. We are working on making a full website build with our responsive design spanning mobile, tablet, and desktop.
 </br>
@@ -73,7 +71,7 @@ run craco build
 
 # Contribute
 
-Thanks goes to these wonderful people ([design](https://allcontributors.org/docs/en/emoji-key)):
+Thanks goes to these wonderful developers!
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
