@@ -60,17 +60,26 @@ function ParkResultPage({ search }) {
     else {
       content = data.map((parks) => {
         return (
-          <div className="foo" key={parks.parkCode}>
-            <Link to={`park/${parks.parkCode}`}>
-              <button className="bar">{parks.fullName}</button>
-            </Link>
-          </div>
+          <>
+            <div className="foo" key={parks.parkCode}>
+              <Link to={`park/${parks.parkCode}`}>
+                <button className="bar">{parks.fullName}</button>
+              </Link>
+            </div>
+          </>
         )
       })
     }
   }
 
-  return <Layout>{content}</Layout>
+  return (
+    <Layout>
+      <div class="grid grid-rows-2 gap-4 max-w-screen-xl m-auto">
+        <h1>List page</h1>
+        {content}
+      </div>
+    </Layout>
+  )
 }
 
 export default ParkResultPage
