@@ -33,21 +33,20 @@
 
 <img width="1217" alt="ParkwayScreenGrab" src="https://user-images.githubusercontent.com/44657893/115175332-6a0e7800-a090-11eb-995e-f0ec2820cfb7.png">
 
-Parkway is a website brought to you by people who know and love the outdoors and want to share the beauty that is the national park service in this country.
+<b>Parkway is a website brought to you by people who know and love the outdoors and want to share the beauty that is the national park service in this country.</b>
 
 _This website that has been created wouldn't have been possible without the wonderful people at the National Park Service (NPS) who have provided developers with a data filled API_
 
 _Our website only saves user data that is relevant to our park saving feature and user authentication. We have no use for collecting data for personal gain_
 
 <!-- maybe add a gif of the responsive nature or image of mobile tablet and desktop frames -->
-
-Our service is a free service as data should be open source and provided the NPS API stays active we will be active. We are working on making a full website build with our responsive design spanning mobile, tablet, and desktop.
 </br>
 
 # Table of contents
 
 - [Development](#development)
-- [Contribute](#contribute)
+- [Team](#team)
+- [Contributing](#contributing)
 
 # Development
 
@@ -69,7 +68,19 @@ After installing the dependencies, build the project by executing:
 run craco build
 ```
 
-# Contribute
+# Acknowledgements
+* [TailwindCSS](https://tailwindcss.com/)
+* [SwiperJS](https://swiperjs.com/)
+* [Craco](https://www.npmjs.com/package/@craco/craco)
+* [Vercel](https://vercel.com/login)
+* [ConnaryFagen](https://connary.com/index.html)
+* [ReactTabs](https://www.npmjs.com/package/react-tabs)
+* [GoogleFonts](https://fonts.google.com/)
+* [NPS API](https://github.com/cferdinandi/smooth-scroll)
+* [OpenWeather API](https://openweathermap.org/api)
+* [Mapbox API](https://docs.mapbox.com/api/overview/)
+
+# Team
 
 Thanks goes to these wonderful developers!
 
@@ -87,5 +98,14 @@ Thanks goes to these wonderful developers!
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
+## Contributing
+
+1. Fork it (<https://github.com/yourname/yourproject/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
+
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
