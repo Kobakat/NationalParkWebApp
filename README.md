@@ -90,10 +90,10 @@ Thanks goes to these wonderful developers!
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/SnehMehta23"><img src="https://github.com/SnehMehta23.png" width="100px;" alt=""/><br /><sub><b>SnehMehta <3</b></sub></a><br /><a href="https://github.com/Kobakat/NationalParkWebApp/commits?author=SnehMehta23"></a></td>
-    <td align="center"><a href="https://github.com/tyler-morales"><img src="https://github.com/tyler-morales.png" width="100px;" alt=""/><br /><sub><b>TMOCodes <3</b></sub></a><br /><a href="https://github.com/Kobakat/NationalParkWebApp/commits?author=tyler-morales"></a></td>
-    <td align="center"><a href="https://github.com/Kobakat"><img src="https://github.com/Kobakat.png" width="100px;" alt=""/><br /><sub><b>Kobakat <3</b></sub></a><br /><a href="https://github.com/Kobakat/NationalParkWebApp/commits?author=Kobakat"></a></td>
-    <td align="center"><a href="https://github.com/Raphsant"><img src="https://github.com/Raphsant.png" width="100px;" alt=""/><br /><sub><b>Raphy <3</b></sub></a><br /><a href="https://github.com/Kobakat/NationalParkWebApp/commits?author=Raphsant"></a></td>
+    <td align="center"><a href="https://github.com/SnehMehta23"><img src="https://github.com/SnehMehta23.png" width="100px;" alt=""/><br /><sub><b>SnehMehta ♥</b></sub></a><br /><a href="https://github.com/Kobakat/NationalParkWebApp/commits?author=SnehMehta23"></a></td>
+    <td align="center"><a href="https://github.com/tyler-morales"><img src="https://github.com/tyler-morales.png" width="100px;" alt=""/><br /><sub><b>TMOCodes ♥</b></sub></a><br /><a href="https://github.com/Kobakat/NationalParkWebApp/commits?author=tyler-morales"></a></td>
+    <td align="center"><a href="https://github.com/Kobakat"><img src="https://github.com/Kobakat.png" width="100px;" alt=""/><br /><sub><b>Kobakat ♥</b></sub></a><br /><a href="https://github.com/Kobakat/NationalParkWebApp/commits?author=Kobakat"></a></td>
+    <td align="center"><a href="https://github.com/Raphsant"><img src="https://github.com/Raphsant.png" width="100px;" alt=""/><br /><sub><b>Raphy ♥</b></sub></a><br /><a href="https://github.com/Kobakat/NationalParkWebApp/commits?author=Raphsant"></a></td>
   </tr>
 </table>
 

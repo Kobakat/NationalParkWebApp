@@ -12,7 +12,7 @@ function App() {
     setSearchBarParams(childData);
   };
 
-  console.log(searchBarParams);
+  // console.log(searchBarParams);
 
   return (
     <BrowserRouter>
