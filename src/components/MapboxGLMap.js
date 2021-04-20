@@ -15,13 +15,13 @@ const stickyMap = {
   top: '10px',
 }
 
-const dummyCoords = [{}]
-
-const MapboxGLMap = ({ lon, lat, mapType }) => {
+const MapboxGLMap = ({ lon, lat, coordinates, mapType }) => {
+  console.log(lon, lat, coordinates)
   const [map, setMap] = useState(null)
   const mapContainer = useRef(null)
 
   useEffect(() => {
+    // console.log(coordinates)
     mapboxgl.accessToken =
       'pk.eyJ1IjoiYnJpYW5iYW5jcm9mdCIsImEiOiJsVGVnMXFzIn0.7ldhVh3Ppsgv4lCYs65UdA'
     const initializeMap = ({ setMap, mapContainer }) => {
@@ -29,18 +29,31 @@ const MapboxGLMap = ({ lon, lat, mapType }) => {
         container: mapContainer.current,
         style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
         center: [lon, lat], // starting position [lng, lat]
-        zoom: 7,
+        zoom: 4,
       })
 
-      map.on('load', () => {
-        setMap(map)
-        map.resize()
-        new mapboxgl.Marker().setLngLat([lon, lat]).addTo(map)
+      // Create a default Marker and add it to the map.
+      coordinates.forEach((coordinate) => {
+        new mapboxgl.Marker()
+          .setLngLat([+coordinate.longitude, +coordinate.latitude])
+          .addTo(map)
       })
+
+      // map.on('load', () => {
+      //   console.log(lon, lat, coordinates)
+      //   setMap(map)
+      //   map.resize()
+      // coordinates.forEach((coordinate) => {
+      //     console.log('Hello world 🌎')
+      //     new mapboxgl.Marker()
+      //       .setLngLat([+coordinate.longitude, +coordinate.latitude])
+      //       .addTo(map)
+      // })
+      // })
     }
 
     if (!map) initializeMap({ setMap, mapContainer })
-  }, [map, lat, lon])
+  }, [map, lat, lon, coordinates])
 
   return (
     <div

@@ -55,6 +55,7 @@ function ParkResultPage({ search }) {
 
   let parks
   let parkCount
+  let coordinates = []
   const { data } = resultFetch
 
   if (data !== null) {
@@ -69,7 +70,8 @@ function ParkResultPage({ search }) {
           { parkCode, fullName, description, images, latitude, longitude },
           index
         ) => {
-          console.log(latitude, longitude)
+          // console.log(latitude, longitude)
+          coordinates.push({ latitude, longitude })
           return (
             <div key={index}>
               <Link to={`park/${parkCode}`} key={parkCode}>
@@ -101,7 +103,7 @@ function ParkResultPage({ search }) {
           </div>
           {parks}
         </div>
-        <MapboxGLMap lat={40} lon={-105} mapType="stickyMap" />
+        <MapboxGLMap lat={40} lon={-105} coordinates={coordinates} mapType="stickyMap" />
       </div>
     </Layout>
   )

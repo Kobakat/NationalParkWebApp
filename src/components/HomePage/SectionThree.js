@@ -14,8 +14,8 @@ function SectionThree() {
         slidesPerView={1}
         loop={true}
         autoplay={{ delay: 3000 }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        // onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log("slide change")}
       >
         <SwiperSlide className="carousel-slide">
           <img
