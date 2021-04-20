@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
@@ -16,34 +16,18 @@ const stickyMap = {
 }
 
 const MapboxGLMap = ({ lon, lat, coordinates, mapType }) => {
-  // const [map, setMap] = useState(null)
   const mapContainer = useRef(null)
 
   useEffect(() => {
     mapboxgl.accessToken =
       'pk.eyJ1IjoiYnJpYW5iYW5jcm9mdCIsImEiOiJsVGVnMXFzIn0.7ldhVh3Ppsgv4lCYs65UdA'
 
-    // const initializeMap = ({ setMap, mapContainer }) => {
+    // INITIALIZE mapbox
     const map = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
       center: [-98.5, 39.8], // starting position [lng, lat]
       zoom: 5,
-    })
-
-    map.on('loaded', function () {
-      map.addLayer({
-        id: 'raster-layer',
-        type: 'raster',
-        source: {
-          type: 'raster',
-          tiles: [
-            'https://api.mapbox.com/v4/{tileset_id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidHlsZXItbW9yYWxlcyIsImEiOiJja25ubGE4dncwcWlzMndvOXFnNW9obTF0In0.7V5r5-1fbaLsYcTEHwAvvA',
-          ],
-        },
-        minzoom: 0,
-        maxzoom: 22,
-      })
     })
 
     // LOOP through each park and create a new marker
@@ -53,6 +37,8 @@ const MapboxGLMap = ({ lon, lat, coordinates, mapType }) => {
         .addTo(map)
     })
 
+    // SWITCH to first coordinte in array of coordinates as center
+    // TODO: make center the true center of all points & set zoom level to match radius of all points
     map.on('sourcedataloading', () => {
       console.log(+coordinates[0].longitude, +coordinates[0].latitude)
       map.flyTo({
@@ -61,7 +47,6 @@ const MapboxGLMap = ({ lon, lat, coordinates, mapType }) => {
     })
     // }
 
-    // if (!map) initializeMap({ setMap, mapContainer })
   }, [lat, lon, coordinates])
 
   return (
