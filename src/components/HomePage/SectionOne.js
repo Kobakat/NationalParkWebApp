@@ -1,12 +1,12 @@
 import React from "react";
 import GrandCanyon from "./images/icons8-grand-canyon-48.png";
 import Alps from "./images/icons8-alps-48.png";
-import Climbing from "./images/icons8-climbing-48.png";
+import Forest from "./images/icons8-forest-48.png";
 import Hills from "./images/icons8-hills-48.png";
 import Lake from "./images/icons8-lake-48.png";
 import Mountain from "./images/icons8-mountain-48.png";
-import Park from "./images/icons8-national-park-48.png";
-import Rafting from "./images/icons8-rafting-48.png";
+import SnowCapped from "./images/icons8-snow-capped-mountain-48.png";
+import Geyser from "./images/icons8-geyser-48.png";
 import "./section-one.css";
 import { Link } from "react-router-dom";
 
@@ -32,7 +32,7 @@ function SectionOne() {
           <Link to="/park/yell">
             <div className="icon-bg">
               {/* TODO: When the text from the API is implemented adjust icons to match*/}
-              <img src={Mountain} alt="Mountain" />
+              <img src={Geyser} alt="Geyser" />
             </div>
             {/* Add text from NPS API below inside of <b> tag */}
 
@@ -47,7 +47,7 @@ function SectionOne() {
           </Link>
           <Link to="/park/yell">
             <div className="icon-bg">
-              <img src={Climbing} alt="Climbing" />
+              <img src={Mountain} alt="Mountain" />
             </div>
             {/* Add text from nps api below inside of <b> tag */}
             <b>Yosemite National Park</b>
@@ -56,21 +56,21 @@ function SectionOne() {
         <div className="column column2">
           <Link to="/park/yell">
             <div className="icon-bg">
-              <img src={Rafting} alt="Rafting" />
+              <img src={Forest} alt="Forest" />
             </div>
             {/* Add text from nps api below inside of <b> tag */}
             <b>Acadia National Park</b>
           </Link>
           <Link to="/park/yell">
             <div className="icon-bg">
-              <img src={Hills} alt="Hills" />
+              <img src={Alps} alt="Snowy Mountains" />
             </div>
             {/* Add text from nps api below inside of <b> tag */}
             <b>Grand Teton National Park</b>
           </Link>
           <Link to="/park/yell">
             <div className="icon-bg">
-              <img src={Alps} alt="Alps" />
+              <img src={SnowCapped} alt="Snowy Mountain Range" />
             </div>
             {/* Add text from nps api below inside of <b> tag */}
             <b>Rocky Mountains National Park</b>
@@ -79,21 +79,21 @@ function SectionOne() {
         <div className="column column3">
           <Link to="/park/yell">
             <div className="icon-bg">
-              <img src={Mountain} alt="Mountain" />
+              <img src={GrandCanyon} alt="Canyon" />
             </div>
             {/* Add text from nps api below inside of <b> tag */}
             <b>Zion National Park</b>
           </Link>
           <Link to="/park/yell">
             <div className="icon-bg">
-              <img src={Lake} alt="Lake" />
+              <img src={Hills} alt="Mountainous Hills" />
             </div>
             {/* Add text from nps api below inside of <b> tag */}
             <b>Great Smoky National Park</b>
           </Link>
           <Link to="/park/yell">
             <div className="icon-bg">
-              <img src={Park} alt="Park" />
+              <img src={Lake} alt="Lake" />
             </div>
             {/* Add text from nps api below inside of <b> tag */}
             <b>Glacier National Park</b>

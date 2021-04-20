@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import getParkByActivity from "./get-park-by-activity";
 import { Link } from "react-router-dom";
-import Climbing from "../components/HomePage/images/icons8-climbing-48.png";
 import "../components/HomePage/section-one.css";
 import "../home/home-page.css";
 function ActivityList({ activity }) {
