@@ -16,7 +16,6 @@ const stickyMap = {
 }
 
 const MapboxGLMap = ({ coordinates, mapType }) => {
-  console.log(coordinates[0])
   const mapContainer = useRef(null)
 
   useEffect(() => {
