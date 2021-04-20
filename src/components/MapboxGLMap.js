@@ -2,13 +2,21 @@ import React, { useEffect, useRef, useState } from 'react'
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
-const styles = {
+const defaultMap = {
   width: '100%',
   height: '400px',
   borderRadius: '.75rem',
 }
+const stickyMap = {
+  width: '100%',
+  height: 'calc(100vh - 150px)',
+  borderRadius: '.75rem',
+  position: 'sticky',
+  top: '10px',
+}
 
-const MapboxGLMap = ({ lon = 90, lat = 90 }) => {
+const MapboxGLMap = ({ lon, lat, mapType }) => {
+  console.log(mapType)
   const [map, setMap] = useState(null)
   const mapContainer = useRef(null)
 
@@ -33,7 +41,12 @@ const MapboxGLMap = ({ lon = 90, lat = 90 }) => {
     if (!map) initializeMap({ setMap, mapContainer })
   }, [map, lat, lon])
 
-  return <div ref={(el) => (mapContainer.current = el)} style={styles} />
+  return (
+    <div
+      ref={(el) => (mapContainer.current = el)}
+      style={mapType === 'stickyMap' ? stickyMap : defaultMap}
+    />
+  )
 }
 
 export default MapboxGLMap

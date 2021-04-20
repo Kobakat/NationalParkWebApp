@@ -14,23 +14,33 @@ async function getResults(query, { filters }) {
 
     const json = await response.json()
 
-    console.log(url)
+    // console.log(url)
     //Maps the results to an array of relevant information for the result algorithm to determine if it should be displayed
-    const parks = json.data.map((park) => {
-      return {
-        fullName: park.fullName,
-        parkCode: park.parkCode,
-        images: park.images,
-        description: park.description,
-        states: park.states.split(','),
-        topics: park.topics.map((topic) => {
-          return topic.name
-        }),
-        activities: park.activities.map((activity) => {
-          return activity.name
-        }),
+    const parks = json.data.map(
+      ({
+        fullName,
+        parkCode,
+        images,
+        description,
+        latitude,
+        longitude,
+        states,
+        topics,
+        activities,
+      }) => {
+        return {
+          fullName: fullName,
+          parkCode: parkCode,
+          images: images,
+          description: description,
+          latitude: latitude,
+          longitude: longitude,
+          states: states.split(','),
+          topics: topics.map((topic) => topic.name),
+          activities: activities.map((activity) => activity.name),
+        }
       }
-    })
+    )
 
     const valueFilters = {
       states: filters.states.map((state) => {
@@ -51,23 +61,21 @@ async function getResults(query, { filters }) {
       const containsActivity =
         filters.activities.length === 0 ||
         valueFilters.activities.every((r) => park.activities.includes(r))
-      console.log('activity match: ' + containsActivity)
+      // console.log('activity match: ' + containsActivity)
       const containsTopic =
         filters.topics.length === 0 ||
         valueFilters.topics.every((r) => park.topics.includes(r))
-      console.log('topic match: ' + containsTopic)
+      // console.log('topic match: ' + containsTopic)
       const containsState =
         filters.states.length === 0 ||
         valueFilters.states.every((r) => park.states.includes(r))
-      console.log('state match: ' + containsState)
+      // console.log('state match: ' + containsState)
       if (containsActivity && containsTopic && containsState) return park
       else return null
     })
 
     //Removes any null elements of the array created above
-    const culledResults = filteredResults.filter((result) => {
-      return result
-    })
+    const culledResults = filteredResults.filter((result) => result)
 
     return culledResults
   } catch (err) {
@@ -75,5 +83,4 @@ async function getResults(query, { filters }) {
     throw err
   }
 }
-
 export default getResults
