@@ -103,7 +103,7 @@ function ParkResultPage({ search }) {
           </div>
           {parks}
         </div>
-        <MapboxGLMap lat={40} lon={-105} coordinates={coordinates} mapType="stickyMap" />
+        <MapboxGLMap coordinates={coordinates} mapType="stickyMap" />
       </div>
     </Layout>
   )

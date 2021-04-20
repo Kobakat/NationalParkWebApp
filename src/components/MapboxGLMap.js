@@ -16,44 +16,53 @@ const stickyMap = {
 }
 
 const MapboxGLMap = ({ lon, lat, coordinates, mapType }) => {
-  console.log(lon, lat, coordinates)
-  const [map, setMap] = useState(null)
+  // const [map, setMap] = useState(null)
   const mapContainer = useRef(null)
 
   useEffect(() => {
-    // console.log(coordinates)
     mapboxgl.accessToken =
       'pk.eyJ1IjoiYnJpYW5iYW5jcm9mdCIsImEiOiJsVGVnMXFzIn0.7ldhVh3Ppsgv4lCYs65UdA'
-    const initializeMap = ({ setMap, mapContainer }) => {
-      const map = new mapboxgl.Map({
-        container: mapContainer.current,
-        style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-        center: [lon, lat], // starting position [lng, lat]
-        zoom: 4,
+
+    // const initializeMap = ({ setMap, mapContainer }) => {
+    const map = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+      center: [-98.5, 39.8], // starting position [lng, lat]
+      zoom: 5,
+    })
+
+    map.on('loaded', function () {
+      map.addLayer({
+        id: 'raster-layer',
+        type: 'raster',
+        source: {
+          type: 'raster',
+          tiles: [
+            'https://api.mapbox.com/v4/{tileset_id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidHlsZXItbW9yYWxlcyIsImEiOiJja25ubGE4dncwcWlzMndvOXFnNW9obTF0In0.7V5r5-1fbaLsYcTEHwAvvA',
+          ],
+        },
+        minzoom: 0,
+        maxzoom: 22,
       })
+    })
 
-      // Create a default Marker and add it to the map.
-      coordinates.forEach((coordinate) => {
-        new mapboxgl.Marker()
-          .setLngLat([+coordinate.longitude, +coordinate.latitude])
-          .addTo(map)
+    // LOOP through each park and create a new marker
+    coordinates.forEach((coordinate) => {
+      new mapboxgl.Marker()
+        .setLngLat([+coordinate.longitude, +coordinate.latitude])
+        .addTo(map)
+    })
+
+    map.on('sourcedataloading', () => {
+      console.log(+coordinates[0].longitude, +coordinates[0].latitude)
+      map.flyTo({
+        center: [+coordinates[0].longitude, +coordinates[0].latitude], // starting position [lng, lat]
       })
+    })
+    // }
 
-      // map.on('load', () => {
-      //   console.log(lon, lat, coordinates)
-      //   setMap(map)
-      //   map.resize()
-      // coordinates.forEach((coordinate) => {
-      //     console.log('Hello world 🌎')
-      //     new mapboxgl.Marker()
-      //       .setLngLat([+coordinate.longitude, +coordinate.latitude])
-      //       .addTo(map)
-      // })
-      // })
-    }
-
-    if (!map) initializeMap({ setMap, mapContainer })
-  }, [map, lat, lon, coordinates])
+    // if (!map) initializeMap({ setMap, mapContainer })
+  }, [lat, lon, coordinates])
 
   return (
     <div
