@@ -11,7 +11,7 @@ async function getParkByActivity(activity) {
     const json = await response.json();
     const data = json.data[0].parks;
 
-    console.log(data);
+    // console.log(data);
 
     return [data];
 
