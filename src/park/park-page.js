@@ -204,7 +204,10 @@ function ParkPage({ parkCode }) {
           </div>
 
           {/* Mapbox */}
-          <MapboxGLMap lat={latitude} lon={longitude} mapType="defaultMap" />
+          <MapboxGLMap
+            coordinates={[{ longitude: longitude, latitude: latitude }]}
+            mapType="defaultMap"
+          />
 
           {/* Entrance Fees & Weather */}
           <div class="grid md:grid-flow-col gap-10">

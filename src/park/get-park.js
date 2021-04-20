@@ -26,7 +26,7 @@ async function getPark(code) {
       longitude,
       latitude,
     } = json.data[0]
-    console.log(json.data[0])
+    // console.log(json.data[0])
 
     return [
       description,
