@@ -15,8 +15,9 @@ const stickyMap = {
   top: '10px',
 }
 
+const dummyCoords = [{}]
+
 const MapboxGLMap = ({ lon, lat, mapType }) => {
-  console.log(mapType)
   const [map, setMap] = useState(null)
   const mapContainer = useRef(null)
 
