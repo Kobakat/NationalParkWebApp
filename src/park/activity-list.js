@@ -26,7 +26,7 @@ function ActivityList({ activity }) {
               <div className="column">
                 <Link to={`/park/${park.parkCode}`}>
                   <div className="icon-bg">
-                    <img src={Climbing} alt="Park" />
+                    <img src="" alt="Park" />
                   </div>
                   {/* Add text from nps api below inside of <b> tag */}
                   <b>{park.fullName}</b>
