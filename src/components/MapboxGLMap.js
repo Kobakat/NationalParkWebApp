@@ -15,7 +15,7 @@ const stickyMap = {
   top: '10px',
 }
 
-const MapboxGLMap = ({ lon, lat, coordinates, mapType }) => {
+const MapboxGLMap = ({ coordinates, mapType }) => {
   const mapContainer = useRef(null)
 
   useEffect(() => {
@@ -40,14 +40,13 @@ const MapboxGLMap = ({ lon, lat, coordinates, mapType }) => {
     // SWITCH to first coordinte in array of coordinates as center
     // TODO: make center the true center of all points & set zoom level to match radius of all points
     map.on('sourcedataloading', () => {
-      console.log(+coordinates[0].longitude, +coordinates[0].latitude)
+      // console.log(+coordinates[0].longitude, +coordinates[0].latitude)
       map.flyTo({
         center: [+coordinates[0].longitude, +coordinates[0].latitude], // starting position [lng, lat]
       })
     })
     // }
-
-  }, [lat, lon, coordinates])
+  }, [coordinates, mapType])
 
   return (
     <div
