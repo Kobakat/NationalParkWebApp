@@ -5,39 +5,32 @@ import getRandomActivitySet from "../get-random-set";
 import "./section-two.css";
 
 function SectionTwo() {
-  const [randomActivities, setRandomActivities] = useState([]);
-  const [activityDisplay, setActivityDisplay] = useState([]);
+  const [randomActivities, setRandomActivities] = useState(() =>
+    getRandomActivitySet()
+  );
 
-  useEffect(() => {
-    const activities = getRandomActivitySet();
-    setRandomActivities(activities);
-    console.log(randomActivities);
-    const renderArray = randomActivities.map((activity) => {
-      const linkUrl = `/activities/${activity.name}`;
-      return (
-        <article key={activity.name}>
-          <img src="https://picsum.photos/300/200///" alt="" />
-          <div className="text">
-            <h3>{activity.name}</h3>
-            <span>{activity.tag}</span>
+  const renderArray = randomActivities.map((activity) => {
+    const linkUrl = `/activities/${activity.name}`;
+    return (
+      <article key={activity.name}>
+        <img src="https://picsum.photos/300/200///" alt="" />
+        <div className="text">
+          <h3>{activity.name}</h3>
+          <span>{activity.tag}</span>
 
-            <Link to={linkUrl}>
-              <button>Show Me</button>
-            </Link>
-          </div>
-        </article>
-      );
-    });
-
-    console.log("test");
-    setActivityDisplay(renderArray);
-  }, []);
+          <Link to={linkUrl}>
+            <button>Show Me</button>
+          </Link>
+        </div>
+      </article>
+    );
+  });
 
   return (
     <section className="discover-top-activities">
       <h2 className="section-title">Discover top activities</h2>
       <div className="inner-container">
-        <main className="grid-section-2">{activityDisplay}</main>
+        <main className="grid-section-2">{renderArray}</main>
       </div>
     </section>
   );
