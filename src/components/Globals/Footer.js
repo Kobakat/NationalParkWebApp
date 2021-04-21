@@ -1,6 +1,6 @@
-import React from 'react'
-import { ReactComponent as Logo } from './ParkwayLogo.svg'
-import './section-footer.css'
+import React from "react";
+import { ReactComponent as Logo } from "./ParkwayLogo.svg";
+import "./section-footer.css";
 
 function Footer() {
   return (
@@ -62,6 +62,6 @@ function Footer() {
         <p className="end">@ 2021 Parkway Web-App</p>
       </div>
     </footer>
-  )
+  );
 }
-export default Footer
+export default Footer;

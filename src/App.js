@@ -1,9 +1,9 @@
-import HomePage from "./home/home-page";
-import ParkResultsPage from "./park/park-result-page";
-import ParkPage from "./park/park-page";
+import HomePage from "./components/HomePage/home-page";
+import ParkResultsPage from "./ParkComponents/park-result-page";
+import ParkPage from "./ParkComponents/park-page";
 import { useState } from "react";
 import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
-import RockClimbingList from "./park/activity-list";
+import RockClimbingList from "./ParkComponents/activity-list";
 
 function App() {
   const [searchBarParams, setSearchBarParams] = useState([]);

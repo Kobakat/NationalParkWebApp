@@ -3,7 +3,7 @@ import './park-page.css'
 import { useState, useEffect } from 'react'
 import getPark from './get-park'
 import useWeather from '../hooks/use-weather'
-import MapboxGLMap from '../components/MapboxGLMap'
+import MapboxGLMap from '../components/UtilityComponents/MapboxGLMap'
 
 function ParkPage({ parkCode }) {
   const [parkFetch, setParkFetch] = useState({

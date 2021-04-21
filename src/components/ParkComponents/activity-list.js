@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import getParkByActivity from "./get-park-by-activity";
 import { Link } from "react-router-dom";
+import Mountain from "../components/HomePage/images/icons8-mountain-48.png";
 import "../components/HomePage/section-one.css";
-import "../home/home-page.css";
+import "../components/HomePage/home-page.css";
 function ActivityList({ activity }) {
   const [parkList, setParkList] = useState([]);
   let content;
@@ -26,7 +27,7 @@ function ActivityList({ activity }) {
               <div className="column">
                 <Link to={`/park/${park.parkCode}`}>
                   <div className="icon-bg">
-                    <img src={Climbing} alt="Park" />
+                    <img src={Mountain} alt="Park" />
                   </div>
                   {/* Add text from nps api below inside of <b> tag */}
                   <b>{park.fullName}</b>

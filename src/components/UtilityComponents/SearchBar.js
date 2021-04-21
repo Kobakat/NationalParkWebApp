@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { getActivities, getTopics, getStates } from "./get-filters";
 import MultiSelect from "react-multi-select-component";
-import useGetNPSData from "../hooks/use-get-nps-data";
+import useGetNPSData from "../../hooks/use-get-nps-data";
 
 function SearchBar({ callback }) {
   //These states are for the possible search bar filter options
