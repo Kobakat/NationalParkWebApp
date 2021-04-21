@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import getParkByActivity from "./get-park-by-activity";
 import { Link } from "react-router-dom";
-import Mountain from "../components/HomePage/images/icons8-mountain-48.png";
-import "../components/HomePage/section-one.css";
-import "../components/HomePage/home-page.css";
+import Mountain from "../HomePage/images/icons8-mountain-48.png";
+import "../HomePage/section-one.css";
+import "../HomePage/home-page.css";
 function ActivityList({ activity }) {
   const [parkList, setParkList] = useState([]);
   let content;

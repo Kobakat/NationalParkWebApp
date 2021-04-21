@@ -16,7 +16,7 @@ function SectionOne() {
       <div className="section-div">
         <div className="inner-section-div">
           <h2>
-            Featured Official <br /> National Parks
+            Our Curated <br /> National Parks
           </h2>
           <p className="right-arrow-text">
             Our curated list of top <br />

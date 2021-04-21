@@ -1,6 +1,6 @@
 import getResults from './get-results'
 import './park-result-page.css'
-import Layout from '../components/Globals/Layout'
+import Layout from '../Globals/Layout'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 

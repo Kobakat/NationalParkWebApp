@@ -1,54 +1,54 @@
-import Layout from '../components/Globals/Layout'
-import './park-page.css'
-import { useState, useEffect } from 'react'
-import getPark from './get-park'
-import useWeather from '../hooks/use-weather'
-import MapboxGLMap from '../components/UtilityComponents/MapboxGLMap'
+import Layout from "../Globals/Layout";
+import "./park-page.css";
+import { useState, useEffect } from "react";
+import getPark from "./get-park";
+import useWeather from "../hooks/use-weather";
+import MapboxGLMap from "../UtilityComponents/MapboxGLMap";
 
 function ParkPage({ parkCode }) {
   const [parkFetch, setParkFetch] = useState({
     isLoading: true,
-    errorMessage: '',
+    errorMessage: "",
     data: null,
     zipCode: 60659,
-  })
+  });
 
   useEffect(() => {
     async function loadPark() {
       setParkFetch({
         isLoading: true,
-        errorMessage: '',
+        errorMessage: "",
         data: null,
-      })
+      });
 
       try {
-        const park = await getPark(parkCode)
+        const park = await getPark(parkCode);
         setParkFetch({
           isLoading: false,
-          errorMessage: '',
+          errorMessage: "",
           data: park,
           zipCode: park[4][0].postalCode,
-        })
+        });
       } catch (err) {
         setParkFetch({
           isLoading: false,
           errorMessage:
-            'Something went wrong loading the park. Please try again later.',
+            "Something went wrong loading the park. Please try again later.",
           data: null,
-        })
+        });
       }
     }
-    loadPark()
-  }, [])
+    loadPark();
+  }, []);
 
-  const { isLoading, errorMessage, data, zipCode } = parkFetch
+  const { isLoading, errorMessage, data, zipCode } = parkFetch;
 
-  const [weather] = useWeather(zipCode)
-  let contents
+  const [weather] = useWeather(zipCode);
+  let contents;
   if (isLoading) {
-    contents = <div>Loading Park</div>
-  } else if (errorMessage !== '') {
-    contents = <div>{errorMessage}</div>
+    contents = <div>Loading Park</div>;
+  } else if (errorMessage !== "") {
+    contents = <div>{errorMessage}</div>;
   } else {
     const [
       description,
@@ -65,30 +65,30 @@ function ParkPage({ parkCode }) {
       states,
       longitude,
       latitude,
-    ] = data
+    ] = data;
 
     //ACTIVITIES ARRAY
-    let activitiesList
+    let activitiesList;
     if (data !== null) {
       activitiesList = activities.map((activity, index) => (
         <li class="bg-green-700 text-white px-4 py-2 rounded-md" key={index}>
           {activity.name}
         </li>
-      ))
+      ));
     }
 
     //TOPICS ARRAY
-    let topicsList
+    let topicsList;
     if (data !== null) {
       topicsList = topics.map((topic, index) => (
         <li class="bg-green-700 text-white px-4 py-2 rounded-md" key={index}>
           {topic.name}
         </li>
-      ))
+      ));
     }
 
     //ENTRANCEFEES ARRAY
-    let entranceFeesList
+    let entranceFeesList;
     if (data !== null) {
       entranceFeesList = entranceFees.map((fee, index) => {
         return (
@@ -96,12 +96,12 @@ function ParkPage({ parkCode }) {
             <span class="font-bold">${fee.cost}</span>
             <span class="block mb-3">{fee.description}</span>
           </div>
-        )
-      })
+        );
+      });
     }
 
     //ENTRANCEPASSES ARRAY
-    let entrancePassesList
+    let entrancePassesList;
     if (data !== null) {
       entrancePassesList = entrancePasses.map((pass, index) => {
         return (
@@ -109,12 +109,12 @@ function ParkPage({ parkCode }) {
             <span class="font-bold">${pass.cost}</span>
             <span class="block mb-3">{pass.description}</span>
           </div>
-        )
-      })
+        );
+      });
     }
 
     // EXTRA IMAGES
-    let imageList
+    let imageList;
     if (data) {
       imageList = images.map((img, index) => {
         return (
@@ -124,12 +124,12 @@ function ParkPage({ parkCode }) {
             alt={img.altText}
             key={index}
           />
-        )
-      })
+        );
+      });
     }
 
     //OPERATING HOURS ARRAY
-    let operatingHoursList
+    let operatingHoursList;
     if (data !== null) {
       operatingHoursList = (
         <div>
@@ -156,21 +156,21 @@ function ParkPage({ parkCode }) {
             Sunday: {operatingHours[0].standardHours.sunday}
           </h3>
         </div>
-      )
+      );
     }
 
     // FIXME: add 's' to State(s) - count number of states and if it is greater than 1, add an 's' to state
     const renderStates = (states) => {
-      let numStates = [states].length
-      let str
+      let numStates = [states].length;
+      let str;
       if (numStates > 1) {
-        str = `States: ${states}`
+        str = `States: ${states}`;
       } else {
-        str = `State: ${states}`
+        str = `State: ${states}`;
       }
 
-      return str
-    }
+      return str;
+    };
 
     contents = (
       <div class="m-auto p-8 lg:max-w-screen-lg text-yellow-900">
@@ -268,10 +268,10 @@ function ParkPage({ parkCode }) {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
-  return <Layout>{contents}</Layout>
+  return <Layout>{contents}</Layout>;
 }
 
-export default ParkPage
+export default ParkPage;

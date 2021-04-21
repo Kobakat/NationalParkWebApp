@@ -12,7 +12,7 @@ function Footer() {
               <Logo className="logo" />
             </a>
             <p>
-              The National Parks is a website brought to you by people who know
+              Parkway is a website brought to you by people who know
               and love the outdoors and want to share the beauty that is the
               national park service in this country. Grab a friend and plan a
               trip to an unforgettable experience
@@ -31,7 +31,7 @@ function Footer() {
                 <a href="https://nps.gov">Park List</a>
               </li>
               <li>
-                <a href="https://nps.gov">Lorem ipsum</a>
+                <a href="https://nps.gov">Topics</a>
               </li>
             </ul>
           </div>
@@ -40,9 +40,6 @@ function Footer() {
             <ul>
               <li>
                 <a href="https://nps.gov">About Us</a>
-              </li>
-              <li>
-                <a href="https://nps.gov">Our Mission</a>
               </li>
             </ul>
           </div>
