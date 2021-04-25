@@ -1,10 +1,10 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay, Pagination } from "swiper";
-import "./section-three.css";
-import "swiper/swiper.scss";
+import React from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import SwiperCore, { Autoplay, Pagination } from 'swiper'
+import './section-three.scss'
+import 'swiper/swiper.scss'
 
-SwiperCore.use([Autoplay, Pagination]);
+// SwiperCore.use([Autoplay, Pagination])
 
 function SectionThree() {
   return (
@@ -14,8 +14,6 @@ function SectionThree() {
         slidesPerView={1}
         loop={true}
         autoplay={{ delay: 3000 }}
-        // onSwiper={(swiper) => console.log(swiper)}
-        // onSlideChange={() => console.log("slide change")}
       >
         <SwiperSlide className="carousel-slide">
           <img
@@ -23,7 +21,7 @@ function SectionThree() {
             alt=""
           />
         </SwiperSlide>
-        <SwiperSlide className="carousel-slide">
+        {/* <SwiperSlide className="carousel-slide">
           <img
             src="https://randomwordgenerator.com/img/picture-generator/55e0d54b4a51ad14f1dc8460962e33791c3ad6e04e507441722a72dc9345c4_640.jpg"
             alt=""
@@ -46,7 +44,7 @@ function SectionThree() {
             src="https://randomwordgenerator.com/img/picture-generator/55e0d54b4a51ad14f1dc8460962e33791c3ad6e04e507441722a72dc9345c4_640.jpg"
             alt=""
           />
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
       <div className="carousel-text-container">
         <h2 className="carousel-title">Lorem ipsum dolor sit amet.</h2>
@@ -58,6 +56,6 @@ function SectionThree() {
         <button className="carousel-button">Lorem</button>
       </div>
     </section>
-  );
+  )
 }
-export default SectionThree;
+export default SectionThree
