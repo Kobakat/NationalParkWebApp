@@ -2,8 +2,8 @@
 
 @font-face {
   font-family: "QuincyCF-ExtraBold";
-  src: url("../Fonts/webFonts/QuincyCFExtraBold/font.woff2") format("woff2"),
-    url("../Fonts/webFonts/QuincyCFExtraBold/font.woff") format("woff");
+  src: url("../../Fonts/webFonts/QuincyCFExtraBold/font.woff2") format("woff2"),
+    url("../../Fonts/webFonts/QuincyCFExtraBold/font.woff") format("woff");
 }
 
 body {

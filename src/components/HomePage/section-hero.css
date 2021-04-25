@@ -6,6 +6,8 @@ main {
 
 main .landing-image {
   margin-top: 5rem;
+  /* have to add the border radius here because Layout is now no longer a child of the div id content */
+  border-radius: 1.875rem;
 }
 
 .bg-image-home {
