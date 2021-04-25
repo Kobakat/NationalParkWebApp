@@ -7,3 +7,7 @@ main {
 main .landing-image {
   margin-top: 5rem;
 }
+
+.bg-image-home {
+  background-image: url('./images/yosemitevalley.png') !important;
+}

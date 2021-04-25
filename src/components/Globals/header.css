@@ -82,6 +82,8 @@
     flex-direction: column;
     list-style-type: none;
     grid-gap: 0px;
+    background: #fefef8;
+    height: 100vh;
   }
   .nav-options.active {
     left: 0;
@@ -95,6 +97,7 @@
   .menu-icon {
     width: 45px;
     height: 45px;
+    cursor: pointer;
   }
   .option {
     display: flex;

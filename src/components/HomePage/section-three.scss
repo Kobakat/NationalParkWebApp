@@ -3,11 +3,23 @@
   grid-row: 14 / 18;
   margin-bottom: 2rem;
   display: flex;
+  max-width: 100%;
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .carousel-slide img {
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
+  width: 100%;
+
+  @media (max-width: 1074px) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 }
 
 .carousel-text-container {
@@ -15,6 +27,12 @@
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   text-align: left !important;
+  display: block;
+
+  @media (max-width: 700px) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
 
 .carousel-title {
@@ -28,7 +46,7 @@
   color: #fefef8;
   font-size: 1rem;
   text-align: left;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   padding: 2rem 2rem 0rem 2rem;
 }
 
@@ -36,7 +54,7 @@
   background: #fefef8;
   border-radius: 8px;
   border: none;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: #545700;
   padding: 10px;
   margin-left: 2rem;
