@@ -15,9 +15,8 @@ function HeroSection({ callback }) {
   }, [searchBarParams]);
 
   return (
-    <main>
+    <main className="bg-image-home">
       <SearchBar callback={searchBarCallback} />
-      <img className="landing-image" src={HeroPicture} alt="" />
     </main>
   );
 }

@@ -23,11 +23,13 @@ function ParkPage({ parkCode }) {
 
       try {
         const park = await getPark(parkCode);
+
         setParkFetch({
           isLoading: false,
           errorMessage: "",
           data: park,
-          zipCode: park[4][0].postalCode,
+
+          zipCode: park[3][0].postalCode,
         });
       } catch (err) {
         setParkFetch({
@@ -204,7 +206,10 @@ function ParkPage({ parkCode }) {
           </div>
 
           {/* Mapbox */}
-          <MapboxGLMap lat={latitude} lon={longitude} />
+          <MapboxGLMap
+            coordinates={[{ longitude: longitude, latitude: latitude }]}
+            mapType="defaultMap"
+          />
 
           {/* Entrance Fees & Weather */}
           <div class="grid md:grid-flow-col gap-10">
@@ -224,18 +229,39 @@ function ParkPage({ parkCode }) {
               </div>
             </div>
 
-            <div class="shadow-lg rounded-lg bg-gray-50">
-              <h2 class="px-6 py-3 rounded-t-lg bg-blue-400 text-white text-3xl text-center">
-                Weather
-              </h2>
-              <div class="p-6 rounded-b-lg">
-                <div class="text-center mb-4">
-                  <span class="text-sm text-center">Current Weather</span>
-                  <span class="block text-5xl">62°F</span>
+            {weather ? (
+              <div class="shadow-lg rounded-lg bg-gray-50">
+                <h2 class="px-6 py-3 rounded-t-lg bg-blue-400 text-white text-3xl text-center">
+                  Weather
+                </h2>
+                <div class="p-6 rounded-b-lg">
+                  <div class="text-center mb-4">
+                    <span class="text-sm text-center">Current Weather</span>
+                    <span class="block text-5xl">
+                      {weather.main
+                        ? Math.round(weather.main.temp) + "°"
+                        : "0°"}
+                      {weather.main ? (
+                        <img
+                          src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+                          alt="icon"
+                        />
+                      ) : (
+                        " "
+                      )}
+                    </span>
+                    <span>
+                      {weather.weather
+                        ? weather.weather[0].description
+                        : "Loading..."}
+                    </span>
+                  </div>
+                  <p>{weatherInfo}</p>
                 </div>
-                <p>{weatherInfo}</p>
               </div>
-            </div>
+            ) : (
+              "Loading weather"
+            )}
 
             {/* {weather.main ? (
                 <div>

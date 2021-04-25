@@ -1,4 +1,4 @@
-async function getActivities() {
+function getActivities() {
   return [
     { label: "Arts and Culture", value: "Arts and Culture" },
     { label: "Astronomy", value: "Astronomy" },
@@ -152,7 +152,6 @@ function getTopics() {
   ];
 }
 
-//Lmao theres 1000% a non troll way to do this
 function getStates() {
   return [
     { label: "Alabama", value: "AL" },

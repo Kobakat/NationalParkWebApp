@@ -13,7 +13,7 @@ function SearchBar({ callback }) {
 
   const handleChangeSearchBar = (e) => {
     setSelectedParks(e.target.value);
-    console.log(`Search is now set to: ${e.target.value}`);
+    // console.log(`Search is now set to: ${e.target.value}`);
   };
 
   //When this runs it populates the search bars filter options
@@ -47,7 +47,7 @@ function SearchBar({ callback }) {
       states: selectedStates,
     };
 
-    console.log(typeof callback);
+    // console.log(typeof callback);
     callback({ params });
   };
 
