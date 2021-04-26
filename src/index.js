@@ -5,7 +5,6 @@ import "./index.css";
 
 import App from "./App.js";
 import getParkByActivity from "./park/get-park-by-activity";
-import useGetNpsNews from "./hooks/use-get-nps-news";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,5 +15,3 @@ ReactDOM.render(
 );
 
 getParkByActivity("climbing");
-
-

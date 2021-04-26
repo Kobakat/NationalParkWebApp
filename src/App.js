@@ -14,7 +14,6 @@ function App() {
   };
 
   // console.log(searchBarParams);
-  useGetNpsNews();
 
   return (
     <BrowserRouter>
