@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Pagination } from "swiper";
 import "./section-three.scss";
@@ -9,17 +9,19 @@ import useGetNpsNews from "../../hooks/use-get-nps-news";
 
 function SectionThree() {
   const data = useGetNpsNews();
-  console.log(data);
+  if (data) console.log(data);
+  const [DivText, setDivText] = useState("Loading");
+  const [index, setIndex] = useState(0);
 
   return (
     <section className="carousel-section">
       <Swiper
         spaceBetween={20}
         slidesPerView={1}
-        loop={true}
+        loop={false}
         autoplay={{ delay: 3000 }}
         onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={(swiper) => console.log(swiper.activeIndex)}
+        onSlideChange={(swiper) => setIndex(swiper.activeIndex)}
       >
         <SwiperSlide className="carousel-slide">
           {data ? (
@@ -73,13 +75,14 @@ function SectionThree() {
         </SwiperSlide>
       </Swiper>
       <div className="carousel-text-container">
-        <h2 className="carousel-title">Lorem ipsum dolor sit amet.</h2>
+        <h2 className="carousel-title">Latest news provided by NPS</h2>
         <p className="carousel-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
-          explicabo!
+          {data ? data[index].title : "Loading..."}
         </p>
         {/* add the linkto */}
-        <button className="carousel-button">Lorem</button>
+        <a href={data ? data[index].url : "https://nps.gov"}>
+          <button className="carousel-button">Click here for more</button>
+        </a>
       </div>
     </section>
   );
