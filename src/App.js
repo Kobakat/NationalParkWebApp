@@ -4,12 +4,10 @@ import ParkPage from "./components/ParkComponents/park-page";
 import AboutPage from "./components/AboutPage/AboutPage";
 import { useState } from "react";
 import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
-<<<<<<< HEAD
-import RockClimbingList from "./park/activity-list";
+
+
 import useGetNpsNews from "./hooks/use-get-nps-news";
-=======
 import RockClimbingList from "./components/ParkComponents/activity-list";
->>>>>>> master
 
 function App() {
   const [searchBarParams, setSearchBarParams] = useState([]);
