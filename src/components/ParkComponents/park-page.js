@@ -1,9 +1,9 @@
-import Layout from "../components/Globals/Layout";
+import Layout from "../Globals/Layout";
 import "./park-page.css";
 import { useState, useEffect } from "react";
 import getPark from "./get-park";
 import useWeather from "../hooks/use-weather";
-import MapboxGLMap from "../components/MapboxGLMap";
+import MapboxGLMap from "../UtilityComponents/MapboxGLMap";
 
 function ParkPage({ parkCode }) {
   const [parkFetch, setParkFetch] = useState({
@@ -28,6 +28,7 @@ function ParkPage({ parkCode }) {
           isLoading: false,
           errorMessage: "",
           data: park,
+
           zipCode: park[3][0].postalCode,
         });
       } catch (err) {

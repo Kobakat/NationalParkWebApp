@@ -23,7 +23,7 @@ li {
   text-align: left !important;
 }
 
-a {
+.footer-links {
   color: #fafafa;
   text-decoration: none;
 }
@@ -61,7 +61,7 @@ a:hover {
   color: #fafafa;
 }
 .items h3::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 40px;
   height: 3px;

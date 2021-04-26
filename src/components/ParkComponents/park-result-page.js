@@ -1,68 +1,68 @@
-import getResults from './get-results'
-import './park-result-page.css'
-import Layout from '../components/Globals/Layout'
-import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import MapboxGLMap from '../components/MapboxGLMap'
+import getResults from "./get-results";
+import "./park-result-page.css";
+import Layout from "../Globals/Layout";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import MapboxGLMap from "../UtilityComponents/MapboxGLMap";
 
 function ParkResultPage({ search }) {
   const [resultFetch, setResultFetch] = useState({
     isLoading: true,
-    errorMessage: '',
+    errorMessage: "",
     data: null,
-  })
+  });
 
   //Todo fucking fix me
-  const { query } = search.searchBarParams.searchBarParams.params
+  const { query } = search.searchBarParams.searchBarParams.params;
   const {
     activities,
     topics,
     states,
-  } = search.searchBarParams.searchBarParams.params
+  } = search.searchBarParams.searchBarParams.params;
 
   const filters = {
     activities: activities,
     topics: topics,
     states: states,
-  }
+  };
 
   useEffect(() => {
     async function fetchResults() {
       setResultFetch({
         isLoading: true,
-        errorMessage: '',
+        errorMessage: "",
         data: null,
-      })
+      });
 
       try {
-        const results = await getResults(query, { filters })
+        const results = await getResults(query, { filters });
         setResultFetch({
           isLoading: false,
-          errorMessage: '',
+          errorMessage: "",
           data: results,
-        })
+        });
       } catch (err) {
         setResultFetch({
           isLoading: false,
           errorMessage:
-            'Something went wrong loading the park. Please try again later.',
+            "Something went wrong loading the park. Please try again later.",
           data: null,
-        })
+        });
       }
     }
-    fetchResults()
-  }, [])
+    fetchResults();
+  }, []);
 
-  let parks
-  let parkCount
-  let coordinates = []
-  const { data } = resultFetch
+  let parks;
+  let parkCount;
+  let coordinates = [];
+  const { data } = resultFetch;
 
   if (data !== null) {
-    if (data.length === 0) parks = <p>No Parks found</p>
+    if (data.length === 0) parks = <p>No Parks found</p>;
     else {
       // COUNT number of total filtered Parks
-      parkCount = data.length
+      parkCount = data.length;
 
       // LOOP through list of parks & create a card for each park
       parks = data.map(
@@ -71,7 +71,7 @@ function ParkResultPage({ search }) {
           index
         ) => {
           // console.log(latitude, longitude)
-          coordinates.push({ latitude, longitude })
+          coordinates.push({ latitude, longitude });
           return (
             <div key={index}>
               <Link to={`park/${parkCode}`} key={parkCode}>
@@ -88,9 +88,9 @@ function ParkResultPage({ search }) {
                 </div>
               </Link>
             </div>
-          )
+          );
         }
-      )
+      );
     }
   }
 
@@ -106,7 +106,7 @@ function ParkResultPage({ search }) {
         <MapboxGLMap coordinates={coordinates} mapType="stickyMap" />
       </div>
     </Layout>
-  )
+  );
 }
 
-export default ParkResultPage
+export default ParkResultPage;

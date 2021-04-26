@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 import App from "./App.js";
-import getParkByActivity from "./park/get-park-by-activity";
+import getParkByActivity from "./components/ParkComponents/get-park-by-activity";
 
 ReactDOM.render(
   <React.StrictMode>

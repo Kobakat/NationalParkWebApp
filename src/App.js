@@ -1,10 +1,15 @@
-import HomePage from "./home/home-page";
-import ParkResultsPage from "./park/park-result-page";
-import ParkPage from "./park/park-page";
+import HomePage from "./components/HomePage/home-page";
+import ParkResultsPage from "./components/ParkComponents/park-result-page";
+import ParkPage from "./components/ParkComponents/park-page";
+import AboutPage from "./components/AboutPage/AboutPage";
 import { useState } from "react";
 import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
+<<<<<<< HEAD
 import RockClimbingList from "./park/activity-list";
 import useGetNpsNews from "./hooks/use-get-nps-news";
+=======
+import RockClimbingList from "./components/ParkComponents/activity-list";
+>>>>>>> master
 
 function App() {
   const [searchBarParams, setSearchBarParams] = useState([]);
@@ -20,6 +25,9 @@ function App() {
       <Switch>
         <Route path="/" exact>
           <HomePage callback={searchBarCallback} />
+        </Route>
+        <Route path="/about">
+          <AboutPage />
         </Route>
         <Route path="/park/:code" children={<SetParkPage />} />
         <Route path="/activities/:activity" children={<SetActivitiesPage />} />
