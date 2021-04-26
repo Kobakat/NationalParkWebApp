@@ -4,6 +4,7 @@ import ParkPage from "./park/park-page";
 import { useState } from "react";
 import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
 import RockClimbingList from "./park/activity-list";
+import useGetNpsNews from "./hooks/use-get-nps-news";
 
 function App() {
   const [searchBarParams, setSearchBarParams] = useState([]);
@@ -13,6 +14,7 @@ function App() {
   };
 
   // console.log(searchBarParams);
+  useGetNpsNews();
 
   return (
     <BrowserRouter>
