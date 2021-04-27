@@ -20,7 +20,7 @@ const MapboxGLMap = ({ coordinates, mapType }) => {
 
   useEffect(() => {
     mapboxgl.accessToken =
-      'pk.eyJ1IjoiYnJpYW5iYW5jcm9mdCIsImEiOiJsVGVnMXFzIn0.7ldhVh3Ppsgv4lCYs65UdA'
+      'pk.eyJ1IjoidHlsZXItbW9yYWxlcyIsImEiOiJja25ubTUzejcxMDFoMnBtbzVkcmN6djloIn0.Zj23iZSmEDSEHnOwmLcR_g'
 
     // INITIALIZE mapbox
     const map = new mapboxgl.Map({
