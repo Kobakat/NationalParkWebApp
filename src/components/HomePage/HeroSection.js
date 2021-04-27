@@ -11,7 +11,7 @@ function HeroSection({ callback }) {
   };
 
   useEffect(() => {
-    callback({ searchBarParams });
+    callback(searchBarParams);
   }, [searchBarParams]);
 
   return (
