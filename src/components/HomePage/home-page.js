@@ -16,7 +16,7 @@ function HomePage({ callback }) {
   };
 
   useEffect(() => {
-    callback({ searchBarParams });
+    callback(searchBarParams);
   }, [searchBarParams]);
 
   return (

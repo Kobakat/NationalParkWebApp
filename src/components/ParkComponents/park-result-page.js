@@ -12,14 +12,8 @@ function ParkResultPage({ search }) {
     data: null,
   });
 
-  //Todo fucking fix me
-  const { query } = search.searchBarParams.searchBarParams.params;
-  const {
-    activities,
-    topics,
-    states,
-  } = search.searchBarParams.searchBarParams.params;
-
+  const { query } = search;
+  const { activities, topics, states } = search;
   const filters = {
     activities: activities,
     topics: topics,

@@ -48,7 +48,7 @@ function SearchBar({ callback }) {
     };
 
     // console.log(typeof callback);
-    callback({ params });
+    callback(params);
   };
 
   //We will pass up the new parameters everytime the user changes one of the inputs

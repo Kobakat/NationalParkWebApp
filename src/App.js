@@ -4,10 +4,8 @@ import ParkPage from "./components/ParkComponents/park-page";
 import AboutPage from "./components/AboutPage/AboutPage";
 import { useState } from "react";
 import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
-
-
-import useGetNpsNews from "./hooks/use-get-nps-news";
 import RockClimbingList from "./components/ParkComponents/activity-list";
+import useGetNpsNews from "./hooks/use-get-nps-news";
 
 function App() {
   const [searchBarParams, setSearchBarParams] = useState([]);
@@ -15,8 +13,6 @@ function App() {
   const searchBarCallback = (childData) => {
     setSearchBarParams(childData);
   };
-
-  // console.log(searchBarParams);
 
   return (
     <BrowserRouter>
