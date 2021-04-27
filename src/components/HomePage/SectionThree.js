@@ -5,7 +5,7 @@ import "./section-three.scss";
 import "swiper/swiper.scss";
 import useGetNpsNews from "../../hooks/use-get-nps-news";
 
-// SwiperCore.use([Autoplay, Pagination])
+SwiperCore.use([Autoplay, Pagination])
 
 function SectionThree() {
   const data = useGetNpsNews();
