@@ -1,6 +1,7 @@
 import React from "react";
 import { ReactComponent as Logo } from "./ParkwayLogo.svg";
 import "./section-footer.css";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -47,8 +48,22 @@ function Footer() {
             <h3>Legal</h3>
             <ul>
               <li>
-                <a className="footer-links" href="https://nps.gov">
+                <Link
+                  to="/about"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                  }}
+                >
                   About Us
+                </Link>
+              </li>
+              <li>
+                <a
+                  className="footer-links"
+                  href="https://www.nps.gov/subjects/digital/nps-data-api.htm"
+                  target="_blank"
+                >
+                  National Park Service API
                 </a>
               </li>
             </ul>
@@ -62,9 +77,14 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a className="footer-links" href="https://nps.gov">
+                <Link
+                  to="/faq"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                  }}
+                >
                   Parkway FAQ
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

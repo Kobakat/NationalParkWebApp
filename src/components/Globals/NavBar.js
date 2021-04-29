@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { GrMenu } from "react-icons/gr";
 import { GrClose } from "react-icons/gr";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "./ParkwayLogo.svg";
 import "./header.css";
 
@@ -19,7 +19,9 @@ const NavBar = () => {
         </div>
         <ul className={click ? "nav-options active" : "nav-options"}>
           <li className="option" onClick={closeMobileMenu}>
-            <Link to="/about/" class="header-link">About</Link>
+            <Link to="/about/" class="header-link">
+              About
+            </Link>
           </li>
           <li className="option" onClick={closeMobileMenu}>
             <a class="header-link" href="/parks">
