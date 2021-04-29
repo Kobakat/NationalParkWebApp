@@ -72,11 +72,6 @@ function Footer() {
             <h3>Support</h3>
             <ul>
               <li>
-                <a className="footer-links" href="https://nps.gov">
-                  Contact Us
-                </a>
-              </li>
-              <li>
                 <Link
                   to="/faq"
                   onClick={() => {

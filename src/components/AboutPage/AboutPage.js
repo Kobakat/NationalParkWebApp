@@ -141,6 +141,20 @@ function AboutPage() {
             Github
           </a>
         </section>
+
+        <section
+          id="join-section"
+          class="block flex flex-col text-center mt-48 mb-48"
+        >
+          <h1 class="text-7xl m-4 text-rocky">Contact Us</h1>
+          <p class="m-4 px-8 lg:px28 font-body">
+            If you have any other questions please feel free to contact this
+            definitely legit email: <br />{" "}
+            <address class="mt-4">
+              <a href="mailto:Parkway@outdoors.com">Parkway@outdoors.com</a>
+            </address>
+          </p>
+        </section>
       </div>
     </Layout>
   );
