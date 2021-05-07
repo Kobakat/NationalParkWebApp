@@ -5,8 +5,11 @@ import SectionOne from "../HomePage/SectionOne";
 import SectionTwo from "../HomePage/SectionTwo";
 import SectionThree from "../HomePage/SectionThree";
 import SectionFour from "../HomePage/SectionFour";
+import Login from "../HomePage/login"
 import { useState, useEffect } from "react";
 import "./home-page.css";
+import useUser from "../../hooks/use-user";
+import { auth } from "../../firebase/firebase";
 
 function HomePage({ callback }) {
   const [searchBarParams, setSearchBarParams] = useState([]);
@@ -15,12 +18,14 @@ function HomePage({ callback }) {
     setSearchBarParams(childData);
   };
 
+  const [isLoading, error, user] = useUser(auth);
+
   useEffect(() => {
     callback(searchBarParams);
   }, [searchBarParams]);
 
   return (
-    <Layout>
+    <Layout user={user}>
       <div id="content">
         <PageHeader />
         <HeroSection callback={searchBarCallback} />

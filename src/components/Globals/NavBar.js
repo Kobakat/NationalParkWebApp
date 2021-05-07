@@ -3,9 +3,12 @@ import { GrMenu } from "react-icons/gr";
 import { GrClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "./ParkwayLogo.svg";
-import "./header.css";
 
-const NavBar = () => {
+import "./header.css";
+import signIn from "../HomePage/login";
+
+const NavBar = ({user}) => {
+  console.log(user)
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -34,9 +37,9 @@ const NavBar = () => {
             </a>
           </li>
           <li className="option mobile-option" onClick={closeMobileMenu}>
-            <a class="header-link" href="/sign-up" className="sign-up">
+            <button class="header-link" onClick={signIn} className="sign-up">
               Sign Up
-            </a>
+            </button>
           </li>
         </ul>
       </div>
@@ -47,9 +50,9 @@ const NavBar = () => {
           </a>
         </li>
         <li onClick={closeMobileMenu}>
-          <a href="/sign-up" className="signup-btn">
-            Sign Up
-          </a>
+          <button onClick={signIn} className="signup-btn">
+            {user ? "sign out" : "Sign in"}
+          </button>
         </li>
       </ul>
       <div className="mobile-menu" onClick={handleClick}>
