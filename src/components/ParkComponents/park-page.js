@@ -4,14 +4,40 @@ import { useState, useEffect } from "react";
 import getPark from "./get-park";
 import useWeather from "../hooks/use-weather";
 import MapboxGLMap from "../UtilityComponents/MapboxGLMap";
+import useUser from "../../hooks/use-user";
+import { BsFillHeartFill } from "react-icons/bs";
+import { auth, usersCollection } from "../../firebase/firebase";
+import favorite from "../UtilityComponents/favorite-park";
 
 function ParkPage({ parkCode }) {
+  const user = useUser(auth);
+
+  console.log(user);
   const [parkFetch, setParkFetch] = useState({
     isLoading: true,
     errorMessage: "",
     data: null,
     zipCode: 60659,
   });
+
+  const onFavoriteSubmit = (event) => {
+    event.preventDefault();
+    favorite(parkCode, user);
+  };
+
+  const favorite = async (parkCode, user) => {
+    try {
+      await usersCollection
+        .doc(user[2].uid)
+        .collection("favoriteParks")
+        .doc(parkCode)
+        .set({
+          parkCode: parkCode,
+        });
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   useEffect(() => {
     async function loadPark() {
@@ -176,6 +202,9 @@ function ParkPage({ parkCode }) {
 
     contents = (
       <div class="m-auto p-8 lg:max-w-screen-lg text-yellow-900">
+        <button>
+          <BsFillHeartFill onClick={onFavoriteSubmit} />
+        </button>
         {/* Top Section */}
         <span class="block text-center text-yellow-900">{designation}</span>
         <h1 class="text-3xl lg:text-7xl text-center mb-4">{name}</h1>
@@ -297,7 +326,7 @@ function ParkPage({ parkCode }) {
     );
   }
 
-  return <Layout>{contents}</Layout>;
+  return <Layout user={user}>{contents}</Layout>;
 }
 
 export default ParkPage;
