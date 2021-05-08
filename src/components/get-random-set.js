@@ -1,6 +1,6 @@
 import Arts from "../components/HomePage/images/pexels-valeria-ushakova-3094218.jpg";
 import Astronomy from "../components/HomePage/images/pexels-tomáš-malík-1703314.jpg";
-import ATV from "../components/HomePage/images/pexels-athena-2986384.jpg";
+import Atv from "../components/HomePage/images/pexels-athena-2986384.jpg";
 import Biking from "../components/HomePage/images/pexels-mike-1174103.jpg";
 import Boating from "../components/HomePage/images/pexels-oliver-sjöström-1122462.jpg";
 import Camping from "../components/HomePage/images/pexels-cottonbro-5993950.jpg";
