@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
 import RockClimbingList from "./components/ParkComponents/activity-list";
 import useGetNpsNews from "./hooks/use-get-nps-news";
 import FAQPage from "./components/FAQPage/FAQPage";
+import EventsPage from "./components/EventsPage/EventsPage";
 
 function App() {
   const [searchBarParams, setSearchBarParams] = useState([]);
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path="/faq">
           <FAQPage />
+        </Route>
+        <Route path = "/events">
+          <EventsPage />
         </Route>
         <Route path="/park/:code" children={<SetParkPage />} />
         <Route path="/activities/:activity" children={<SetActivitiesPage />} />

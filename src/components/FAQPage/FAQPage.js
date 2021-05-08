@@ -8,7 +8,7 @@ function FAQPage() {
   );
   return (
     <Layout>
-      <section id="mission-section" class="block flex flex-col text-center">
+      <section class="block flex flex-col text-center">
         <h1 class="text-7xl m-4 text-rocky">FAQ</h1>
       </section>
       <section className="accordionSection">

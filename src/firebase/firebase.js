@@ -3,12 +3,12 @@ import "firebase/auth";
 import "firebase/firestore";
 require("dotenv").config();
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  apiKey: "AIzaSyDToLLe1MwiW3q1KO_oCj_k0Sn-Oel64iQ",
+  authDomain: "parkway-56221.firebaseapp.com",
   projectId: "parkway-56221",
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_APP_ID,
+  storageBucket: "parkway-56221.appspot.com",
+  messagingSenderId: "390683954202",
+  appId: "1:390683954202:web:4495dc679aa2a87afd95a3"
 };
 
 firebase.initializeApp(firebaseConfig);
