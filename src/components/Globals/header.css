@@ -52,6 +52,7 @@
   padding: 10px 10px;
   height: 2.4rem;
   border-radius: 30px;
+  line-height: 0;
   opacity: 0.8;
   transition: 0.3s;
   color: #fafafa;
