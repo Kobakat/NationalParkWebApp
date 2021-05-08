@@ -91,7 +91,7 @@ function activitySet() {
     },
     {
       name: "Auto and ATV",
-      URL: ATV,
+      URL: Atv,
       tag: "Feel the road",
     },
     {
