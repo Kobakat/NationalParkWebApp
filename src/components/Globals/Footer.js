@@ -62,6 +62,7 @@ function Footer() {
                   className="footer-links"
                   href="https://www.nps.gov/subjects/digital/nps-data-api.htm"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   National Park Service API
                 </a>

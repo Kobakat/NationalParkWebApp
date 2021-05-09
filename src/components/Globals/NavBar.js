@@ -7,8 +7,8 @@ import { ReactComponent as Logo } from "./ParkwayLogo.svg";
 import "./header.css";
 import signIn from "../HomePage/login";
 
-const NavBar = ({user}) => {
-  console.log(user)
+const NavBar = ({ user }) => {
+  console.log(user);
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -32,26 +32,16 @@ const NavBar = ({user}) => {
             </a>
           </li>
           <li className="option mobile-option" onClick={closeMobileMenu}>
-            <a class="header-link" href="/sign-in">
-              Sign in
-            </a>
-          </li>
-          <li className="option mobile-option" onClick={closeMobileMenu}>
             <button class="header-link" onClick={signIn} className="sign-up">
-              Sign Up
+              Sign In
             </button>
           </li>
         </ul>
       </div>
       <ul className="signin-up">
-        <li className="sign-in" onClick={closeMobileMenu}>
-          <a class="header-link" href="/sign-in">
-            Sign in
-          </a>
-        </li>
         <li onClick={closeMobileMenu}>
           <button onClick={signIn} className="signup-btn">
-            {user ? "sign out" : "Sign in"}
+            {user ? "Sign Out" : "Sign In"}
           </button>
         </li>
       </ul>
