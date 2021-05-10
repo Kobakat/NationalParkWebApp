@@ -1,17 +1,22 @@
-import { useState } from "react";
-import { GrMenu } from "react-icons/gr";
-import { GrClose } from "react-icons/gr";
-import { Link } from "react-router-dom";
-import { ReactComponent as Logo } from "./ParkwayLogo.svg";
+import { useState } from 'react'
+import { GrMenu } from 'react-icons/gr'
+import { GrClose } from 'react-icons/gr'
+import { Link } from 'react-router-dom'
+import { ReactComponent as Logo } from './ParkwayLogo.svg'
 
-import "./header.css";
-import signIn from "../HomePage/login";
+import './header.css'
+import signIn from '../HomePage/login'
 
-const NavBar = ({user}) => {
+const NavBar = ({ user }) => {
   console.log(user)
-  const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
+  const [click, setClick] = useState(false)
+  const handleClick = () => setClick(!click)
+  const closeMobileMenu = () => setClick(false)
+
+  const showAccountPage = () => {
+    if (user) return 'Account'
+  }
+
   return (
     <div className="header">
       <div className="logo-nav">
@@ -20,7 +25,7 @@ const NavBar = ({user}) => {
             <Logo className="logo" />
           </a>
         </div>
-        <ul className={click ? "nav-options active" : "nav-options"}>
+        <ul className={click ? 'nav-options active' : 'nav-options'}>
           <li className="option" onClick={closeMobileMenu}>
             <Link to="/about/" class="header-link">
               About
@@ -31,7 +36,7 @@ const NavBar = ({user}) => {
               Parks
             </a>
           </li>
-          <li className="option mobile-option" onClick={closeMobileMenu}>
+          {/* <li className="option mobile-option" onClick={closeMobileMenu}>
             <a class="header-link" href="/sign-in">
               Sign in
             </a>
@@ -40,18 +45,19 @@ const NavBar = ({user}) => {
             <button class="header-link" onClick={signIn} className="sign-up">
               Sign Up
             </button>
-          </li>
+          </li> */}
         </ul>
       </div>
       <ul className="signin-up">
         <li className="sign-in" onClick={closeMobileMenu}>
-          <a class="header-link" href="/sign-in">
-            Sign in
+          <a class="header-link" href="/account">
+            {showAccountPage()}
+            {/* {user ? 'Account' : ''} */}
           </a>
         </li>
         <li onClick={closeMobileMenu}>
           <button onClick={signIn} className="signup-btn">
-            {user ? "sign out" : "Sign in"}
+            {user ? 'Sign out' : 'Sign Up'}
           </button>
         </li>
       </ul>
@@ -63,7 +69,7 @@ const NavBar = ({user}) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar
