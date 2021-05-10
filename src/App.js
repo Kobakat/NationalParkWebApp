@@ -1,20 +1,20 @@
-import HomePage from "./components/HomePage/home-page";
-import ParkResultsPage from "./components/ParkComponents/park-result-page";
-import ParkPage from "./components/ParkComponents/park-page";
-import AboutPage from "./components/AboutPage/AboutPage";
-import { useState } from "react";
-import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
-import RockClimbingList from "./components/ParkComponents/activity-list";
-import useGetNpsNews from "./hooks/use-get-nps-news";
-import FAQPage from "./components/FAQPage/FAQPage";
-import EventsPage from "./components/EventsPage/EventsPage";
+import HomePage from './components/HomePage/home-page'
+import ParkResultsPage from './components/ParkComponents/park-result-page'
+import ParkPage from './components/ParkComponents/park-page'
+import AboutPage from './components/AboutPage/AboutPage'
+import { useState } from 'react'
+import { BrowserRouter, Route, Switch, useParams } from 'react-router-dom'
+import RockClimbingList from './components/ParkComponents/activity-list'
+import useGetNpsNews from './hooks/use-get-nps-news'
+import FAQPage from './components/FAQPage/FAQPage'
+import AccountPage from './components/AccountPage/AccountPage'
 
 function App() {
-  const [searchBarParams, setSearchBarParams] = useState([]);
+  const [searchBarParams, setSearchBarParams] = useState([])
 
   const searchBarCallback = (childData) => {
-    setSearchBarParams(childData);
-  };
+    setSearchBarParams(childData)
+  }
 
   return (
     <BrowserRouter>
@@ -28,9 +28,7 @@ function App() {
         <Route path="/faq">
           <FAQPage />
         </Route>
-        <Route path = "/events">
-          <EventsPage />
-        </Route>
+        <Route path="/account" component={AccountPage} />
         <Route path="/park/:code" children={<SetParkPage />} />
         <Route path="/activities/:activity" children={<SetActivitiesPage />} />
         <Route path="/results">
@@ -38,17 +36,17 @@ function App() {
         </Route>
       </Switch>
     </BrowserRouter>
-  );
+  )
 }
 
 function SetParkPage() {
-  let { code } = useParams();
-  return <ParkPage parkCode={code}></ParkPage>;
+  let { code } = useParams()
+  return <ParkPage parkCode={code}></ParkPage>
 }
 
 function SetActivitiesPage() {
-  let { activity } = useParams();
-  return <RockClimbingList activity={activity} />;
+  let { activity } = useParams()
+  return <RockClimbingList activity={activity} />
 }
 
-export default App;
+export default App
