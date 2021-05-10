@@ -8,8 +8,8 @@ function FAQPage() {
   );
   return (
     <Layout>
-      <section class="block flex flex-col text-center">
-        <h1 class="text-7xl m-4 text-rocky">FAQ</h1>
+      <section className="block flex flex-col text-center">
+        <h1 className="text-7xl m-4 text-rocky">FAQ</h1>
       </section>
       <section className="accordionSection">
         <Accordion

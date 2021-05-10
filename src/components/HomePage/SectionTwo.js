@@ -1,13 +1,10 @@
-import { render } from "@testing-library/react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import getRandomActivitySet from "../get-random-set";
 import "./section-two.css";
 
 function SectionTwo() {
-  const [randomActivities, setRandomActivities] = useState(() =>
-    getRandomActivitySet()
-  );
+  const [randomActivities] = useState(() => getRandomActivitySet());
 
   const renderArray = randomActivities.map((activity) => {
     const linkUrl = `/activities/${activity.name}`;

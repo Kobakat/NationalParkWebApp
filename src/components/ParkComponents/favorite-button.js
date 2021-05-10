@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { BsFillHeartFill, BsHeart } from "react-icons/bs";
 import { usersCollection } from "../../firebase/firebase";
-import UseCheckFavorite from "../../hooks/use-check-favorite";
-function FavoriteButton({ parkCode, user, onFavoriteSubmit }) {
+
+function FavoriteButton({
+  parkCode,
+  user,
+  onFavoriteSubmit,
+  onUnFavoriteSubmit,
+}) {
   const [isFav, setIsFav] = useState(false);
   const checkFav = async (parkCode, user) => {
     try {
       const parkRef = usersCollection
-        .doc(user[2].uid)
+        .doc(user[0].uid)
         .collection("favoriteParks")
         .doc(parkCode);
       const isFavorite = await parkRef.get();
@@ -24,13 +29,16 @@ function FavoriteButton({ parkCode, user, onFavoriteSubmit }) {
       console.error(err);
     }
   };
-
-  checkFav(parkCode, user);
+  if (user) checkFav(parkCode, user);
 
   console.log(isFav);
   return (
     <div>
-      {isFav ? <BsFillHeartFill /> : <BsHeart onClick={onFavoriteSubmit} />}
+      {isFav ? (
+        <BsFillHeartFill onClick={onUnFavoriteSubmit} />
+      ) : (
+        <BsHeart onClick={onFavoriteSubmit} />
+      )}
     </div>
   );
 }

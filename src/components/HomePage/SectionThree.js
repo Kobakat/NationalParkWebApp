@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Pagination } from "swiper";
 import "./section-three.scss";
@@ -10,7 +10,7 @@ SwiperCore.use([Autoplay, Pagination]);
 function SectionThree() {
   const data = useGetNpsNews();
   if (data) console.log(data);
-  const [DivText, setDivText] = useState("Loading");
+
   const [index, setIndex] = useState(0);
 
   return (

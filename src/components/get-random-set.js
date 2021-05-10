@@ -282,8 +282,4 @@ function activitySet() {
   ];
 }
 
-function topicSet() {
-  //Todo
-}
-
 export default getRandomActivitySet;

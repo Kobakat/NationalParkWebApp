@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { getActivities, getTopics, getStates } from "./get-filters";
 import MultiSelect from "react-multi-select-component";
-import useGetNPSData from "../hooks/use-get-nps-data";
 
 function SearchBar({ callback }) {
   //These states are for the possible search bar filter options
@@ -54,21 +53,27 @@ function SearchBar({ callback }) {
   //We will pass up the new parameters everytime the user changes one of the inputs
   useEffect(() => {
     passParams();
-  }, [selectedParks, selectedStates, selectedTopics, selectedActivities]);
+  }, [
+    selectedParks,
+    selectedStates,
+    selectedTopics,
+    selectedActivities,
+    passParams,
+  ]);
 
   return (
-    <div class="bg-white min-h-28 w-4/5 m-auto py-8 px-8 rounded-2xl border-2 border-gray-100 shadow-lg">
+    <div className="bg-white min-h-28 w-4/5 m-auto py-8 px-8 rounded-2xl border-2 border-gray-100 shadow-lg">
       <Tabs>
-        <div class="border-b-2">
+        <div className="border-b-2">
           <TabList>
-            <div class="flex gap-2 pb-4 flex-col lg:flex-row text-center">
+            <div className="flex gap-2 pb-4 flex-col lg:flex-row text-center">
               <Tab selectedClassName="bg-green-700 text-white rounded-lg">
-                <button class="py-4 px-10 rounded-lg hover:bg-green-500 hover:text-white cursor-pointer w-full transition">
+                <button className="py-4 px-10 rounded-lg hover:bg-green-500 hover:text-white cursor-pointer w-full transition">
                   Park Name
                 </button>
               </Tab>
               <Tab selectedClassName="bg-green-700 text-white rounded-lg">
-                <button class="py-4 px-10 rounded-lg hover:bg-green-500 hover:text-white cursor-pointer w-full transition">
+                <button className="py-4 px-10 rounded-lg hover:bg-green-500 hover:text-white cursor-pointer w-full transition">
                   Filter
                 </button>
               </Tab>
@@ -77,11 +82,11 @@ function SearchBar({ callback }) {
         </div>
 
         <TabPanel>
-          <div class="flex flex-col gap-4 pt-6">
-            <label class="text-green-700" htmlFor="park-name">
+          <div className="flex flex-col gap-4 pt-6">
+            <label className="text-green-700" htmlFor="park-name">
               Park Name
             </label>
-            <div class="flex gap-4 flex-col lg:flex-row">
+            <div className="flex gap-4 flex-col lg:flex-row">
               <input
                 type="text"
                 id="name"
@@ -89,7 +94,7 @@ function SearchBar({ callback }) {
                 onChange={handleChangeSearchBar}
               />
               <Link to="/results">
-                <button class="text-white bg-green-700 hover:bg-green-500 focus:bg-green-500 py-4 px-10 rounded-lg transition">
+                <button className="text-white bg-green-700 hover:bg-green-500 focus:bg-green-500 py-4 px-10 rounded-lg transition">
                   Search
                 </button>
               </Link>
@@ -98,15 +103,15 @@ function SearchBar({ callback }) {
         </TabPanel>
 
         <TabPanel>
-          <div class="flex gap-4 pt-6 items-end flex-col lg:flex-row">
-            <div class="flex flex-col gap-4 w-full content-end">
+          <div className="flex gap-4 pt-6 items-end flex-col lg:flex-row">
+            <div className="flex flex-col gap-4 w-full content-end">
               {/* state */}
-              <label class="text-green-700" htmlFor="park-name">
+              <label className="text-green-700" htmlFor="park-name">
                 State
               </label>
-              <div class="flex gap-4 h-full">
+              <div className="flex gap-4 h-full">
                 <MultiSelect
-                  class="bg-gray-100 p-3 w-full rounded-3xl pl-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="bg-gray-100 p-3 w-full rounded-3xl pl-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   options={states}
                   value={selectedStates}
                   onChange={setSelectedStates}
@@ -114,14 +119,14 @@ function SearchBar({ callback }) {
                 />
               </div>
             </div>
-            <div class="flex flex-col gap-4 w-full">
+            <div className="flex flex-col gap-4 w-full">
               {/* activity */}
-              <label class="text-green-700" htmlFor="park-name">
+              <label className="text-green-700" htmlFor="park-name">
                 Activity
               </label>
-              <div class="flex gap-4 h-full">
+              <div className="flex gap-4 h-full">
                 <MultiSelect
-                  class="bg-gray-100 p-3 w-full rounded-3xl pl-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="bg-gray-100 p-3 w-full rounded-3xl pl-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   options={activities}
                   value={selectedActivities}
                   onChange={setSelectedActivities}
@@ -129,14 +134,14 @@ function SearchBar({ callback }) {
                 />
               </div>
             </div>
-            <div class="flex flex-col gap-4 w-full">
+            <div className="flex flex-col gap-4 w-full">
               {/* topic */}
-              <label class="text-green-700" htmlFor="park-name">
+              <label className="text-green-700" htmlFor="park-name">
                 Topic
               </label>
-              <div class="flex gap-4 h-full">
+              <div className="flex gap-4 h-full">
                 <MultiSelect
-                  class="bg-gray-100 p-3 w-full rounded-3xl pl-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="bg-gray-100 p-3 w-full rounded-3xl pl-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   options={topics}
                   value={selectedTopics}
                   onChange={setSelectedTopics}
@@ -145,13 +150,13 @@ function SearchBar({ callback }) {
               </div>
             </div>
             <Link to="/results">
-              <button class="text-white bg-green-700 hover:bg-green-500 focus:bg-green-500 py-4 px-10 rounded-lg transition">
+              <button className="text-white bg-green-700 hover:bg-green-500 focus:bg-green-500 py-4 px-10 rounded-lg transition">
                 Search
               </button>
             </Link>
           </div>
         </TabPanel>
-        <p class="text-center mt-6 text-sm text-gray-300 hover:text-black transition">
+        <p className="text-center mt-6 text-sm text-gray-300 hover:text-black transition">
           Feel free to select as many or as few options as necessary
         </p>
       </Tabs>
