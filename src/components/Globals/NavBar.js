@@ -13,6 +13,12 @@ const NavBar = ({ user }) => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+  console.log(user)
+
+
+  const showAccountPage = () => {
+    if (user) return 'Account'
+  }
 
   return (
     <div className="header">
@@ -38,7 +44,7 @@ const NavBar = ({ user }) => {
       <ul className="signin-up">
         <li className="sign-in" onClick={closeMobileMenu}>
           <a class="header-link" href="/account">
-            {showAccountPage()}
+            {showAccountPage  ()}
           </a>
         </li>
         <li onClick={closeMobileMenu}>
