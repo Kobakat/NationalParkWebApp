@@ -8,6 +8,8 @@ import RockClimbingList from './components/ParkComponents/activity-list'
 import useGetNpsNews from './hooks/use-get-nps-news'
 import FAQPage from './components/FAQPage/FAQPage'
 import AccountPage from './components/AccountPage/AccountPage'
+import useUser from './hooks/use-user'
+import { auth } from './firebase/firebase'
 
 function App() {
   const [searchBarParams, setSearchBarParams] = useState([])
@@ -15,12 +17,13 @@ function App() {
   const searchBarCallback = (childData) => {
     setSearchBarParams(childData)
   }
+  const [isLoading, error, user] = useUser(auth);
 
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/" exact>
-          <HomePage callback={searchBarCallback} />
+          <HomePage callback={searchBarCallback} user={user}/>
         </Route>
         <Route path="/about">
           <AboutPage />
@@ -28,7 +31,7 @@ function App() {
         <Route path="/faq">
           <FAQPage />
         </Route>
-        <Route path="/account" component={AccountPage} />
+        <Route path="/account" component={AccountPage} user={user}/>
         <Route path="/park/:code" children={<SetParkPage />} />
         <Route path="/activities/:activity" children={<SetActivitiesPage />} />
         <Route path="/results">
