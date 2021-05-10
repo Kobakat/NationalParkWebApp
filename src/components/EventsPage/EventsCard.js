@@ -22,7 +22,11 @@ const EventsCard = ({ eventTitle, dateStart, dateEnd, desc, url }) => {
               </p>
             </div>
             <button class="m-4 bg-dustBunnyGreen p-1 hover:shadow-lg hover:underline rounded-2xl text-white">
-              <a href={url}>More Info</a>
+              <a
+                href={`https://www.nps.gov/planyourvisit/event-details.htm?id=${url}`}
+              >
+                More Info
+              </a>
             </button>
           </div>
         </div>
