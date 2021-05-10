@@ -3,14 +3,17 @@ import "./park-result-page.css";
 import Layout from "../Globals/Layout";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import useSearch from "../hooks/use-search";
 import MapboxGLMap from "../UtilityComponents/MapboxGLMap";
 
-function ParkResultPage({ search }) {
+function ParkResultPage() {
   const [resultFetch, setResultFetch] = useState({
     isLoading: true,
     errorMessage: "",
     data: null,
   });
+
+  const search = useSearch().state;
 
   const { query } = search;
   const { activities, topics, states } = search;

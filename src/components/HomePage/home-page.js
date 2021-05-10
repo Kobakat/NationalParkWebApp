@@ -12,14 +12,9 @@ import useUser from "../../hooks/use-user";
 import { auth, usersCollection } from "../../firebase/firebase";
 import GetLocation from "../UtilityComponents/get-location";
 
-function HomePage({ callback, user }) {
-  const [searchBarParams, setSearchBarParams] = useState([]);
-  console.log(user)
-  const searchBarCallback = (childData) => {
-    setSearchBarParams(childData);
-  };
+function HomePage({ user }) {
+  console.log(user);
 
-  
   const setData = async (user) => {
     try {
       await usersCollection.doc(user.uid).set({
@@ -35,15 +30,11 @@ function HomePage({ callback, user }) {
   if (user) setData(user);
   if (user) GetLocation(user);
 
-  useEffect(() => {
-    callback(searchBarParams);
-  }, [searchBarParams]);
-
   return (
     <Layout user={user}>
       <div id="content">
         <PageHeader />
-        <HeroSection callback={searchBarCallback} />
+        <HeroSection />
         <SectionOne />
         <SectionTwo />
         <SectionThree />

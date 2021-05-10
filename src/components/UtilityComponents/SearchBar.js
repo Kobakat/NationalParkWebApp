@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { getActivities, getTopics, getStates } from "./get-filters";
+import useSearch from "../hooks/use-search";
 import MultiSelect from "react-multi-select-component";
 import useGetNPSData from "../hooks/use-get-nps-data";
 
-function SearchBar({ callback }) {
+function SearchBar() {
+  const setSearchState = useSearch();
+
   //These states are for the possible search bar filter options
   const [states, setStates] = useState([]);
   const [activities, setActivities] = useState([]);
@@ -38,7 +41,6 @@ function SearchBar({ callback }) {
   const [selectedActivities, setSelectedActivities] = useState([]);
   const [selectedTopics, setSelectedTopics] = useState([]);
 
-  //This function will pass the the parent component the search parameters the user has inputed
   const passParams = () => {
     const params = {
       query: selectedParks,
@@ -47,11 +49,9 @@ function SearchBar({ callback }) {
       states: selectedStates,
     };
 
-    // console.log(typeof callback);
-    callback(params);
+    setSearchState.setFunction(params);
   };
 
-  //We will pass up the new parameters everytime the user changes one of the inputs
   useEffect(() => {
     passParams();
   }, [selectedParks, selectedStates, selectedTopics, selectedActivities]);
