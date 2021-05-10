@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import SearchBar from "../UtilityComponents/SearchBar";
 import "./section-hero.css";
-import HeroPicture from "./images/yosemitevalley.png";
 
 function HeroSection({ callback }) {
   const [searchBarParams, setSearchBarParams] = useState([]);

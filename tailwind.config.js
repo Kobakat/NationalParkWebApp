@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       colors: {
         rocky: "#743100",
+        dustBunnyGreen: "#6A775F",
       },
       fontFamily: {
         body: ["Nunito"],

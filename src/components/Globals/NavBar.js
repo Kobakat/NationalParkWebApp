@@ -8,6 +8,7 @@ import './header.css'
 import signIn from '../HomePage/login'
 
 const NavBar = ({ user }) => {
+
   console.log(user)
   const [click, setClick] = useState(false)
   const handleClick = () => setClick(!click)
@@ -16,7 +17,7 @@ const NavBar = ({ user }) => {
   const showAccountPage = () => {
     if (user) return 'Account'
   }
-
+  
   return (
     <div className="header">
       <div className="logo-nav">
@@ -36,28 +37,18 @@ const NavBar = ({ user }) => {
               Parks
             </a>
           </li>
-          {/* <li className="option mobile-option" onClick={closeMobileMenu}>
-            <a class="header-link" href="/sign-in">
-              Sign in
-            </a>
-          </li>
-          <li className="option mobile-option" onClick={closeMobileMenu}>
-            <button class="header-link" onClick={signIn} className="sign-up">
-              Sign Up
-            </button>
-          </li> */}
         </ul>
       </div>
       <ul className="signin-up">
         <li className="sign-in" onClick={closeMobileMenu}>
           <a class="header-link" href="/account">
             {showAccountPage()}
-            {/* {user ? 'Account' : ''} */}
           </a>
         </li>
         <li onClick={closeMobileMenu}>
           <button onClick={signIn} className="signup-btn">
             {user ? 'Sign out' : 'Sign Up'}
+
           </button>
         </li>
       </ul>

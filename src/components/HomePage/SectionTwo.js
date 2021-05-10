@@ -13,11 +13,11 @@ function SectionTwo() {
     const linkUrl = `/activities/${activity.name}`;
     return (
       <article key={activity.name}>
-        <img src="https://picsum.photos/300/200///" alt="" />
+        <img src={activity.URL} alt="" />
         <div className="text">
           <h3>{activity.name}</h3>
           <span>{activity.tag}</span>
-
+          <br />
           <Link to={linkUrl}>
             <button>Show Me</button>
           </Link>
