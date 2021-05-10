@@ -26,7 +26,7 @@ function ParkPage({ parkCode }) {
 
   const onFavoriteSubmit = (event) => {
     event.preventDefault();
-    favorite(parkCode, user);
+    favorite(parkCode, user, data[9]);
   };
 
   useEffect(() => {
