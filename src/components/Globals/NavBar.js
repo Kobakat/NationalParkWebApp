@@ -4,20 +4,16 @@ import { GrClose } from 'react-icons/gr'
 import { Link } from 'react-router-dom'
 import { ReactComponent as Logo } from './ParkwayLogo.svg'
 
-import './header.css'
-import signIn from '../HomePage/login'
+
+import "./header.css";
+import signIn from "../HomePage/login";
+import SignOut from "../HomePage/logout";
 
 const NavBar = ({ user }) => {
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
 
-  console.log(user)
-  const [click, setClick] = useState(false)
-  const handleClick = () => setClick(!click)
-  const closeMobileMenu = () => setClick(false)
-
-  const showAccountPage = () => {
-    if (user) return 'Account'
-  }
-  
   return (
     <div className="header">
       <div className="logo-nav">
@@ -46,8 +42,9 @@ const NavBar = ({ user }) => {
           </a>
         </li>
         <li onClick={closeMobileMenu}>
-          <button onClick={signIn} className="signup-btn">
-            {user ? 'Sign out' : 'Sign Up'}
+
+          <button onClick={user? SignOut : signIn} className="signup-btn">
+            {user ? "Sign Out" : "Sign In"}
 
           </button>
         </li>

@@ -5,11 +5,12 @@ import SectionOne from "../HomePage/SectionOne";
 import SectionTwo from "../HomePage/SectionTwo";
 import SectionThree from "../HomePage/SectionThree";
 import SectionFour from "../HomePage/SectionFour";
-import Login from "../HomePage/login"
+import Login from "../HomePage/login";
 import { useState, useEffect } from "react";
 import "./home-page.css";
 import useUser from "../../hooks/use-user";
-import { auth } from "../../firebase/firebase";
+import { auth, usersCollection } from "../../firebase/firebase";
+import GetLocation from "../UtilityComponents/get-location";
 
 function HomePage({ callback }) {
   const [searchBarParams, setSearchBarParams] = useState([]);
@@ -19,6 +20,20 @@ function HomePage({ callback }) {
   };
 
   const [isLoading, error, user] = useUser(auth);
+  const setData = async (user) => {
+    try {
+      await usersCollection.doc(user.uid).set({
+        Name: user.displayName,
+        profilePic: user.photoURL,
+      });
+    } catch (err) {
+      console.error(err);
+    }
+    console.log("Success!");
+  };
+
+  if (user) setData(user);
+  if (user) GetLocation(user);
 
   useEffect(() => {
     callback(searchBarParams);
