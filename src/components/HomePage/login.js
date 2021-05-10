@@ -1,4 +1,5 @@
-import { auth, provider } from "../../firebase/firebase";
+import { auth, provider, usersCollection } from "../../firebase/firebase";
+import GetLocation from "../UtilityComponents/get-location";
 
 const signIn = async () => {
   try {

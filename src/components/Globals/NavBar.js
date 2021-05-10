@@ -6,9 +6,9 @@ import { ReactComponent as Logo } from "./ParkwayLogo.svg";
 
 import "./header.css";
 import signIn from "../HomePage/login";
+import SignOut from "../HomePage/logout";
 
 const NavBar = ({ user }) => {
-  console.log(user);
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -40,7 +40,7 @@ const NavBar = ({ user }) => {
       </div>
       <ul className="signin-up">
         <li onClick={closeMobileMenu}>
-          <button onClick={signIn} className="signup-btn">
+          <button onClick={user? SignOut : signIn} className="signup-btn">
             {user ? "Sign Out" : "Sign In"}
           </button>
         </li>
