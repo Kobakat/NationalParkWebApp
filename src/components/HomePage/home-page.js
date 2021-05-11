@@ -35,15 +35,11 @@ function HomePage({ callback }) {
   if (user) setData(user);
   if (user) GetLocation(user);
 
-  useEffect(() => {
-    callback(searchBarParams);
-  }, [searchBarParams]);
-
   return (
     <Layout user={user}>
       <div id="content">
         <PageHeader />
-        <HeroSection callback={searchBarCallback} />
+        <HeroSection />
         <SectionOne />
         <SectionTwo />
         <SectionThree />
