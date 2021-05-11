@@ -12,6 +12,7 @@ import { auth } from "./firebase/firebase";
 import { SearchProvider } from "./components/hooks/use-search";
 import EventsPage from "./components/EventsPage/EventsPage";
 import ParksPage from "./components/MainParksPage/ParksPage";
+import AuthenticatedRoute from "./components/UtilityComponents/authenticated-route";
 
 function App() {
   const user = useUser(auth);
@@ -35,7 +36,9 @@ function App() {
           <Route path="/events">
             <EventsPage />
           </Route>
-          <Route path="/account" component={AccountPage} user={user} />
+          <AuthenticatedRoute user={user} path="/account">
+            <AccountPage />
+          </AuthenticatedRoute>
           <Route path="/park/:code" children={<SetParkPage />} />
           <Route
             path="/activities/:activity"
