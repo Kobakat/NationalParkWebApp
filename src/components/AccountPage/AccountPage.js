@@ -7,7 +7,7 @@ import useUser from "../../hooks/use-user";
 import { Link } from "react-router-dom";
 
 function AccountPage() {
-  const [user] = useUser(auth);
+  const user = useUser(auth);
   const [data, setData] = useState(null);
   useEffect(() => {
     const GetParks = async (user) => {
@@ -19,7 +19,6 @@ function AccountPage() {
             .get();
 
           setData(snapshot);
-          console.log(snapshot);
         } catch (err) {
           console.error(err);
         }
@@ -28,6 +27,11 @@ function AccountPage() {
   }, [user]);
 
   let parkList;
+  if (data) {
+    data.docs.map((doc) => {
+      console.log(doc.data());
+    });
+  }
 
   if (data) {
     parkList = data.docs.map((doc) => {
