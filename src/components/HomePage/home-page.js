@@ -15,7 +15,7 @@ import useUser from "../../hooks/use-user";
 
 function HomePage({ callback }) {
   const [searchBarParams, setSearchBarParams] = useState([]);
-  const [user] = useUser(auth);
+  const user = useUser(auth);
   const searchBarCallback = (childData) => {
     setSearchBarParams(childData);
   };
@@ -33,7 +33,7 @@ function HomePage({ callback }) {
   };
 
   if (user) setData(user);
-  if (user) GetLocation(user);
+  // if (user) GetLocation(user);
 
   return (
     <Layout user={user}>

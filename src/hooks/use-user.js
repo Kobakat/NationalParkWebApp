@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
 
 function useUser(auth) {
-  const [data, setData] = useState({ isLoading: true, user: null });
+  const [data, setData] = useState({ user: null });
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const onChange = (currentUser) => {
-      setData({ isLoading: false, user: currentUser });
+      setData({ user: currentUser });
     };
     const onError = (e) => setError(e);
     const unsubscribe = auth.onAuthStateChanged(onChange, onError);
     return unsubscribe;
   }, [auth]);
-  const { isLoading, user } = data;
-  return [user];
+  const { user } = data;
+  return user;
 }
 
 export default useUser;

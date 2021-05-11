@@ -8,13 +8,16 @@ function FavoriteButton({
   onFavoriteSubmit,
   onUnFavoriteSubmit,
 }) {
-  console.log(user);
   const [isFav, setIsFav] = useState(false);
+
+  const onButtonClick = () => {
+    checkFav(parkCode, user);
+  };
   const checkFav = async (parkCode, user) => {
     if (user) {
       try {
         const parkRef = usersCollection
-          .doc(user[0].uid)
+          .doc(user.uid)
           .collection("favoriteParks")
           .doc(parkCode);
         const isFavorite = await parkRef.get();
@@ -36,7 +39,7 @@ function FavoriteButton({
 
   console.log(isFav);
   return (
-    <div>
+    <div onClick={onButtonClick}>
       {isFav ? (
         <BsFillHeartFill onClick={onUnFavoriteSubmit} />
       ) : (

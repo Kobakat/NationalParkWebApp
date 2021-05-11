@@ -13,7 +13,7 @@ import { SearchProvider } from "./components/hooks/use-search";
 import EventsPage from "./components/EventsPage/EventsPage";
 
 function App() {
-  const [isLoading, error, user] = useUser(auth);
+  const user = useUser(auth);
 
   return (
     <BrowserRouter>
