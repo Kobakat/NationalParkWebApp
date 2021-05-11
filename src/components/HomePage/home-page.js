@@ -9,12 +9,13 @@ import SectionFour from "../HomePage/SectionFour";
 import { useState, useEffect } from "react";
 import "./home-page.css";
 
-import { usersCollection } from "../../firebase/firebase";
+import { auth, usersCollection } from "../../firebase/firebase";
 import GetLocation from "../UtilityComponents/get-location";
+import useUser from "../../hooks/use-user";
 
-function HomePage({ callback, user }) {
+function HomePage({ callback }) {
   const [searchBarParams, setSearchBarParams] = useState([]);
-  console.log(user);
+  const [user] = useUser(auth);
   const searchBarCallback = (childData) => {
     setSearchBarParams(childData);
   };
