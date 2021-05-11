@@ -33,39 +33,39 @@ function SectionOne() {
             <img src={Geyser} alt="Geyser" />
             <b>Yellowstone National Park</b>
           </Link>
-          <Link className="linkto" to="/park/yell">
+          <Link className="linkto" to="/park/grca">
             <img src={GrandCanyon} alt="Grand Canyon" />
             <b>Grand Canyon National Park</b>
           </Link>
-          <Link className="linkto" to="/park/yell">
+          <Link className="linkto" to="/park/yose">
             <img src={Mountain} alt="Mountain" />
             <b>Yosemite National Park</b>
           </Link>
         </div>
         <div className="column">
-          <Link className="linkto" to="/park/yell">
+          <Link className="linkto" to="/park/acad">
             <img src={Forest} alt="Forest" />
             <b>Acadia National Park</b>
           </Link>
-          <Link className="linkto" to="/park/yell">
+          <Link className="linkto" to="/park/grte">
             <img src={Alps} alt="Snowy Mountains" />
             <b>Grand Teton National Park</b>
           </Link>
-          <Link className="linkto" to="/park/yell">
+          <Link className="linkto" to="/park/romo">
             <img src={SnowCapped} alt="Snowy Mountain Range" />
             <b>Rocky Mountains National Park</b>
           </Link>
         </div>
         <div className="column">
-          <Link className="linkto" to="/park/yell">
+          <Link className="linkto" to="/park/zion">
             <img src={GrandCanyon} alt="Canyon" />
             <b>Zion National Park</b>
           </Link>
-          <Link className="linkto" to="/park/yell">
+          <Link className="linkto" to="/park/grsm">
             <img src={Hills} alt="Mountainous Hills" />
             <b>Great Smoky National Park</b>
           </Link>
-          <Link className="linkto" to="/park/yell">
+          <Link className="linkto" to="/park/glac">
             <img src={Lake} alt="Lake" />
             <b>Glacier National Park</b>
           </Link>
