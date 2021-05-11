@@ -13,13 +13,8 @@ import { auth, usersCollection } from "../../firebase/firebase";
 import GetLocation from "../UtilityComponents/get-location";
 import useUser from "../../hooks/use-user";
 
-function HomePage({ callback }) {
-  const [searchBarParams, setSearchBarParams] = useState([]);
+function HomePage() {
   const user = useUser(auth);
-  const searchBarCallback = (childData) => {
-    setSearchBarParams(childData);
-  };
-
   const setData = async (user) => {
     try {
       await usersCollection.doc(user.uid).set({
