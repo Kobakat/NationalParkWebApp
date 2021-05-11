@@ -5,14 +5,16 @@ import getPark from "./get-park";
 import useWeather from "../hooks/use-weather";
 import MapboxGLMap from "../UtilityComponents/MapboxGLMap";
 import useUser from "../../hooks/use-user";
-import { BsFillHeartFill, BsHeart } from "react-icons/bs";
+
 import { auth } from "../../firebase/firebase";
 import favorite from "../UtilityComponents/favorite-park";
 import UseCheckFavorite from "../../hooks/use-check-favorite";
 import FavoriteButton from "./favorite-button";
+import unfavorite from "../UtilityComponents/unfavorite-park";
 
 function ParkPage({ parkCode }) {
   const user = useUser(auth);
+  console.log(user);
 
   const [parkFetch, setParkFetch] = useState({
     isLoading: true,
@@ -27,6 +29,11 @@ function ParkPage({ parkCode }) {
   const onFavoriteSubmit = (event) => {
     event.preventDefault();
     favorite(parkCode, user, data[9]);
+  };
+
+  const onUnFavoriteSubmit = (event) => {
+    event.preventDefault();
+    unfavorite(parkCode, user, data[9]);
   };
 
   useEffect(() => {
@@ -56,9 +63,9 @@ function ParkPage({ parkCode }) {
       }
     }
     loadPark();
-  }, []);
+  }, [parkCode]);
 
-  const { isLoading, errorMessage, data, zipCode, isFavorite } = parkFetch;
+  const { isLoading, errorMessage, data, zipCode } = parkFetch;
 
   const [weather] = useWeather(zipCode);
   let contents;
@@ -83,6 +90,8 @@ function ParkPage({ parkCode }) {
       longitude,
       latitude,
     ] = data;
+
+    console.log(addresses);
 
     //ACTIVITIES ARRAY
     let activitiesList;
@@ -196,6 +205,7 @@ function ParkPage({ parkCode }) {
             parkCode={parkCode}
             user={user}
             onFavoriteSubmit={onFavoriteSubmit}
+            onUnFavoriteSubmit={onUnFavoriteSubmit}
           />
         </button>
         {/* Top Section */}
@@ -300,7 +310,7 @@ function ParkPage({ parkCode }) {
           </div>
 
           {/* More images */}
-          <div className="masonry">{imageList}</div>
+          <div class="masonry">{imageList}</div>
 
           {/* Activities & Topics */}
           <div class="grid gap-10 max-w-full">

@@ -5,12 +5,13 @@ import SectionOne from "../HomePage/SectionOne";
 import SectionTwo from "../HomePage/SectionTwo";
 import SectionThree from "../HomePage/SectionThree";
 import SectionFour from "../HomePage/SectionFour";
-import Login from "../HomePage/login";
+
 import { useState, useEffect } from "react";
 import "./home-page.css";
-import useUser from "../../hooks/use-user";
-import { auth, usersCollection } from "../../firebase/firebase";
+
+import { usersCollection } from "../../firebase/firebase";
 import GetLocation from "../UtilityComponents/get-location";
+
 
 function HomePage({ user }) {
   console.log(user);

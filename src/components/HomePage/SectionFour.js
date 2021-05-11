@@ -6,6 +6,7 @@ import "swiper/swiper.scss";
 import "../../../node_modules/swiper/swiper-bundle.css";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
+import { Link } from "react-router-dom";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -39,48 +40,45 @@ function SectionFour() {
         <SwiperSlide className="slide">
           <div className="slide-content">
             <img
-              src="https://randomwordgenerator.com/img/picture-generator/55e0d54b4a51ad14f1dc8460962e33791c3ad6e04e507441722a72dc9345c4_640.jpg"
+              src="https://th.bing.com/th/id/OIP.2OaozpXAr_8x-2vXqtlBwAHaJB?pid=ImgDet&rs=1"
               alt=""
             />
             <div className="slide-text-content">
-              <h3>Lorem Ipsum</h3>
-              <button className="slide-button">Click</button>
+              <h3>Events</h3>
+              <Link to="/events">
+                <button className="slide-button">Click</button>
+              </Link>
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide className="slide">
           <div className="slide-content">
             <img
-              src="https://randomwordgenerator.com/img/picture-generator/55e0d54b4a51ad14f1dc8460962e33791c3ad6e04e507441722a72dc9345c4_640.jpg"
+              src="https://www.schultzphoto.com/wp-content/uploads/2018/03/180805-1X8052.jpg"
               alt=""
             />
             <div className="slide-text-content">
-              <h3>Lorem Ipsum</h3>
-              <button className="slide-button">Click</button>
+              <h3>Wildlife Webcams</h3>
+              <button className="slide-button">
+                <a href="https://www.nps.gov/subjects/watchingwildlife/webcams.htm">
+                  {" "}
+                  visit{" "}
+                </a>
+              </button>
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide className="slide">
           <div className="slide-content">
             <img
-              src="https://randomwordgenerator.com/img/picture-generator/55e0d54b4a51ad14f1dc8460962e33791c3ad6e04e507441722a72dc9345c4_640.jpg"
+              src="https://www.ready.gov/sites/default/files/hazard-hero-images/alerts_v1.jpg"
               alt=""
             />
             <div className="slide-text-content">
-              <h3>Lorem Ipsum</h3>
-              <button className="slide-button">Click</button>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="slide">
-          <div className="slide-content">
-            <img
-              src="https://randomwordgenerator.com/img/picture-generator/55e0d54b4a51ad14f1dc8460962e33791c3ad6e04e507441722a72dc9345c4_640.jpg"
-              alt=""
-            />
-            <div className="slide-text-content">
-              <h3>Lorem Ipsum</h3>
-              <button className="slide-button">Click</button>
+              <h3>Alerts!</h3>
+              <button className="slide-button">
+                <a href="https://www.nps.gov/planyourvisit/alerts.htm">visit</a>
+              </button>
             </div>
           </div>
         </SwiperSlide>

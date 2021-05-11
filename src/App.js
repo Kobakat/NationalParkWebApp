@@ -5,12 +5,12 @@ import AboutPage from "./components/AboutPage/AboutPage";
 import { useState } from "react";
 import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
 import RockClimbingList from "./components/ParkComponents/activity-list";
-import useGetNpsNews from "./hooks/use-get-nps-news";
 import FAQPage from "./components/FAQPage/FAQPage";
 import AccountPage from "./components/AccountPage/AccountPage";
 import useUser from "./hooks/use-user";
 import { auth } from "./firebase/firebase";
 import { SearchProvider } from "./components/hooks/use-search";
+import EventsPage from "./components/EventsPage/EventsPage";
 
 function App() {
   const [isLoading, error, user] = useUser(auth);
@@ -27,6 +27,9 @@ function App() {
           </Route>
           <Route path="/faq">
             <FAQPage />
+          </Route>
+          <Route path="/events">
+            <EventsPage />
           </Route>
           <Route path="/account" component={AccountPage} user={user} />
           <Route path="/park/:code" children={<SetParkPage />} />

@@ -4,7 +4,6 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { getActivities, getTopics, getStates } from "./get-filters";
 import useSearch from "../hooks/use-search";
 import MultiSelect from "react-multi-select-component";
-import useGetNPSData from "../hooks/use-get-nps-data";
 
 function SearchBar() {
   const setSearchState = useSearch();
@@ -62,12 +61,12 @@ function SearchBar() {
         <div class="border-b-2">
           <TabList>
             <div class="flex gap-2 pb-4 flex-col lg:flex-row text-center">
-              <Tab selectedClassName="bg-green-700 text-white rounded-lg">
+              <Tab selectedclass="bg-green-700 text-white rounded-lg">
                 <button class="py-4 px-10 rounded-lg hover:bg-green-500 hover:text-white cursor-pointer w-full transition">
                   Park Name
                 </button>
               </Tab>
-              <Tab selectedClassName="bg-green-700 text-white rounded-lg">
+              <Tab selectedclass="bg-green-700 text-white rounded-lg">
                 <button class="py-4 px-10 rounded-lg hover:bg-green-500 hover:text-white cursor-pointer w-full transition">
                   Filter
                 </button>

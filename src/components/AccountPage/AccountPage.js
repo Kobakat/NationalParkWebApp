@@ -3,25 +3,26 @@ import Layout from "../Globals/Layout";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { auth, usersCollection } from "../../firebase/firebase";
 import useUser from "../../hooks/use-user";
-import UseGetFirebaseParks from "../../hooks/use-get-firebase-parks";
+
 import { Link } from "react-router-dom";
 
 function AccountPage() {
-  const [isLoading, error, user] = useUser(auth);
+  const [user] = useUser(auth);
   const [data, setData] = useState(null);
   useEffect(() => {
     const GetParks = async (user) => {
-      try {
-        const snapshot = await usersCollection
-          .doc(user.uid)
-          .collection("favoriteParks")
-          .get();
+      if (user)
+        try {
+          const snapshot = await usersCollection
+            .doc(user.uid)
+            .collection("favoriteParks")
+            .get();
 
-        setData(snapshot);
-        console.log(snapshot);
-      } catch (err) {
-        console.error(err);
-      }
+          setData(snapshot);
+          console.log(snapshot);
+        } catch (err) {
+          console.error(err);
+        }
     };
     GetParks(user);
   }, [user]);
@@ -31,7 +32,7 @@ function AccountPage() {
   if (data) {
     parkList = data.docs.map((doc) => {
       return (
-        <div>
+        <div key={doc.data().parkCode}>
           <button class="text-lg py-4 px-10 rounded-lg hover:bg-green-500 hover:text-white cursor-pointer w-full transition">
             <Link to={`park/${doc.data().parkCode}`} key={doc.data().parkCode}>
               {doc.data().name}
@@ -53,12 +54,12 @@ function AccountPage() {
                 <TabList>
                   <div class="flex gap-2 pb-4 flex-col lg:flex-row">
                     <div class="flex m-auto gap-6">
-                      <Tab selectedClassName="bg-green-700 text-white rounded-lg">
+                      <Tab selectedclass="bg-green-700 text-white rounded-lg">
                         <button class="text-lg py-4 px-10 rounded-lg hover:bg-green-500 hover:text-white cursor-pointer w-full transition">
                           My Details
                         </button>
                       </Tab>
-                      <Tab selectedClassName="bg-green-700 text-white rounded-lg">
+                      <Tab selectedclass="bg-green-700 text-white rounded-lg">
                         <button class="text-lg py-4 px-10 rounded-lg hover:bg-green-500 hover:text-white cursor-pointer w-full transition">
                           Favorites
                         </button>

@@ -18,9 +18,9 @@ const UseGetFirebaseParks = (user) => {
         console.error(err);
       }
     };
-    if (user)GetParks(user);
+    if (user) GetParks(user);
     console.log("Calling...");
-  }, []);
+  }, [user]);
 
   return data;
 };
