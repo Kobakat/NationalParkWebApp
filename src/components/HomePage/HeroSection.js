@@ -2,20 +2,10 @@ import { useState, useEffect } from "react";
 import SearchBar from "../UtilityComponents/SearchBar";
 import "./section-hero.css";
 
-function HeroSection({ callback }) {
-  const [searchBarParams, setSearchBarParams] = useState([]);
-
-  const searchBarCallback = (childData) => {
-    setSearchBarParams(childData);
-  };
-
-  useEffect(() => {
-    callback(searchBarParams);
-  }, [searchBarParams]);
-
+function HeroSection() {
   return (
     <main className="bg-image-home">
-      <SearchBar callback={searchBarCallback} />
+      <SearchBar />
     </main>
   );
 }

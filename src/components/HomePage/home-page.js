@@ -12,12 +12,9 @@ import "./home-page.css";
 import { usersCollection } from "../../firebase/firebase";
 import GetLocation from "../UtilityComponents/get-location";
 
-function HomePage({ callback, user }) {
-  const [searchBarParams, setSearchBarParams] = useState([]);
+
+function HomePage({ user }) {
   console.log(user);
-  const searchBarCallback = (childData) => {
-    setSearchBarParams(childData);
-  };
 
   const setData = async (user) => {
     try {
@@ -34,15 +31,11 @@ function HomePage({ callback, user }) {
   if (user) setData(user);
   if (user) GetLocation(user);
 
-  useEffect(() => {
-    callback(searchBarParams);
-  }, [searchBarParams]);
-
   return (
     <Layout user={user}>
       <div id="content">
         <PageHeader />
-        <HeroSection callback={searchBarCallback} />
+        <HeroSection />
         <SectionOne />
         <SectionTwo />
         <SectionThree />
