@@ -11,6 +11,7 @@ import useUser from "./hooks/use-user";
 import { auth } from "./firebase/firebase";
 import { SearchProvider } from "./components/hooks/use-search";
 import EventsPage from "./components/EventsPage/EventsPage";
+import ParksPage from "./components/MainParksPage/ParksPage";
 
 function App() {
   const user = useUser(auth);
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/faq">
             <FAQPage />
+          </Route>
+          <Route path="/parks">
+            <ParksPage />
           </Route>
           <Route path="/events">
             <EventsPage />

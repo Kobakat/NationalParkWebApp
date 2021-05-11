@@ -1,0 +1,28 @@
+.columns {
+  columns: 250px 3;
+  column-rule: 1px dotted #ccc;
+  column-gap: 3em;
+}
+
+.intro {
+  column-span: all;
+}
+
+#column-p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 4rem;
+  color: #743100;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.column-section {
+  margin: 5rem;
+  font-size: 1.3rem;
+  text-align: center;
+  line-height: 1.65;
+}
