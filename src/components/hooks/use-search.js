@@ -9,8 +9,6 @@ function useSearchInternal() {
     state: searchState,
     setFunction: setSearchState,
   };
-
-  console.log(returnVal);
   return returnVal;
 }
 

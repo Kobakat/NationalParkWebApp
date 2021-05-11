@@ -2,7 +2,6 @@ import HomePage from "./components/HomePage/home-page";
 import ParkResultsPage from "./components/ParkComponents/park-result-page";
 import ParkPage from "./components/ParkComponents/park-page";
 import AboutPage from "./components/AboutPage/AboutPage";
-import { useState } from "react";
 import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
 import RockClimbingList from "./components/ParkComponents/activity-list";
 import FAQPage from "./components/FAQPage/FAQPage";
@@ -11,6 +10,7 @@ import useUser from "./hooks/use-user";
 import { auth } from "./firebase/firebase";
 import { SearchProvider } from "./components/hooks/use-search";
 import EventsPage from "./components/EventsPage/EventsPage";
+import AuthenticatedRoute from "./components/UtilityComponents/authenticated-route";
 
 function App() {
   const user = useUser(auth);
@@ -31,7 +31,9 @@ function App() {
           <Route path="/events">
             <EventsPage />
           </Route>
-          <Route path="/account" component={AccountPage} user={user} />
+          <AuthenticatedRoute user={user} path="/account">
+            <AccountPage />
+          </AuthenticatedRoute>
           <Route path="/park/:code" children={<SetParkPage />} />
           <Route
             path="/activities/:activity"
