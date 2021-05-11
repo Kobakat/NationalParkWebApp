@@ -81,7 +81,7 @@ function SearchBar() {
               Park Name
             </label>
             <div class="flex gap-4 flex-col lg:flex-row">
-              <input
+              <input class="border-2 border-dustBunnyGreen rounded-lg"
                 type="text"
                 id="name"
                 placeholder="Yellowstone"
