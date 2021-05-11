@@ -5,14 +5,17 @@ import getPark from "./get-park";
 import useWeather from "../hooks/use-weather";
 import MapboxGLMap from "../UtilityComponents/MapboxGLMap";
 import useUser from "../../hooks/use-user";
-import { BsFillHeartFill } from "react-icons/bs";
-import { auth, usersCollection } from "../../firebase/firebase";
+
+import { auth } from "../../firebase/firebase";
 import favorite from "../UtilityComponents/favorite-park";
+import UseCheckFavorite from "../../hooks/use-check-favorite";
+import FavoriteButton from "./favorite-button";
+import unfavorite from "../UtilityComponents/unfavorite-park";
 
 function ParkPage({ parkCode }) {
   const user = useUser(auth);
-
   console.log(user);
+
   const [parkFetch, setParkFetch] = useState({
     isLoading: true,
     errorMessage: "",
@@ -20,23 +23,17 @@ function ParkPage({ parkCode }) {
     zipCode: 60659,
   });
 
+  const fav = UseCheckFavorite(parkCode, user);
+  console.log(fav);
+
   const onFavoriteSubmit = (event) => {
     event.preventDefault();
-    favorite(parkCode, user);
+    favorite(parkCode, user, data[9]);
   };
 
-  const favorite = async (parkCode, user) => {
-    try {
-      await usersCollection
-        .doc(user[2].uid)
-        .collection("favoriteParks")
-        .doc(parkCode)
-        .set({
-          parkCode: parkCode,
-        });
-    } catch (err) {
-      console.error(err);
-    }
+  const onUnFavoriteSubmit = (event) => {
+    event.preventDefault();
+    unfavorite(parkCode, user, data[9]);
   };
 
   useEffect(() => {
@@ -54,7 +51,6 @@ function ParkPage({ parkCode }) {
           isLoading: false,
           errorMessage: "",
           data: park,
-
           zipCode: park[3][0].postalCode,
         });
       } catch (err) {
@@ -67,7 +63,7 @@ function ParkPage({ parkCode }) {
       }
     }
     loadPark();
-  }, []);
+  }, [parkCode]);
 
   const { isLoading, errorMessage, data, zipCode } = parkFetch;
 
@@ -94,6 +90,8 @@ function ParkPage({ parkCode }) {
       longitude,
       latitude,
     ] = data;
+
+    console.log(addresses);
 
     //ACTIVITIES ARRAY
     let activitiesList;
@@ -203,7 +201,12 @@ function ParkPage({ parkCode }) {
     contents = (
       <div class="m-auto p-8 lg:max-w-screen-lg text-yellow-900">
         <button>
-          <BsFillHeartFill onClick={onFavoriteSubmit} />
+          <FavoriteButton
+            parkCode={parkCode}
+            user={user}
+            onFavoriteSubmit={onFavoriteSubmit}
+            onUnFavoriteSubmit={onUnFavoriteSubmit}
+          />
         </button>
         {/* Top Section */}
         <span class="block text-center text-yellow-900">{designation}</span>
@@ -307,7 +310,7 @@ function ParkPage({ parkCode }) {
           </div>
 
           {/* More images */}
-          <div className="masonry">{imageList}</div>
+          <div class="masonry">{imageList}</div>
 
           {/* Activities & Topics */}
           <div class="grid gap-10 max-w-full">

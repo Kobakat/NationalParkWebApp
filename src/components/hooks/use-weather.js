@@ -23,8 +23,6 @@ const useWeather = (city) => {
       }
     };
     getWeather();
-    console.log("weather component mounted.");
-    console.log(weatherData);
   }, [url]);
 
   // useEffect(() => {

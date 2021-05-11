@@ -1,7 +1,7 @@
-import React from "react";
-import { ReactComponent as Logo } from "./ParkwayLogo.svg";
-import "./section-footer.css";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { ReactComponent as Logo } from './ParkwayLogo.svg'
+import './section-footer.css'
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -51,7 +51,7 @@ function Footer() {
                 <Link
                   to="/about"
                   onClick={() => {
-                    window.scrollTo(0, 0);
+                    window.scrollTo(0, 0)
                   }}
                 >
                   About Us
@@ -76,7 +76,7 @@ function Footer() {
                 <Link
                   to="/faq"
                   onClick={() => {
-                    window.scrollTo(0, 0);
+                    window.scrollTo(0, 0)
                   }}
                 >
                   Parkway FAQ
@@ -89,6 +89,6 @@ function Footer() {
         <p className="end">@ 2021 Parkway Web-App</p>
       </div>
     </footer>
-  );
+  )
 }
-export default Footer;
+export default Footer

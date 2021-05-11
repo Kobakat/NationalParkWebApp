@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Pagination } from "swiper";
 import "./section-three.scss";
 import "swiper/swiper.scss";
 import useGetNpsNews from "../../hooks/use-get-nps-news";
 
-SwiperCore.use([Autoplay, Pagination])
+SwiperCore.use([Autoplay, Pagination]);
 
 function SectionThree() {
   const data = useGetNpsNews();
   if (data) console.log(data);
-  const [DivText, setDivText] = useState("Loading");
+
   const [index, setIndex] = useState(0);
 
   return (
@@ -25,7 +25,14 @@ function SectionThree() {
       >
         <SwiperSlide className="carousel-slide">
           {data ? (
-            <img src={data[0].image.url} alt="" />
+            <img
+              src={
+                data[0].image.url
+                  ? data[0].image.url
+                  : "https://www.nps.gov/common/commonspot/templates/images/logos/nps_social_image_02.jpg"
+              }
+              alt="nps news"
+            />
           ) : (
             <img
               src="https://randomwordgenerator.com/img/picture-generator/55e0d54b4a51ad14f1dc8460962e33791c3ad6e04e507441722a72dc9345c4_640.jpg"
@@ -35,7 +42,14 @@ function SectionThree() {
         </SwiperSlide>
         <SwiperSlide className="carousel-slide">
           {data ? (
-            <img src={data[1].image.url} alt="" />
+            <img
+              src={
+                data[1].image.url
+                  ? data[1].image.url
+                  : "https://www.nps.gov/common/commonspot/templates/images/logos/nps_social_image_02.jpg"
+              }
+              alt="nps news"
+            />
           ) : (
             <img
               src="https://randomwordgenerator.com/img/picture-generator/55e0d54b4a51ad14f1dc8460962e33791c3ad6e04e507441722a72dc9345c4_640.jpg"
@@ -45,7 +59,14 @@ function SectionThree() {
         </SwiperSlide>
         <SwiperSlide className="carousel-slide">
           {data ? (
-            <img src={data[2].image.url} alt="" />
+            <img
+              src={
+                data[2].image.url
+                  ? data[2].image.url
+                  : "https://www.nps.gov/common/commonspot/templates/images/logos/nps_social_image_02.jpg"
+              }
+              alt="nps news"
+            />
           ) : (
             <img
               src="https://randomwordgenerator.com/img/picture-generator/55e0d54b4a51ad14f1dc8460962e33791c3ad6e04e507441722a72dc9345c4_640.jpg"
@@ -55,7 +76,14 @@ function SectionThree() {
         </SwiperSlide>
         <SwiperSlide className="carousel-slide">
           {data ? (
-            <img src={data[3].image.url} alt="" />
+            <img
+              src={
+                data[3].image.url
+                  ? data[3].image.url
+                  : "https://www.nps.gov/common/commonspot/templates/images/logos/nps_social_image_02.jpg"
+              }
+              alt="nps news"
+            />
           ) : (
             <img
               src="https://randomwordgenerator.com/img/picture-generator/55e0d54b4a51ad14f1dc8460962e33791c3ad6e04e507441722a72dc9345c4_640.jpg"
@@ -65,7 +93,14 @@ function SectionThree() {
         </SwiperSlide>
         <SwiperSlide className="carousel-slide">
           {data ? (
-            <img src={data[4].image.url} alt="" />
+            <img
+              src={
+                data[4].image.url
+                  ? data[4].image.url
+                  : "https://www.nps.gov/common/commonspot/templates/images/logos/nps_social_image_02.jpg"
+              }
+              alt="nps news"
+            />
           ) : (
             <img
               src="https://randomwordgenerator.com/img/picture-generator/55e0d54b4a51ad14f1dc8460962e33791c3ad6e04e507441722a72dc9345c4_640.jpg"
