@@ -11,7 +11,7 @@ function FavoriteButton({
   console.log(user);
   const [isFav, setIsFav] = useState(false);
   const checkFav = async (parkCode, user) => {
-    if (user[0]) {
+    if (user) {
       try {
         const parkRef = usersCollection
           .doc(user[0].uid)
@@ -32,7 +32,7 @@ function FavoriteButton({
       }
     }
   };
-  if (user) checkFav(parkCode, user[0]);
+  if (user) checkFav(parkCode, user);
 
   console.log(isFav);
   return (
