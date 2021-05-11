@@ -8,6 +8,7 @@ import RockClimbingList from "./components/ParkComponents/activity-list";
 import useGetNpsNews from "./hooks/use-get-nps-news";
 import FAQPage from "./components/FAQPage/FAQPage";
 import EventsPage from "./components/EventsPage/EventsPage";
+import ParksPage from "./components/MainParksPage/ParksPage";
 
 function App() {
   const [searchBarParams, setSearchBarParams] = useState([]);
@@ -25,10 +26,13 @@ function App() {
         <Route path="/about">
           <AboutPage />
         </Route>
+        <Route path="/parks">
+          <ParksPage />
+        </Route>
         <Route path="/faq">
           <FAQPage />
         </Route>
-        <Route path = "/events">
+        <Route path="/events">
           <EventsPage />
         </Route>
         <Route path="/park/:code" children={<SetParkPage />} />
