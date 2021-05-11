@@ -28,9 +28,9 @@ function EventsPage() {
   console.log(eventList);
   return (
     <Layout>
-      <section className="block flex flex-col text-center">
-        <h1 className="text-7xl m-4 text-rocky">Events</h1>
-        <h4 className="text-xl text-rocky">Plan Your Visit</h4>
+      <section class="block flex flex-col text-center">
+        <h1 class="text-7xl m-4 text-rocky">Events</h1>
+        <h4 class="text-xl text-rocky">Plan Your Visit</h4>
       </section>
       {contents ? contents : "Loading..."}
     </Layout>

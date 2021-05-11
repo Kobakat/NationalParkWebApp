@@ -8,10 +8,10 @@ function FAQPage() {
   );
   return (
     <Layout>
-      <section className="block flex flex-col text-center">
-        <h1 className="text-7xl m-4 text-rocky">FAQ</h1>
+      <section class="block flex flex-col text-center">
+        <h1 class="text-7xl m-4 text-rocky">FAQ</h1>
       </section>
-      <section className="accordionSection">
+      <section class="accordionSection">
         <Accordion
           question="Is the data and information presented on this website accurate?"
           answer="Yes! All of the data that is being displayed is directly taken from the National Park Service API, which is an agency overseen and ran by the United States Federal Government. Thank you NPS!"

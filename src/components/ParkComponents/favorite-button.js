@@ -8,28 +8,31 @@ function FavoriteButton({
   onFavoriteSubmit,
   onUnFavoriteSubmit,
 }) {
+  console.log(user);
   const [isFav, setIsFav] = useState(false);
   const checkFav = async (parkCode, user) => {
-    try {
-      const parkRef = usersCollection
-        .doc(user[0].uid)
-        .collection("favoriteParks")
-        .doc(parkCode);
-      const isFavorite = await parkRef.get();
-      if (isFavorite) {
-        if (isFavorite.exists) {
-          setIsFav(true);
-          console.log("it does exist");
-        } else {
-          setIsFav(false);
-          console.log("it doesn't exist");
+    if (user[0]) {
+      try {
+        const parkRef = usersCollection
+          .doc(user[0].uid)
+          .collection("favoriteParks")
+          .doc(parkCode);
+        const isFavorite = await parkRef.get();
+        if (isFavorite) {
+          if (isFavorite.exists) {
+            setIsFav(true);
+            console.log("it does exist");
+          } else {
+            setIsFav(false);
+            console.log("it doesn't exist");
+          }
         }
+      } catch (err) {
+        console.error(err);
       }
-    } catch (err) {
-      console.error(err);
     }
   };
-  if (user) checkFav(parkCode, user);
+  if (user) checkFav(parkCode, user[0]);
 
   console.log(isFav);
   return (

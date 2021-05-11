@@ -97,10 +97,7 @@ function ParkPage({ parkCode }) {
     let activitiesList;
     if (data !== null) {
       activitiesList = activities.map((activity, index) => (
-        <li
-          className="bg-green-700 text-white px-4 py-2 rounded-md"
-          key={index}
-        >
+        <li class="bg-green-700 text-white px-4 py-2 rounded-md" key={index}>
           {activity.name}
         </li>
       ));
@@ -110,10 +107,7 @@ function ParkPage({ parkCode }) {
     let topicsList;
     if (data !== null) {
       topicsList = topics.map((topic, index) => (
-        <li
-          className="bg-green-700 text-white px-4 py-2 rounded-md"
-          key={index}
-        >
+        <li class="bg-green-700 text-white px-4 py-2 rounded-md" key={index}>
           {topic.name}
         </li>
       ));
@@ -124,9 +118,9 @@ function ParkPage({ parkCode }) {
     if (data !== null) {
       entranceFeesList = entranceFees.map((fee, index) => {
         return (
-          <div className="font-body" key={index}>
-            <span className="font-bold">${fee.cost}</span>
-            <span className="block mb-3">{fee.description}</span>
+          <div class="font-body" key={index}>
+            <span class="font-bold">${fee.cost}</span>
+            <span class="block mb-3">{fee.description}</span>
           </div>
         );
       });
@@ -137,9 +131,9 @@ function ParkPage({ parkCode }) {
     if (data !== null) {
       entrancePassesList = entrancePasses.map((pass, index) => {
         return (
-          <div className="font-body" key={index}>
-            <span className="font-bold">${pass.cost}</span>
-            <span className="block mb-3">{pass.description}</span>
+          <div class="font-body" key={index}>
+            <span class="font-bold">${pass.cost}</span>
+            <span class="block mb-3">{pass.description}</span>
           </div>
         );
       });
@@ -151,7 +145,7 @@ function ParkPage({ parkCode }) {
       imageList = images.map((img, index) => {
         return (
           <img
-            className="m-auto object-cover w-full rounded-xl"
+            class="m-auto object-cover w-full rounded-xl"
             src={img.url}
             alt={img.altText}
             key={index}
@@ -165,26 +159,26 @@ function ParkPage({ parkCode }) {
     if (data !== null) {
       operatingHoursList = (
         <div>
-          <h2 className="text-3xl mb-2">Hours</h2>
-          <h3 className="font-body">
+          <h2 class="text-3xl mb-2">Hours</h2>
+          <h3 class="font-body">
             Monday: {operatingHours[0].standardHours.monday}
           </h3>
-          <h3 className="font-body">
+          <h3 class="font-body">
             Tuesday: {operatingHours[0].standardHours.tuesday}
           </h3>
-          <h3 className="font-body">
+          <h3 class="font-body">
             Wednesday: {operatingHours[0].standardHours.wednesday}
           </h3>
-          <h3 className="font-body">
+          <h3 class="font-body">
             Thursday: {operatingHours[0].standardHours.thursday}
           </h3>
-          <h3 className="font-body">
+          <h3 class="font-body">
             Friday: {operatingHours[0].standardHours.friday}
           </h3>
-          <h3 className="font-body">
+          <h3 class="font-body">
             Saturday: {operatingHours[0].standardHours.saturday}
           </h3>
-          <h3 className="font-body">
+          <h3 class="font-body">
             Sunday: {operatingHours[0].standardHours.sunday}
           </h3>
         </div>
@@ -205,7 +199,7 @@ function ParkPage({ parkCode }) {
     };
 
     contents = (
-      <div className="m-auto p-8 lg:max-w-screen-lg text-yellow-900">
+      <div class="m-auto p-8 lg:max-w-screen-lg text-yellow-900">
         <button>
           <FavoriteButton
             parkCode={parkCode}
@@ -215,32 +209,30 @@ function ParkPage({ parkCode }) {
           />
         </button>
         {/* Top Section */}
-        <span className="block text-center text-yellow-900">{designation}</span>
-        <h1 className="text-3xl lg:text-7xl text-center mb-4">{name}</h1>
+        <span class="block text-center text-yellow-900">{designation}</span>
+        <h1 class="text-3xl lg:text-7xl text-center mb-4">{name}</h1>
         <figure>
           <img
-            className="m-auto object-cover w-full max-h-96 rounded-xl"
+            class="m-auto object-cover w-full max-h-96 rounded-xl"
             src={images[0].url}
             alt={images[0].altText}
           />
-          <figcaption className="mt-3 text-center  text-sm">
+          <figcaption class="mt-3 text-center  text-sm">
             <span>{images[0].caption}</span>
-            <span className="italic"> {images[0].credit}</span>
+            <span class="italic"> {images[0].credit}</span>
           </figcaption>
         </figure>
 
-        <hr className="border-1 border-gray-400 mt-10 mb-10" />
+        <hr class="border-1 border-gray-400 mt-10 mb-10" />
 
-        <div className="grid gap-16">
+        <div class="grid gap-16">
           {/* Description & Hours */}
-          <div className="grid gap-10 md:grid-flow-col">
+          <div class="grid gap-10 md:grid-flow-col">
             <div>
               <p>{description}</p>
-              <span className="block mt-4 font-body">
-                {renderStates(states)}
-              </span>
+              <span class="block mt-4 font-body">{renderStates(states)}</span>
             </div>
-            <div className="bg-green-800 text-white p-6 rounded-lg shadow-lg">
+            <div class="bg-green-800 text-white p-6 rounded-lg shadow-lg">
               {operatingHoursList}
             </div>
           </div>
@@ -252,32 +244,32 @@ function ParkPage({ parkCode }) {
           />
 
           {/* Entrance Fees & Weather */}
-          <div className="grid md:grid-flow-col gap-10">
-            <div className="shadow-lg rounded-lg bg-gray-50">
-              <h2 className="px-6 py-3 rounded-t-lg bg-green-800 text-white text-3xl">
+          <div class="grid md:grid-flow-col gap-10">
+            <div class="shadow-lg rounded-lg bg-gray-50">
+              <h2 class="px-6 py-3 rounded-t-lg bg-green-800 text-white text-3xl">
                 Entrance Fees/ Passes
               </h2>
-              <div className="p-6 rounded-b-lg">
+              <div class="p-6 rounded-b-lg">
                 <div>
-                  <span className="text-sm block">Fees</span>
+                  <span class="text-sm block">Fees</span>
                   {entranceFeesList}
                 </div>
                 <div>
-                  <span className="text-sm block mt-6">Fees</span>
+                  <span class="text-sm block mt-6">Fees</span>
                   {entrancePassesList}
                 </div>
               </div>
             </div>
 
             {weather ? (
-              <div className="shadow-lg rounded-lg bg-gray-50">
-                <h2 className="px-6 py-3 rounded-t-lg bg-blue-400 text-white text-3xl text-center">
+              <div class="shadow-lg rounded-lg bg-gray-50">
+                <h2 class="px-6 py-3 rounded-t-lg bg-blue-400 text-white text-3xl text-center">
                   Weather
                 </h2>
-                <div className="p-6 rounded-b-lg">
-                  <div className="text-center mb-4">
-                    <span className="text-sm text-center">Current Weather</span>
-                    <span className="block text-5xl">
+                <div class="p-6 rounded-b-lg">
+                  <div class="text-center mb-4">
+                    <span class="text-sm text-center">Current Weather</span>
+                    <span class="block text-5xl">
                       {weather.main
                         ? Math.round(weather.main.temp) + "°"
                         : "0°"}
@@ -318,18 +310,18 @@ function ParkPage({ parkCode }) {
           </div>
 
           {/* More images */}
-          <div className="masonry">{imageList}</div>
+          <div class="masonry">{imageList}</div>
 
           {/* Activities & Topics */}
-          <div className="grid gap-10 max-w-full">
-            <div className="shadow-lg p-6 rounded-b-lg">
-              <h2 className="text-3xl mb-4">Activities</h2>
-              <ul className="flex flex-wrap gap-3">{activitiesList}</ul>
+          <div class="grid gap-10 max-w-full">
+            <div class="shadow-lg p-6 rounded-b-lg">
+              <h2 class="text-3xl mb-4">Activities</h2>
+              <ul class="flex flex-wrap gap-3">{activitiesList}</ul>
             </div>
 
-            <div className="shadow-lg p-6 rounded-b-lg">
-              <h2 className="text-3xl mb-4">Topics</h2>
-              <ul className="flex flex-wrap gap-3">{topicsList}</ul>
+            <div class="shadow-lg p-6 rounded-b-lg">
+              <h2 class="text-3xl mb-4">Topics</h2>
+              <ul class="flex flex-wrap gap-3">{topicsList}</ul>
             </div>
           </div>
         </div>

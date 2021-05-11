@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { usersCollection } from "../firebase/firebase";
 
 const UseCheckfav = async (parkCode, user) => {};
 
@@ -13,7 +14,7 @@ const UseCheckFavorite = (parkCode, user) => {
     } else {
       console.log("no.");
     }
-  }, [parkCode, user]);
+  }, [parkCode]);
 
   return isFavorite;
 };
