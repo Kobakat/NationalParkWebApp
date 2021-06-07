@@ -40,7 +40,7 @@ function SectionFour() {
         <SwiperSlide className="slide">
           <div className="slide-content">
             <img
-              src="https://th.bing.com/th/id/OIP.2OaozpXAr_8x-2vXqtlBwAHaJB?pid=ImgDet&rs=1"
+              src="http://fortdavidson.com/wp-content/uploads/2018/10/hiking-mo.jpg"
               alt=""
             />
             <div className="slide-text-content">

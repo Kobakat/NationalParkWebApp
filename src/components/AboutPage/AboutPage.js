@@ -64,7 +64,7 @@ function AboutPage() {
         </section>
         <section id="team-section" class="block text-center mt-48">
           <h1 class="text-7xl m-4 text-center text-rocky">Our Team</h1>
-          <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mt-16">
+          <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8 m-6 mt-16">
             <figure class="flex flex-col">
               <img
                 src="https://avatars.githubusercontent.com/u/44333523?v=4"
